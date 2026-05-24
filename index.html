@@ -5,695 +5,805 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr. Dipanwita Banerjee — Gynaecological Oncologist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --teal-deep:   #0b4f4a;
-      --teal-mid:    #0f766e;
-      --teal-light:  #5eada6;
-      --gold:        #c9a96e;
-      --gold-light:  #e8d5b0;
-      --ivory:       #f8f5ef;
-      --ivory-dark:  #ede9e0;
-      --charcoal:    #1a1a1a;
-      --mid-grey:    #6b6b6b;
+      --navy:        #1a2e4a;
+      --navy-mid:    #2d4a6e;
+      --blue:        #3a6fa8;
+      --blue-light:  #6a9fd4;
+      --sky:         #c8ddf0;
+      --gold:        #b89660;
+      --gold-light:  #d4b88a;
+      --cream:       #f7f5f1;
+      --cream-dark:  #ece8e0;
       --white:       #ffffff;
+      --charcoal:    #2c2c2c;
+      --mid-grey:    #5a6070;
+      --light-grey:  #8a93a2;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--ivory);
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      background: var(--cream);
       color: var(--charcoal);
       overflow-x: hidden;
     }
 
-    /* ── CURSOR ── */
-    body { cursor: none; }
-    #cursor {
-      position: fixed; width: 10px; height: 10px;
-      background: var(--gold); border-radius: 50%;
-      pointer-events: none; z-index: 9999;
-      transform: translate(-50%,-50%);
-      transition: transform 0.1s, width 0.3s, height 0.3s, opacity 0.3s;
-    }
-    #cursor-ring {
-      position: fixed; width: 36px; height: 36px;
-      border: 1.5px solid var(--teal-mid); border-radius: 50%;
-      pointer-events: none; z-index: 9998;
-      transform: translate(-50%,-50%);
-      transition: transform 0.25s ease, width 0.3s, height 0.3s, opacity 0.3s;
-    }
-    body:hover #cursor { opacity: 1; }
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--blue-light); border-radius: 2px; }
 
-    /* ── NAV ── */
+    /* ─── NAV ─── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 22px 60px;
-      background: transparent;
-      transition: background 0.4s, backdrop-filter 0.4s, padding 0.4s;
+      padding: 24px 64px;
+      transition: background 0.5s, padding 0.4s, box-shadow 0.4s;
     }
     nav.scrolled {
-      background: rgba(248,245,239,0.92);
-      backdrop-filter: blur(12px);
-      padding: 14px 60px;
-      box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+      background: rgba(247,245,241,0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 14px 64px;
+      box-shadow: 0 1px 0 rgba(42,74,110,0.08);
     }
-    .nav-logo {
+    .nav-brand {
+      display: flex; flex-direction: column; gap: 2px; text-decoration: none;
+    }
+    .nav-brand-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; font-weight: 600; letter-spacing: 0.08em;
-      color: var(--white); text-decoration: none;
+      font-size: 1.15rem; font-weight: 600; letter-spacing: 0.04em;
+      color: var(--white);
+      transition: color 0.4s;
+      line-height: 1;
+    }
+    nav.scrolled .nav-brand-name { color: var(--navy); }
+    .nav-brand-title {
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
       transition: color 0.4s;
     }
-    nav.scrolled .nav-logo { color: var(--teal-deep); }
-    .nav-links { display: flex; gap: 36px; list-style: none; }
+    nav.scrolled .nav-brand-title { color: var(--light-grey); }
+    .nav-links { display: flex; gap: 34px; list-style: none; align-items: center; }
     .nav-links a {
-      font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: rgba(255,255,255,0.85); text-decoration: none;
+      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 400;
+      color: rgba(255,255,255,0.75); text-decoration: none;
       transition: color 0.3s;
     }
     nav.scrolled .nav-links a { color: var(--mid-grey); }
-    .nav-links a:hover { color: var(--gold); }
-    nav.scrolled .nav-links a:hover { color: var(--teal-mid); }
+    .nav-links a:hover { color: var(--gold-light) !important; }
+    .nav-cta {
+      padding: 9px 22px;
+      border: 1px solid rgba(255,255,255,0.45);
+      color: var(--white) !important;
+      border-radius: 2px;
+      transition: background 0.3s, border-color 0.3s, color 0.3s !important;
+    }
+    nav.scrolled .nav-cta {
+      border-color: var(--blue);
+      color: var(--blue) !important;
+    }
+    .nav-cta:hover {
+      background: var(--gold) !important;
+      border-color: var(--gold) !important;
+      color: var(--white) !important;
+    }
 
-    /* ── HERO ── */
+    /* hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 1.5px;
+      background: var(--white);
+      transition: background 0.4s, transform 0.3s;
+    }
+    nav.scrolled .hamburger span { background: var(--navy); }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* mobile nav drawer */
+    .mobile-nav {
+      display: none; position: fixed; top: 0; left: 0; right: 0;
+      background: var(--navy); z-index: 199;
+      padding: 90px 36px 40px;
+      flex-direction: column; gap: 0;
+      transform: translateY(-100%);
+      transition: transform 0.4s ease;
+    }
+    .mobile-nav.open { transform: translateY(0); }
+    .mobile-nav a {
+      display: block; padding: 16px 0;
+      font-size: 1.1rem; letter-spacing: 0.08em;
+      font-family: 'Cormorant Garamond', serif; font-weight: 400;
+      color: var(--white); text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: color 0.2s;
+    }
+    .mobile-nav a:hover { color: var(--gold-light); }
+
+    /* ─── HERO ─── */
     .hero {
       position: relative; min-height: 100vh;
       display: flex; align-items: flex-end;
       overflow: hidden;
-      background: var(--teal-deep);
+      background: var(--navy);
     }
-    .hero-bg-img {
+    .hero-photo {
       position: absolute; inset: 0;
-      background: url('images/profile.png') center 20% / cover no-repeat;
-      opacity: 0.28;
-      filter: grayscale(30%);
+      background: url('profile.png') center 15% / cover no-repeat;
+      opacity: 0.22;
     }
-    .hero-overlay {
+    .hero-grad {
       position: absolute; inset: 0;
-      background: linear-gradient(120deg, rgba(11,79,74,0.96) 0%, rgba(11,79,74,0.5) 55%, rgba(11,79,74,0.15) 100%);
+      background: linear-gradient(
+        115deg,
+        rgba(26,46,74,0.97) 0%,
+        rgba(26,46,74,0.80) 45%,
+        rgba(45,74,110,0.30) 75%,
+        rgba(45,74,110,0.10) 100%
+      );
     }
-    /* decorative grain */
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0; z-index: 2;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      opacity: 0.45; pointer-events: none;
+    /* subtle dot pattern */
+    .hero-pattern {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(200,221,240,0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
     }
     .hero-content {
-      position: relative; z-index: 3;
-      padding: 0 60px 90px;
-      max-width: 760px;
+      position: relative; z-index: 2;
+      padding: 0 80px 96px;
+      max-width: 820px;
     }
-    .hero-eyebrow {
-      font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 28px;
-      display: flex; align-items: center; gap: 14px;
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 14px;
+      font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--gold-light); margin-bottom: 30px;
     }
-    .hero-eyebrow::before {
-      content: ''; width: 40px; height: 1px; background: var(--gold);
-    }
+    .eyebrow-line { width: 36px; height: 1px; background: var(--gold); }
     .hero-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.2rem, 6vw, 5.6rem);
-      font-weight: 300; line-height: 1.05; color: var(--white);
-      margin-bottom: 10px;
+      font-size: clamp(3.4rem, 6.5vw, 6rem);
+      font-weight: 300; line-height: 1.02;
+      color: var(--white); margin-bottom: 12px;
+      letter-spacing: -0.01em;
     }
-    .hero-name em { font-style: italic; color: var(--gold-light); }
-    .hero-title {
-      font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--teal-light); margin-bottom: 32px;
+    .hero-name em { font-style: italic; color: var(--sky); }
+    .hero-credential {
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--blue-light); margin-bottom: 36px;
     }
     .hero-tagline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem; font-style: italic; font-weight: 300;
-      color: rgba(255,255,255,0.72); max-width: 480px; line-height: 1.65;
-      margin-bottom: 48px;
+      font-size: 1.22rem; font-style: italic; font-weight: 300;
+      color: rgba(255,255,255,0.62); line-height: 1.75;
+      max-width: 500px; margin-bottom: 52px;
+      border-left: 2px solid var(--gold);
+      padding-left: 20px;
     }
-    .hero-cta {
-      display: inline-flex; align-items: center; gap: 12px;
-      padding: 14px 32px; border: 1px solid var(--gold);
-      color: var(--gold); text-decoration: none;
-      font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
-      transition: background 0.3s, color 0.3s;
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 32px;
+      background: var(--blue); color: var(--white);
+      text-decoration: none; font-size: 0.72rem;
+      letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400;
+      transition: background 0.3s; border-radius: 2px;
     }
-    .hero-cta:hover { background: var(--gold); color: var(--teal-deep); }
-    .hero-cta svg { transition: transform 0.3s; }
-    .hero-cta:hover svg { transform: translateX(5px); }
+    .btn-primary:hover { background: var(--navy-mid); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 30px;
+      border: 1px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.8);
+      text-decoration: none; font-size: 0.72rem;
+      letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400;
+      transition: border-color 0.3s, color 0.3s; border-radius: 2px;
+    }
+    .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
-    /* stat strip */
+    /* stats bar */
     .hero-stats {
-      position: absolute; bottom: 0; right: 0; z-index: 3;
+      position: absolute; bottom: 0; right: 0; z-index: 2;
       display: flex;
     }
-    .stat-card {
-      padding: 28px 40px;
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(8px);
-      border-left: 1px solid rgba(255,255,255,0.1);
-      text-align: center;
+    .stat {
+      padding: 26px 44px; text-align: center;
+      background: rgba(255,255,255,0.05);
+      border-left: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
     }
-    .stat-card:first-child { background: var(--gold); }
-    .stat-num {
+    .stat:first-child { background: var(--blue); border-left: none; }
+    .stat-n {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.6rem; font-weight: 600;
+      font-size: 2.5rem; font-weight: 600;
       color: var(--white); line-height: 1;
     }
-    .stat-card:first-child .stat-num { color: var(--teal-deep); }
-    .stat-label {
-      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: rgba(255,255,255,0.7); margin-top: 6px;
+    .stat-l {
+      font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); margin-top: 5px;
     }
-    .stat-card:first-child .stat-label { color: rgba(11,79,74,0.75); }
 
-    /* scroll indicator */
-    .scroll-hint {
-      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-      z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: rgba(255,255,255,0.4); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
-      animation: bounce 2s infinite;
+    /* scroll hint */
+    .scroll-cue {
+      position: absolute; left: 50%; bottom: 36px; z-index: 2;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.3);
     }
-    .scroll-hint span { writing-mode: vertical-lr; }
-    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+    .scroll-cue-label {
+      font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+      writing-mode: vertical-lr;
+    }
+    .scroll-cue-line {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0%,100% { transform: scaleY(1); transform-origin: top; }
+      50% { transform: scaleY(0.4); transform-origin: top; }
+    }
 
-    /* ── ABOUT ── */
+    /* ─── SECTION COMMON ─── */
+    .sec-label {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+    }
+    .sec-label::before { content:''; width:28px; height:1px; background:var(--gold); }
+    .sec-label.light { color: var(--gold-light); }
+    .sec-label.light::before { background: var(--gold-light); }
+
+    /* ─── ABOUT ─── */
     .about {
       display: grid; grid-template-columns: 1fr 1fr;
-      min-height: 80vh; overflow: hidden;
+      min-height: 85vh; overflow: hidden;
     }
-    .about-image {
-      position: relative; background: var(--teal-deep);
-      overflow: hidden;
+    .about-img-wrap {
+      position: relative; overflow: hidden; min-height: 480px;
+      background: var(--navy-mid);
     }
-    .about-image img {
+    .about-img-wrap img {
       width: 100%; height: 100%; object-fit: cover;
       object-position: center top;
-      opacity: 0.85;
-      transition: transform 0.8s ease;
+      opacity: 0.88;
+      display: block;
+      transition: transform 0.9s ease;
     }
-    .about-image:hover img { transform: scale(1.03); }
-    .about-image-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, transparent 60%, var(--ivory) 100%);
+    .about-img-wrap:hover img { transform: scale(1.03); }
+    /* right fade overlay so image blends into content */
+    .about-img-fade {
+      position: absolute; top: 0; right: 0; bottom: 0; width: 40%;
+      background: linear-gradient(to right, transparent, var(--cream));
     }
-    .about-img-caption {
-      position: absolute; bottom: 30px; left: 30px;
-      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
+    /* caption bottom left */
+    .img-caption {
+      position: absolute; bottom: 22px; left: 24px;
+      font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
     }
-    .about-content {
-      padding: 80px 70px;
+    .about-body {
+      padding: 88px 72px;
       display: flex; flex-direction: column; justify-content: center;
-      background: var(--ivory);
+      background: var(--cream);
     }
-    .section-label {
-      font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 20px;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .section-label::before { content:''; width:30px; height:1px; background:var(--gold); }
-    .about-content h2 {
+    .about-body h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 3vw, 3.2rem);
-      font-weight: 300; line-height: 1.2; color: var(--teal-deep);
-      margin-bottom: 30px;
+      font-size: clamp(2rem, 3vw, 3rem); font-weight: 300;
+      color: var(--navy); line-height: 1.22; margin-bottom: 28px;
     }
-    .about-content h2 em { font-style: italic; }
-    .about-content p {
-      font-size: 0.95rem; color: var(--mid-grey); line-height: 1.9;
-      margin-bottom: 18px;
+    .about-body h2 em { font-style: italic; color: var(--blue); }
+    .about-body p {
+      font-size: 0.97rem; color: var(--mid-grey); line-height: 1.95;
+      margin-bottom: 18px; font-weight: 300;
     }
-    .credential-pills {
-      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px;
+    .about-body p strong { font-weight: 700; color: var(--navy); }
+    .pills {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px;
     }
     .pill {
-      padding: 6px 16px; border: 1px solid var(--teal-mid);
-      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--teal-mid); border-radius: 100px;
+      padding: 6px 16px;
+      border: 1px solid var(--blue-light);
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--blue); border-radius: 100px; font-weight: 400;
     }
 
-    /* ── EXPERTISE ── */
+    /* ─── EXPERTISE ─── */
     .expertise {
-      background: var(--teal-deep);
-      padding: 100px 60px;
+      background: var(--navy);
+      padding: 108px 64px;
       position: relative; overflow: hidden;
     }
-    .expertise::before {
-      content: 'EXPERTISE';
-      position: absolute; top: -20px; left: -10px;
+    /* giant ghost word */
+    .expertise-ghost {
+      position: absolute; top: -30px; right: -20px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 12rem; font-weight: 700; letter-spacing: -0.02em;
-      color: rgba(255,255,255,0.03); line-height: 1;
-      pointer-events: none; user-select: none;
+      font-size: 16rem; font-weight: 700; letter-spacing: -0.04em;
+      color: rgba(255,255,255,0.025); line-height: 1;
+      pointer-events: none; user-select: none; white-space: nowrap;
     }
-    .expertise-header {
-      max-width: 600px; margin-bottom: 70px;
+    .expertise-intro {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 40px; align-items: end; margin-bottom: 64px;
     }
-    .expertise-header h2 {
+    .expertise-intro h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.5rem, 4vw, 3.8rem);
-      font-weight: 300; color: var(--white); line-height: 1.15;
+      font-size: clamp(2.2rem, 3.8vw, 3.6rem); font-weight: 300;
+      color: var(--white); line-height: 1.16;
     }
-    .expertise-header h2 em { color: var(--gold-light); font-style: italic; }
-    .expertise-grid {
+    .expertise-intro h2 em { font-style: italic; color: var(--sky); }
+    .expertise-intro p {
+      font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.9;
+    }
+    .exp-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 2px; position: relative; z-index: 1;
+      gap: 1px; position: relative; z-index: 1;
     }
-    .expertise-card {
-      padding: 50px 40px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      transition: background 0.35s, border-color 0.35s, transform 0.35s;
+    .exp-card {
+      padding: 48px 38px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.06);
       position: relative; overflow: hidden;
+      transition: background 0.4s, transform 0.4s;
     }
-    .expertise-card::after {
+    .exp-card:hover { background: rgba(255,255,255,0.075); transform: translateY(-5px); }
+    .exp-card::after {
       content: '';
       position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-      background: var(--gold);
+      background: linear-gradient(to right, var(--gold), var(--blue-light));
       transform: scaleX(0); transform-origin: left;
-      transition: transform 0.4s ease;
+      transition: transform 0.45s ease;
     }
-    .expertise-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); }
-    .expertise-card:hover::after { transform: scaleX(1); }
-    .expertise-icon {
-      width: 44px; height: 44px; margin-bottom: 24px;
-      color: var(--gold);
-    }
-    .expertise-card h3 {
+    .exp-card:hover::after { transform: scaleX(1); }
+    .exp-card-num {
+      position: absolute; top: 18px; right: 22px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem; font-weight: 400; color: var(--white);
-      margin-bottom: 12px;
+      font-size: 3.5rem; font-weight: 700;
+      color: rgba(255,255,255,0.04); line-height: 1;
     }
-    .expertise-card p {
-      font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.8;
+    .exp-icon {
+      width: 40px; height: 40px; margin-bottom: 22px;
+      color: var(--gold-light); flex-shrink: 0;
     }
-    .expertise-num {
-      position: absolute; top: 20px; right: 24px;
+    .exp-card h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 4rem; font-weight: 700;
-      color: rgba(255,255,255,0.05); line-height: 1;
+      font-size: 1.4rem; font-weight: 400;
+      color: var(--white); margin-bottom: 12px;
+    }
+    .exp-card p {
+      font-size: 0.82rem; color: rgba(255,255,255,0.48);
+      line-height: 1.85; font-weight: 300;
     }
 
-    /* ── EXPERIENCE TIMELINE ── */
+    /* ─── EXPERIENCE ─── */
     .experience {
-      padding: 110px 60px;
-      background: var(--ivory);
+      padding: 110px 64px;
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+      background: var(--cream);
     }
-    .experience-left h2 {
+    .exp-left h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 3.5vw, 3.5rem);
-      font-weight: 300; line-height: 1.15; color: var(--teal-deep);
-      margin-bottom: 20px;
+      font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300;
+      color: var(--navy); line-height: 1.18; margin-bottom: 22px;
     }
-    .experience-left h2 em { font-style: italic; }
-    .experience-left p {
-      font-size: 0.9rem; color: var(--mid-grey); line-height: 1.9; margin-bottom: 40px;
+    .exp-left h2 em { font-style: italic; color: var(--blue); }
+    .exp-left p {
+      font-size: 0.95rem; color: var(--mid-grey);
+      line-height: 1.9; margin-bottom: 36px; font-weight: 300;
     }
-    .hospital-imgs {
+    .hosp-imgs {
       display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
     }
-    .hospital-imgs img {
-      width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px;
-      transition: transform 0.4s; filter: saturate(0.7);
+    .hosp-imgs img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      border-radius: 3px; display: block;
+      filter: saturate(0.65);
+      transition: filter 0.4s, transform 0.4s;
     }
-    .hospital-imgs img:hover { transform: scale(1.02); filter: saturate(1); }
-    .timeline { position: relative; padding-left: 26px; }
-    .timeline::before {
+    .hosp-imgs img:hover { filter: saturate(1); transform: scale(1.02); }
+
+    /* timeline */
+    .tl { position: relative; padding-left: 22px; }
+    .tl::before {
       content: '';
-      position: absolute; left: 0; top: 8px; bottom: 8px;
-      width: 1px; background: var(--ivory-dark);
+      position: absolute; left: 0; top: 8px; bottom: 0;
+      width: 1px; background: var(--cream-dark);
     }
-    .tl-item { position: relative; margin-bottom: 44px; }
+    .tl-item { position: relative; margin-bottom: 42px; }
     .tl-dot {
-      position: absolute; left: -30px; top: 6px;
+      position: absolute; left: -26px; top: 7px;
       width: 9px; height: 9px; border-radius: 50%;
-      background: var(--gold); border: 2px solid var(--ivory);
+      background: var(--gold); border: 2px solid var(--cream);
     }
     .tl-year {
-      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 6px;
+      font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 5px;
     }
     .tl-role {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem; font-weight: 400; color: var(--teal-deep);
+      font-size: 1.3rem; font-weight: 400; color: var(--navy);
       margin-bottom: 4px;
     }
     .tl-org {
-      font-size: 0.8rem; color: var(--mid-grey); line-height: 1.6;
+      font-size: 0.82rem; color: var(--mid-grey); line-height: 1.65; font-weight: 300;
     }
 
-    /* ── ROBOTIC SURGERY FEATURE ── */
+    /* ─── ROBOTIC FEATURE ─── */
     .robotic {
-      position: relative; height: 70vh; overflow: hidden;
-      display: flex; align-items: center;
+      position: relative; height: 72vh; min-height: 460px;
+      display: flex; align-items: center; overflow: hidden;
     }
-    .robotic-img {
+    .robotic-bg {
       position: absolute; inset: 0;
-      background: url('images/robotic.png') center / cover no-repeat;
+      background: url('robotic.png') center / cover no-repeat;
     }
     .robotic-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(11,79,74,0.92) 0%, rgba(11,79,74,0.6) 50%, rgba(11,79,74,0.1) 100%);
+      background: linear-gradient(
+        to right,
+        rgba(26,46,74,0.96) 0%,
+        rgba(26,46,74,0.72) 45%,
+        rgba(26,46,74,0.15) 100%
+      );
     }
-    .robotic-content {
+    .robotic-body {
       position: relative; z-index: 2;
-      padding: 0 90px; max-width: 600px;
+      padding: 0 100px; max-width: 620px;
     }
-    .robotic-content h2 {
+    .robotic-body h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4vw, 3.8rem);
-      font-weight: 300; color: var(--white); line-height: 1.15;
-      margin-bottom: 20px;
+      font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 300;
+      color: var(--white); line-height: 1.15; margin-bottom: 20px;
     }
-    .robotic-content h2 em { font-style: italic; color: var(--gold-light); }
-    .robotic-content p {
-      font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.85;
-      margin-bottom: 36px;
+    .robotic-body h2 em { font-style: italic; color: var(--sky); }
+    .robotic-body p {
+      font-size: 0.9rem; color: rgba(255,255,255,0.65);
+      line-height: 1.9; margin-bottom: 34px; font-weight: 300;
     }
-    .robotic-badge {
+    .badge {
       display: inline-flex; align-items: center; gap: 10px;
       padding: 10px 22px; background: var(--gold);
-      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--teal-deep); font-weight: 500;
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--navy); font-weight: 700; border-radius: 2px;
     }
 
-    /* ── RESEARCH ── */
+    /* ─── RESEARCH ─── */
     .research {
-      padding: 110px 60px;
-      background: var(--ivory-dark);
-      display: grid; grid-template-columns: 1fr 2fr; gap: 80px;
+      padding: 110px 64px;
+      background: var(--cream-dark);
+      display: grid; grid-template-columns: 5fr 7fr; gap: 80px;
       align-items: center;
     }
-    .research-left {
+    .research-num-block {
       position: relative;
     }
-    .research-big-num {
+    .big-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 10rem; font-weight: 700; color: var(--teal-deep);
-      line-height: 0.9; letter-spacing: -0.04em;
+      font-size: clamp(7rem, 12vw, 11rem);
+      font-weight: 700; color: var(--navy);
+      line-height: 0.85; letter-spacing: -0.04em;
     }
-    .research-big-num span { color: var(--gold); }
-    .research-descriptor {
-      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--mid-grey); margin-top: 14px;
+    .big-num span { color: var(--blue); }
+    .big-num-sub {
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--mid-grey); margin-top: 14px; font-weight: 400;
     }
-    .research-right h2 {
+    .research-body h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3vw, 3rem);
-      font-weight: 300; color: var(--teal-deep); line-height: 1.2;
-      margin-bottom: 20px;
+      font-size: clamp(2rem, 3vw, 2.9rem); font-weight: 300;
+      color: var(--navy); line-height: 1.22; margin-bottom: 22px;
     }
-    .research-right h2 em { font-style: italic; }
-    .research-right p {
-      font-size: 0.92rem; color: var(--mid-grey); line-height: 1.9;
-      margin-bottom: 16px;
+    .research-body h2 em { font-style: italic; color: var(--blue); }
+    .research-body p {
+      font-size: 0.95rem; color: var(--mid-grey);
+      line-height: 1.9; margin-bottom: 16px; font-weight: 300;
     }
-    .research-tags {
-      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;
+    .rtags {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px;
     }
     .rtag {
-      padding: 7px 16px; background: var(--teal-deep);
-      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--white); border-radius: 2px;
+      padding: 7px 16px; background: var(--navy);
+      font-size: 0.67rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--sky); border-radius: 2px; font-weight: 400;
     }
 
-    /* ── CONTACT ── */
+    /* ─── CONTACT ─── */
     .contact {
-      background: var(--teal-deep);
+      background: var(--navy);
       display: grid; grid-template-columns: 1fr 1fr;
-      min-height: 60vh;
     }
-    .contact-left {
-      padding: 90px 70px;
-      border-right: 1px solid rgba(255,255,255,0.08);
+    .contact-info {
+      padding: 96px 72px;
+      border-right: 1px solid rgba(255,255,255,0.07);
     }
-    .contact-left h2 {
+    .contact-info h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 4vw, 4rem);
-      font-weight: 300; color: var(--white); line-height: 1.1;
-      margin-bottom: 40px;
+      font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 300;
+      color: var(--white); line-height: 1.1; margin-bottom: 52px;
     }
-    .contact-left h2 em { font-style: italic; color: var(--gold-light); }
-    .contact-items { display: flex; flex-direction: column; gap: 30px; }
-    .contact-item { display: flex; gap: 18px; align-items: flex-start; }
-    .ci-icon {
-      width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.15);
+    .contact-info h2 em { font-style: italic; color: var(--sky); }
+    .ci-items { display: flex; flex-direction: column; gap: 34px; }
+    .ci-row { display: flex; align-items: flex-start; gap: 20px; }
+    .ci-icon-box {
+      width: 42px; height: 42px; flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.12);
       display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; color: var(--gold);
+      color: var(--gold-light); border-radius: 2px;
     }
     .ci-label {
-      font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--teal-light); margin-bottom: 5px;
+      font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--blue-light); margin-bottom: 5px;
     }
     .ci-value {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem; color: var(--white);
+      font-size: 1.2rem; color: var(--white);
     }
-    .contact-right {
-      padding: 90px 70px;
+    .ci-value a { color: var(--white); text-decoration: none; }
+    .ci-value a:hover { color: var(--gold-light); }
+    .contact-quote {
+      padding: 96px 72px;
       display: flex; flex-direction: column; justify-content: center;
     }
-    .contact-right p {
+    .contact-quote blockquote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem; font-weight: 300; font-style: italic;
-      color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 40px;
+      font-size: 1.55rem; font-weight: 300; font-style: italic;
+      color: rgba(255,255,255,0.55); line-height: 1.75;
+      border-left: 2px solid var(--gold);
+      padding-left: 24px; margin-bottom: 44px;
     }
-    .linkedin-btn {
-      display: inline-flex; align-items: center; gap: 12px;
-      padding: 14px 30px; border: 1px solid var(--gold);
-      color: var(--gold); text-decoration: none;
-      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-      transition: background 0.3s, color 0.3s; width: fit-content;
+    .linkedin-link {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 28px; border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.75); text-decoration: none;
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400;
+      border-radius: 2px; transition: border-color 0.3s, color 0.3s;
+      width: fit-content;
     }
-    .linkedin-btn:hover { background: var(--gold); color: var(--teal-deep); }
+    .linkedin-link:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
-    /* ── FOOTER ── */
+    /* ─── FOOTER ─── */
     footer {
-      background: #071f1d;
-      padding: 28px 60px;
+      background: #101d2e;
+      padding: 24px 64px;
       display: flex; align-items: center; justify-content: space-between;
     }
-    .footer-logo {
+    .footer-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem; color: rgba(255,255,255,0.4);
+      font-size: 1rem; color: rgba(255,255,255,0.35);
     }
     .footer-copy {
-      font-size: 0.68rem; letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.25);
+      font-size: 0.65rem; letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.22);
     }
 
-    /* ── REVEAL ANIMATIONS ── */
-    .reveal {
-      opacity: 0; transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+    /* ─── REVEAL ANIMATIONS ─── */
+    .reveal, .reveal-l, .reveal-r {
+      opacity: 0; transition: opacity 0.85s ease, transform 0.85s ease;
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-left {
-      opacity: 0; transform: translateX(-40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .reveal-left.visible { opacity: 1; transform: translateX(0); }
-    .reveal-right {
-      opacity: 0; transform: translateX(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .reveal       { transform: translateY(36px); }
+    .reveal-l     { transform: translateX(-36px); }
+    .reveal-r     { transform: translateX(36px); }
+    .revealed     { opacity: 1 !important; transform: none !important; }
+    .d1 { transition-delay: 0.10s; }
+    .d2 { transition-delay: 0.20s; }
+    .d3 { transition-delay: 0.30s; }
+    .d4 { transition-delay: 0.42s; }
+    .d5 { transition-delay: 0.54s; }
+    .d6 { transition-delay: 0.64s; }
 
-    /* delay helpers */
-    .d1 { transition-delay: 0.1s; }
-    .d2 { transition-delay: 0.2s; }
-    .d3 { transition-delay: 0.3s; }
-    .d4 { transition-delay: 0.4s; }
-    .d5 { transition-delay: 0.5s; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      nav { padding: 18px 24px; }
-      nav.scrolled { padding: 12px 24px; }
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      nav { padding: 20px 32px; }
+      nav.scrolled { padding: 12px 32px; }
       .nav-links { display: none; }
-      .hero-content { padding: 0 24px 120px; }
-      .hero-stats { position: static; flex-wrap: wrap; margin-top: 30px; }
-      .hero { flex-direction: column; align-items: flex-start; }
+      .hamburger { display: flex; }
+      .mobile-nav { display: flex; }
+      .hero-content { padding: 0 32px 140px; }
+      .hero-stats { flex-wrap: wrap; position: relative; right: auto; bottom: auto; width: 100%; margin-top: 0; }
+      .hero-stats { position: absolute; }
       .about { grid-template-columns: 1fr; }
-      .about-image { height: 50vw; }
-      .about-image-overlay { background: linear-gradient(to bottom, transparent 50%, var(--ivory)); }
-      .about-content { padding: 50px 30px; }
-      .expertise { padding: 70px 24px; }
-      .expertise-grid { grid-template-columns: 1fr; gap: 2px; }
-      .experience { grid-template-columns: 1fr; padding: 70px 24px; gap: 50px; }
-      .robotic-content { padding: 0 30px; }
-      .research { grid-template-columns: 1fr; padding: 70px 24px; gap: 30px; }
-      .research-big-num { font-size: 7rem; }
+      .about-img-wrap { min-height: 56vw; max-height: 420px; }
+      .about-img-fade { display: none; }
+      .about-body { padding: 56px 32px; }
+      .expertise { padding: 80px 32px; }
+      .expertise-intro { grid-template-columns: 1fr; }
+      .exp-grid { grid-template-columns: 1fr 1fr; }
+      .experience { grid-template-columns: 1fr; padding: 80px 32px; gap: 52px; }
+      .robotic-body { padding: 0 36px; }
+      .research { grid-template-columns: 1fr; padding: 80px 32px; gap: 36px; }
       .contact { grid-template-columns: 1fr; }
-      .contact-left, .contact-right { padding: 60px 30px; }
-      footer { padding: 22px 24px; flex-direction: column; gap: 8px; text-align: center; }
+      .contact-info, .contact-quote { padding: 64px 32px; }
+      .contact-info { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      footer { padding: 22px 32px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-name { font-size: 3rem; }
+      .hero-stats { display: none; }
+      .exp-grid { grid-template-columns: 1fr; }
+      .hosp-imgs { grid-template-columns: 1fr; }
+      .robotic { height: 80vw; min-height: 340px; }
+      .robotic-body { padding: 0 24px; }
+      .big-num { font-size: 6rem; }
+      .expertise-ghost { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Custom cursor -->
-  <div id="cursor"></div>
-  <div id="cursor-ring"></div>
-
-  <!-- NAV -->
+  <!-- ── NAV ── -->
   <nav id="nav">
-    <a href="#" class="nav-logo">Dr. Dipanwita Banerjee</a>
+    <a href="#home" class="nav-brand">
+      <span class="nav-brand-name">Dr. Dipanwita Banerjee</span>
+      <span class="nav-brand-title">Gynaecological Oncologist</span>
+    </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#expertise">Expertise</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#research">Research</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
+    <button class="hamburger" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <!-- HERO -->
+  <!-- mobile drawer -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about"       onclick="closeMobile()">About</a>
+    <a href="#expertise"   onclick="closeMobile()">Expertise</a>
+    <a href="#experience"  onclick="closeMobile()">Experience</a>
+    <a href="#research"    onclick="closeMobile()">Research</a>
+    <a href="#contact"     onclick="closeMobile()">Contact</a>
+  </div>
+
+  <!-- ── HERO ── -->
   <section class="hero" id="home">
-    <div class="hero-bg-img"></div>
-    <div class="hero-overlay"></div>
+    <div class="hero-photo"></div>
+    <div class="hero-grad"></div>
+    <div class="hero-pattern"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow">Gynaecological Oncology</div>
-      <h1 class="hero-name">Dr. <em>Dipanwita</em><br>Banerjee</h1>
-      <p class="hero-title">MS · MCh AIIMS New Delhi &nbsp;|&nbsp; Senior Consultant</p>
-      <p class="hero-tagline">Advancing women's cancer care through evidence-based surgery, compassion, and relentless clinical research.</p>
-      <a href="#contact" class="hero-cta">
-        Get in Touch
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
+      <div class="eyebrow"><span class="eyebrow-line"></span>Gynaecological Oncology · Kolkata</div>
+      <h1 class="hero-name">Dr.&nbsp;<em>Dipanwita</em><br>Banerjee</h1>
+      <p class="hero-credential">MS &nbsp;·&nbsp; MCh AIIMS New Delhi &nbsp;·&nbsp; Senior Consultant</p>
+      <p class="hero-tagline">Advancing women's cancer care through evidence-based surgery, deep compassion, and relentless clinical research.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">
+          Book a Consultation
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#about" class="btn-outline">Learn More</a>
+      </div>
     </div>
     <div class="hero-stats">
-      <div class="stat-card">
-        <div class="stat-num">14+</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">35+</div>
-        <div class="stat-label">Publications</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">MCh</div>
-        <div class="stat-label">AIIMS Delhi</div>
-      </div>
+      <div class="stat"><div class="stat-n">14<span style="font-size:1.5rem">+</span></div><div class="stat-l">Years Experience</div></div>
+      <div class="stat"><div class="stat-n">35<span style="font-size:1.5rem">+</span></div><div class="stat-l">Publications</div></div>
+      <div class="stat"><div class="stat-n">MCh</div><div class="stat-l">AIIMS Delhi</div></div>
     </div>
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
-        <rect x="1" y="1" width="12" height="18" rx="6" stroke="currentColor" stroke-width="1.2"/>
-        <circle cx="7" cy="6" r="1.5" fill="currentColor">
-          <animateTransform attributeName="transform" type="translate" values="0,0;0,6;0,0" dur="1.8s" repeatCount="indefinite"/>
-        </circle>
-      </svg>
+    <div class="scroll-cue">
+      <div class="scroll-cue-line"></div>
+      <span class="scroll-cue-label">Scroll</span>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about-image reveal-left">
-      <img src="images/profile.png" alt="Dr. Dipanwita Banerjee">
-      <div class="about-image-overlay"></div>
-      <div class="about-img-caption">Chittaranjan National Cancer Institute, Kolkata</div>
-    </div>
-    <div class="about-content">
-      <div class="section-label reveal d1">About</div>
-      <h2 class="reveal d2">A physician <em>dedicated</em><br>to women's health</h2>
-      <p class="reveal d3">Dr. Dipanwita Banerjee is a specialist Gynaecological Oncologist at a premier Regional Cancer Centre in eastern India. She completed her MCh in Gynaecological Oncology from the All India Institute of Medical Sciences (AIIMS), New Delhi — one of the country's most prestigious institutions.</p>
-      <p class="reveal d4">She is the recipient of the prestigious <strong>John N Kapoor Travelling Fellowship</strong>, which enabled advanced training in Robotic Surgery at Roswell Park Comprehensive Cancer Centre, New York — bringing world-class surgical expertise back to her patients in Kolkata.</p>
-      <div class="credential-pills reveal d5">
-        <span class="pill">MCh AIIMS Delhi</span>
-        <span class="pill">MS OBG IPGMER</span>
-        <span class="pill">IFCPC IARC Colposcopist</span>
-        <span class="pill">Robotic Surgery</span>
-        <span class="pill">GCP Trained</span>
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="about">
+      <div class="about-img-wrap reveal-l">
+        <img src="profile.png" alt="Dr. Dipanwita Banerjee, Gynaecological Oncologist, Kolkata" loading="lazy">
+        <div class="about-img-fade"></div>
+        <div class="img-caption">Chittaranjan National Cancer Institute · Kolkata</div>
+      </div>
+      <div class="about-body">
+        <div class="sec-label reveal">About</div>
+        <h2 class="reveal d1">A physician <em>committed</em><br>to women's health</h2>
+        <p class="reveal d2">Dr. Dipanwita Banerjee is a specialist Gynaecological Oncologist at the <strong>Chittaranjan National Cancer Institute</strong>, Kolkata — one of eastern India's leading cancer centres. She completed her MCh from <strong>AIIMS, New Delhi</strong>, and is a recipient of the prestigious <strong>John N Kapoor Travelling Fellowship</strong>.</p>
+        <p class="reveal d3">This fellowship enabled advanced training in Robotic Surgery at <strong>Roswell Park Comprehensive Cancer Centre, New York</strong> — bringing internationally recognised surgical expertise to her patients. She is an <strong>IFCPC IARC certified colposcopist</strong> and has served as Site Principal Investigator for the Serum Institute HPV vaccine trial.</p>
+        <div class="pills reveal d4">
+          <span class="pill">MCh · AIIMS Delhi</span>
+          <span class="pill">MS · IPGMER Kolkata</span>
+          <span class="pill">IFCPC IARC Colposcopist</span>
+          <span class="pill">Robotic Surgery</span>
+          <span class="pill">GCP Trained</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- EXPERTISE -->
+  <!-- ── EXPERTISE ── -->
   <section class="expertise" id="expertise">
-    <div class="expertise-header">
-      <div class="section-label" style="color:var(--gold-light)">
-        <span style="width:30px;height:1px;background:var(--gold-light);display:inline-block;"></span>
-        Areas of Expertise
+    <div class="expertise-ghost">EXPERTISE</div>
+    <div class="expertise-intro">
+      <div>
+        <div class="sec-label light reveal">Areas of Expertise</div>
+        <h2 class="reveal d1">Precision care<br>for <em>complex cancers</em></h2>
       </div>
-      <h2 class="reveal" style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4vw,3.8rem);font-weight:300;line-height:1.15;margin-top:16px">
-        Precision surgery<br><em>for complex cancers</em>
-      </h2>
+      <p class="reveal d2">With over a decade at a premier cancer centre and international fellowship training, Dr. Banerjee offers a rare combination of surgical mastery and compassionate patient care.</p>
     </div>
-    <div class="expertise-grid">
-      <div class="expertise-card reveal d1">
-        <div class="expertise-num">01</div>
-        <svg class="expertise-icon" viewBox="0 0 44 44" fill="none">
-          <path d="M22 4C12.06 4 4 12.06 4 22s8.06 18 18 18 18-8.06 18-18S31.94 4 22 4zm0 32c-7.73 0-14-6.27-14-14S14.27 8 22 8s14 6.27 14 14-6.27 14-14 14zm-2-20h4v10h-4zm0-6h4v4h-4z" fill="currentColor"/>
+    <div class="exp-grid">
+
+      <div class="exp-card reveal d1">
+        <div class="exp-card-num">01</div>
+        <svg class="exp-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4C11.16 4 4 11.16 4 20s7.16 16 16 16 16-7.16 16-16S28.84 4 20 4zm0 28c-6.63 0-12-5.37-12-12S13.37 8 20 8s12 5.37 12 12-5.37 12-12 12zm-1-17h2v9h-2zm0-5h2v3h-2z" fill="currentColor"/>
         </svg>
         <h3>Gynaecological Cancer Surgery</h3>
-        <p>Radical surgeries for cervical, ovarian, uterine, vulvar and vaginal cancers following international evidence-based guidelines.</p>
+        <p>Radical and reconstructive surgeries for cervical, ovarian, uterine, vulvar and vaginal cancers using international evidence-based guidelines.</p>
       </div>
-      <div class="expertise-card reveal d2">
-        <div class="expertise-num">02</div>
-        <svg class="expertise-icon" viewBox="0 0 44 44" fill="none">
-          <path d="M36 8H8C5.79 8 4 9.79 4 12v20c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V12c0-2.21-1.79-4-4-4zm0 24H8V12h28v20zm-14-4c3.31 0 6-2.69 6-6s-2.69-6-6-6-6 2.69-6 6 2.69 6 6 6z" fill="currentColor"/>
+
+      <div class="exp-card reveal d2">
+        <div class="exp-card-num">02</div>
+        <svg class="exp-icon" viewBox="0 0 40 40" fill="none">
+          <path d="M32 6H8C5.79 6 4 7.79 4 10v20c0 2.21 1.79 4 4 4h24c2.21 0 4-1.79 4-4V10c0-2.21-1.79-4-4-4zm0 24H8V10h24v20zM20 25c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z" fill="currentColor"/>
         </svg>
-        <h3>Robotic & Minimally Invasive</h3>
-        <p>International fellowship-trained in da Vinci robotic surgery — delivering precise, low-morbidity outcomes for complex cases.</p>
+        <h3>Robotic &amp; Minimally Invasive Surgery</h3>
+        <p>International fellowship-trained in da Vinci robotic surgery — delivering precise, low-morbidity outcomes and faster recovery for patients.</p>
       </div>
-      <div class="expertise-card reveal d3">
-        <div class="expertise-num">03</div>
-        <svg class="expertise-icon" viewBox="0 0 44 44" fill="none">
-          <path d="M22 4L4 12v8c0 11.1 7.66 21.48 18 24 10.34-2.52 18-12.9 18-24v-8L22 4zm0 4.18l14 6.22V20c0 9.52-6.42 18.18-14 20.72C14.42 38.18 8 29.52 8 20v-9.6l14-6.22z" fill="currentColor"/>
+
+      <div class="exp-card reveal d3">
+        <div class="exp-card-num">03</div>
+        <svg class="exp-icon" viewBox="0 0 40 40" fill="none">
+          <path d="M20 4L4 11v7c0 10.53 6.84 20.37 16 22.93C29.16 38.37 36 28.53 36 20v-9L20 4zm0 3.62L32 12.4V20c0 8.48-5.56 16.37-12 18.9C13.56 36.37 8 28.48 8 20v-7.6L20 7.62z" fill="currentColor"/>
         </svg>
-        <h3>Colposcopy & Cervical Care</h3>
-        <p>IFCPC IARC certified colposcopist and former site principal investigator of Serum Institute HPV vaccine trial.</p>
+        <h3>Colposcopy &amp; Cervical Care</h3>
+        <p>IFCPC IARC certified colposcopist; former Site Principal Investigator for the Serum Institute HPV vaccine trial.</p>
       </div>
-      <div class="expertise-card reveal d4">
-        <div class="expertise-num">04</div>
-        <svg class="expertise-icon" viewBox="0 0 44 44" fill="none">
-          <path d="M34 6H10C7.79 6 6 7.79 6 10v24c0 2.21 1.79 4 4 4h24c2.21 0 4-1.79 4-4V10c0-2.21-1.79-4-4-4zm-4 26H14v-2h16v2zm0-4H14v-2h16v2zm-4-6v-2h4v-2h-4v-2h-4v2h-4v2h4v2z" fill="currentColor"/>
+
+      <div class="exp-card reveal d4">
+        <div class="exp-card-num">04</div>
+        <svg class="exp-icon" viewBox="0 0 40 40" fill="none">
+          <path d="M30 4H10C7.79 4 6 5.79 6 8v24c0 2.21 1.79 4 4 4h20c2.21 0 4-1.79 4-4V8c0-2.21-1.79-4-4-4zm-2 24H12v-2h16v2zm0-4H12v-2h16v2zm-4-6v-2h4v-2h-4v-2h-4v2h-4v2h4v2z" fill="currentColor"/>
         </svg>
         <h3>Clinical Research</h3>
-        <p>35+ publications in national and international peer-reviewed journals; trained in Good Clinical Practice and biomedical research.</p>
+        <p>35+ publications in national and international peer-reviewed journals. Trained in Good Clinical Practice and biomedical research methodology.</p>
       </div>
-      <div class="expertise-card reveal d5">
-        <div class="expertise-num">05</div>
-        <svg class="expertise-icon" viewBox="0 0 44 44" fill="none">
-          <path d="M22 4C12.06 4 4 12.06 4 22s8.06 18 18 18 18-8.06 18-18S31.94 4 22 4zm1 27h-2v-2h2v2zm0-6h-2V13h2v12z" fill="currentColor"/>
+
+      <div class="exp-card reveal d5">
+        <div class="exp-card-num">05</div>
+        <svg class="exp-icon" viewBox="0 0 40 40" fill="none">
+          <path d="M20 4C11.16 4 4 11.16 4 20s7.16 16 16 16 16-7.16 16-16S28.84 4 20 4zm1 24h-2v-2h2v2zm0-6h-2V11h2v11z" fill="currentColor"/>
         </svg>
-        <h3>Ovarian & Uterine Cancer</h3>
-        <p>Expertise in staging, debulking, and reconstruction in advanced ovarian, endometrial and uterine malignancies.</p>
+        <h3>Ovarian &amp; Uterine Cancer</h3>
+        <p>Expertise in staging, cytoreductive surgery, and comprehensive management of advanced ovarian, endometrial and uterine malignancies.</p>
       </div>
-      <div class="expertise-card reveal" style="transition-delay:0.6s">
-        <div class="expertise-num">06</div>
-        <svg class="expertise-icon" viewBox="0 0 44 44" fill="none">
-          <path d="M24 4h-4v5.27A14 14 0 0 0 8 22H4v4h4a14 14 0 0 0 12 13.73V44h4v-4.27A14 14 0 0 0 36 26h4v-4h-4A14 14 0 0 0 24 9.27V4zm-2 32a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-14a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" fill="currentColor"/>
+
+      <div class="exp-card reveal d6">
+        <div class="exp-card-num">06</div>
+        <svg class="exp-icon" viewBox="0 0 40 40" fill="none">
+          <path d="M22 4h-4v4.27A12 12 0 0 0 8 20H4v4h4a12 12 0 0 0 10 11.73V40h4v-4.27A12 12 0 0 0 32 24h4v-4h-4A12 12 0 0 0 22 8.27V4zm-2 28a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" fill="currentColor"/>
         </svg>
         <h3>Oncofertility Counselling</h3>
-        <p>Guidance on fertility preservation options for women of reproductive age facing gynaecological cancer treatment.</p>
+        <p>Sensitive guidance on fertility-sparing surgery and preservation options for women of reproductive age facing gynaecological cancers.</p>
       </div>
+
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- ── EXPERIENCE ── -->
   <section class="experience" id="experience">
-    <div class="experience-left">
-      <div class="section-label reveal">Experience</div>
-      <h2 class="reveal d1">Fourteen years at<br>the <em>forefront of care</em></h2>
-      <p class="reveal d2">Based at Chittaranjan National Cancer Institute, Kolkata — one of eastern India's leading cancer centres — Dr. Banerjee has managed thousands of complex gynaecological cancer cases over her distinguished career.</p>
-      <div class="hospital-imgs reveal d3">
-        <img src="images/hospital1.png" alt="Hospital">
-        <img src="images/hospital2.png" alt="Hospital">
+    <div class="exp-left">
+      <div class="sec-label reveal">Experience</div>
+      <h2 class="reveal d1">Fourteen years at the<br><em>forefront of cancer care</em></h2>
+      <p class="reveal d2">Based at Chittaranjan National Cancer Institute, Kolkata, Dr. Banerjee has managed thousands of complex gynaecological cancer cases across her distinguished career — combining surgical excellence with deep human compassion.</p>
+      <div class="hosp-imgs reveal d3">
+        <img src="hospital1.png" alt="Chittaranjan National Cancer Institute" loading="lazy">
+        <img src="hospital2.png" alt="Cancer Centre, Kolkata" loading="lazy">
       </div>
     </div>
-    <div class="timeline">
+    <div class="tl">
       <div class="tl-item reveal d1">
         <div class="tl-dot"></div>
-        <div class="tl-year">2012 – Present</div>
+        <div class="tl-year">2012 – Present · 14 Years</div>
         <div class="tl-role">Specialist Gynaecological Oncologist</div>
         <div class="tl-org">Chittaranjan National Cancer Institute, Kolkata<br>Eastern India's premier Regional Cancer Centre</div>
       </div>
@@ -706,13 +816,13 @@
       <div class="tl-item reveal d3">
         <div class="tl-dot"></div>
         <div class="tl-year">International Fellowship</div>
-        <div class="tl-role">Robotic Surgery Training</div>
+        <div class="tl-role">Advanced Robotic Surgery Training</div>
         <div class="tl-org">Roswell Park Comprehensive Cancer Centre, New York<br>John N Kapoor Travelling Fellowship Recipient</div>
       </div>
       <div class="tl-item reveal d4">
         <div class="tl-dot"></div>
         <div class="tl-year">2009 – 2012</div>
-        <div class="tl-role">MS, Obstetrics & Gynaecology</div>
+        <div class="tl-role">MS, Obstetrics &amp; Gynaecology</div>
         <div class="tl-org">Institute of Post Graduate Medical Education &amp; Research (IPGMER), Kolkata</div>
       </div>
       <div class="tl-item reveal d5">
@@ -724,37 +834,32 @@
     </div>
   </section>
 
-  <!-- ROBOTIC SURGERY -->
+  <!-- ── ROBOTIC SURGERY ── -->
   <section class="robotic">
-    <div class="robotic-img"></div>
+    <div class="robotic-bg"></div>
     <div class="robotic-overlay"></div>
-    <div class="robotic-content">
-      <div class="section-label" style="color:var(--gold-light);margin-bottom:20px">
-        <span style="display:inline-block;width:30px;height:1px;background:var(--gold-light)"></span>
-        Advanced Surgery
-      </div>
-      <h2 class="reveal">The precision of<br><em>robotic surgery</em></h2>
-      <p class="reveal d2">Fellowship-trained at Roswell Park Comprehensive Cancer Centre, New York, Dr. Banerjee brings internationally recognised robotic and minimally invasive surgical expertise to patients in eastern India — delivering reduced recovery times, lower morbidity, and superior oncological outcomes.</p>
-      <div class="robotic-badge reveal d3">
-        ✦ &nbsp;International Fellowship Certified
-      </div>
+    <div class="robotic-body">
+      <div class="sec-label light reveal">Advanced Surgery</div>
+      <h2 class="reveal d1">The precision of<br><em>robotic surgery</em></h2>
+      <p class="reveal d2">Fellowship-trained at Roswell Park Comprehensive Cancer Centre, New York, Dr. Banerjee brings internationally recognised robotic and minimally invasive surgical expertise to patients in eastern India — offering reduced recovery times, lower complication rates, and superior oncological outcomes.</p>
+      <div class="badge reveal d3">✦ &nbsp;International Fellowship Certified</div>
     </div>
   </section>
 
-  <!-- RESEARCH -->
+  <!-- ── RESEARCH ── -->
   <section class="research" id="research">
-    <div class="research-left reveal-left">
-      <div class="research-big-num">35<span>+</span></div>
-      <div class="research-descriptor">Peer-reviewed publications</div>
+    <div class="research-num-block reveal-l">
+      <div class="big-num">35<span>+</span></div>
+      <div class="big-num-sub">Peer-reviewed publications</div>
     </div>
-    <div class="research-right">
-      <div class="section-label reveal">Research & Publications</div>
+    <div class="research-body">
+      <div class="sec-label reveal">Research &amp; Publications</div>
       <h2 class="reveal d1">Advancing the <em>science</em><br>of women's cancer care</h2>
-      <p class="reveal d2">Dr. Banerjee is an active clinical researcher with over 35 publications across leading national and international medical journals. Her work spans gynaecological oncology surgery, HPV vaccination, colposcopy, and minimally invasive surgical outcomes.</p>
-      <p class="reveal d3">Trained in Good Clinical Practice (GCP) and basic biomedical research methodology, she has served as Site Principal Investigator for the Serum Institute HPV vaccine trial — contributing directly to preventive oncology in India.</p>
-      <div class="research-tags reveal d4">
+      <p class="reveal d2">Dr. Banerjee is an active clinical researcher with over 35 publications in leading national and international medical journals. Her work spans gynaecological oncology surgery, HPV vaccination, colposcopy, and minimally invasive surgical outcomes.</p>
+      <p class="reveal d3">Trained in Good Clinical Practice and biomedical research, she has served as Site Principal Investigator for the Serum Institute HPV vaccine trial — contributing directly to preventive oncology in India.</p>
+      <div class="rtags reveal d4">
         <span class="rtag">Gynaecological Oncology</span>
-        <span class="rtag">HPV & Cervical Cancer</span>
+        <span class="rtag">HPV &amp; Cervical Cancer</span>
         <span class="rtag">Robotic Surgery Outcomes</span>
         <span class="rtag">Clinical Trials</span>
         <span class="rtag">Women's Cancer Care</span>
@@ -762,109 +867,17 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ── CONTACT ── -->
   <section class="contact" id="contact">
-    <div class="contact-left">
-      <div class="section-label" style="color:var(--teal-light)">
-        <span style="display:inline-block;width:30px;height:1px;background:var(--teal-light)"></span>
-        Contact
-      </div>
-      <h2 class="reveal" style="margin-top:20px">Let's <em>connect</em><br>and collaborate</h2>
-      <div class="contact-items">
-        <div class="contact-item reveal d2">
-          <div class="ci-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+    <div class="contact-info">
+      <div class="sec-label light reveal">Contact</div>
+      <h2 class="reveal d1">Let's <em>connect</em></h2>
+      <div class="ci-items">
+        <div class="ci-row reveal d2">
+          <div class="ci-icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/>
             </svg>
           </div>
           <div>
-            <div class="ci-label">Location</div>
-            <div class="ci-value">Kolkata, West Bengal, India</div>
-          </div>
-        </div>
-        <div class="contact-item reveal d3">
-          <div class="ci-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="ci-label">Phone</div>
-            <div class="ci-value">+91 62916 81013</div>
-          </div>
-        </div>
-        <div class="contact-item reveal d4">
-          <div class="ci-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-            </svg>
-          </div>
-          <div>
-            <div class="ci-label">Email</div>
-            <div class="ci-value">dr.dipanwita@yahoo.co.in</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="contact-right">
-      <p class="reveal">"Committed to bringing the highest standard of gynaecological cancer care — with science, skill, and deep compassion — to every patient."</p>
-      <a href="https://www.linkedin.com/in/drdipanwitabanerjee" class="linkedin-btn reveal d2" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
-        </svg>
-        Connect on LinkedIn
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">Dr. Dipanwita Banerjee</div>
-    <div class="footer-copy">© 2026 · Senior Consultant, Gynaecological Oncology · Kolkata, India</div>
-  </footer>
-
-  <script>
-    // Custom cursor
-    const cursor = document.getElementById('cursor');
-    const ring = document.getElementById('cursor-ring');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
-    });
-    function animateRing() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-      requestAnimationFrame(animateRing);
-    }
-    animateRing();
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.style.width = '20px'; cursor.style.height = '20px';
-        ring.style.width = '52px'; ring.style.height = '52px';
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.style.width = '10px'; cursor.style.height = '10px';
-        ring.style.width = '36px'; ring.style.height = '36px';
-      });
-    });
-
-    // Nav scroll
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    // Reveal on scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
-  </script>
-</body>
-</html>
+            <div
