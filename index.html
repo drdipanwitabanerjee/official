@@ -139,11 +139,13 @@
     ::-webkit-scrollbar-track { background: var(--cream); }
     ::-webkit-scrollbar-thumb { background: var(--blue-light); border-radius: 2px; }
 
-    /* ─── NAV ─── */
+/* ─── NAV ─── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       display: flex; align-items: center; justify-content: space-between;
       padding: 24px 64px;
+      /* Subtle dark tint gradient on absolute top to protect text contrast */
+      background: linear-gradient(to bottom, rgba(16, 29, 46, 0.4) 0%, transparent 100%);
       transition: background 0.5s, padding 0.4s, box-shadow 0.4s;
     }
     nav.scrolled {
@@ -155,6 +157,7 @@
     }
     .nav-brand {
       display: flex; flex-direction: column; gap: 2px; text-decoration: none;
+      min-width: 320px; /* Keeps the container structurally stable on load */
     }
     .nav-brand-name {
       font-family: 'Cormorant Garamond', serif;
@@ -165,10 +168,10 @@
     }
     nav.scrolled .nav-brand-name { color: var(--navy); }
     .nav-brand-title {
-      font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase;
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
       color: rgba(255,255,255,0.55);
       transition: color 0.4s;
-      white-space: nowrap; /* Keeps the specialty title cleanly on one line */
+      white-space: nowrap; /* CRITICAL: Stops 'Specialist' from jumping lines on load */
     }
     nav.scrolled .nav-brand-title { color: var(--light-grey); }
     .nav-links { display: flex; gap: 34px; list-style: none; align-items: center; }
@@ -261,7 +264,7 @@
     }
     .hero-content {
       position: relative; z-index: 2;
-      padding: 0 80px 96px;
+      padding: 120px 80px 96px; /* Increased top padding from 0 to 120px */
       max-width: 1100px;
       display: grid;
       grid-template-columns: 1fr auto;
