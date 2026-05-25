@@ -134,17 +134,15 @@
       overflow-x: hidden;
     }
 
-    /* ─── SCROLLBAR ─── */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--cream); }
     ::-webkit-scrollbar-thumb { background: var(--blue-light); border-radius: 2px; }
 
-/* ─── NAV ─── */
+    /* ─── NAV ─── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       display: flex; align-items: center; justify-content: space-between;
       padding: 24px 64px;
-      /* Subtle dark tint gradient on absolute top to protect text contrast */
       background: linear-gradient(to bottom, rgba(16, 29, 46, 0.4) 0%, transparent 100%);
       transition: background 0.5s, padding 0.4s, box-shadow 0.4s;
     }
@@ -157,7 +155,7 @@
     }
     .nav-brand {
       display: flex; flex-direction: column; gap: 2px; text-decoration: none;
-      min-width: 320px; /* Keeps the container structurally stable on load */
+      min-width: 320px;
     }
     .nav-brand-name {
       font-family: 'Cormorant Garamond', serif;
@@ -171,7 +169,7 @@
       font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
       color: rgba(255,255,255,0.55);
       transition: color 0.4s;
-      white-space: nowrap; /* CRITICAL: Stops 'Specialist' from jumping lines on load */
+      white-space: nowrap;
     }
     nav.scrolled .nav-brand-title { color: var(--light-grey); }
     .nav-links { display: flex; gap: 34px; list-style: none; align-items: center; }
@@ -199,7 +197,6 @@
       color: var(--white) !important;
     }
 
-    /* hamburger */
     .hamburger {
       display: none; flex-direction: column; gap: 5px;
       background: none; border: none; cursor: pointer; padding: 4px;
@@ -214,7 +211,6 @@
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-    /* mobile nav drawer */
     .mobile-nav {
       display: none; position: fixed; top: 0; left: 0; right: 0;
       background: var(--navy); z-index: 199;
@@ -250,13 +246,12 @@
       position: absolute; inset: 0;
       background: linear-gradient(
         115deg,
-        rgba(16, 29, 46, 0.98) 0%, /* Darkened slightly to make white navbar text pop */
+        rgba(16, 29, 46, 0.98) 0%,
         rgba(26, 46, 74, 0.85) 40%,
         rgba(45, 74, 110, 0.25) 75%,
         rgba(45, 74, 110, 0.05) 100%
       );
     }
-    /* subtle dot pattern */
     .hero-pattern {
       position: absolute; inset: 0;
       background-image: radial-gradient(rgba(200,221,240,0.08) 1px, transparent 1px);
@@ -264,7 +259,7 @@
     }
     .hero-content {
       position: relative; z-index: 2;
-      padding: 120px 80px 96px; /* Increased top padding from 0 to 120px */
+      padding: 120px 80px 96px;
       max-width: 1100px;
       display: grid;
       grid-template-columns: 1fr auto;
@@ -284,7 +279,6 @@
       flex-shrink: 0;
       filter: drop-shadow(0 8px 32px rgba(0,0,0,0.45));
     }
-    /* fallback if image missing */
     .hero-profile-fallback {
       width: 260px; height: 320px;
       background: linear-gradient(160deg, rgba(58,111,168,0.35), rgba(26,46,74,0.8));
@@ -322,9 +316,7 @@
       font-size: 0.72rem; letter-spacing: 0.06em;
       color: rgba(255,255,255,0.52); line-height: 1.5;
     }
-    .leader-item span {
-      color: var(--gold-light);
-    }
+    .leader-item span { color: var(--gold-light); }
     .hero-tagline {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.22rem; font-style: italic; font-weight: 400;
@@ -353,7 +345,6 @@
     }
     .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
-    /* stats bar */
     .hero-stats {
       position: absolute; bottom: 0; right: 0; z-index: 2;
       display: flex;
@@ -375,7 +366,6 @@
       color: rgba(255,255,255,0.55); margin-top: 5px;
     }
 
-    /* scroll hint */
     .scroll-cue {
       position: absolute; left: 50%; bottom: 36px; z-index: 2;
       transform: translateX(-50%);
@@ -423,12 +413,10 @@
       transition: transform 0.9s ease;
     }
     .about-img-wrap:hover img { transform: scale(1.03); }
-    /* right fade overlay so image blends into content */
     .about-img-fade {
       position: absolute; top: 0; right: 0; bottom: 0; width: 40%;
       background: linear-gradient(to right, transparent, var(--cream));
     }
-    /* caption bottom left */
     .img-caption {
       position: absolute; bottom: 22px; left: 24px;
       font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
@@ -466,7 +454,6 @@
       padding: 108px 64px;
       position: relative; overflow: hidden;
     }
-    /* giant ghost word */
     .expertise-ghost {
       position: absolute; top: -30px; right: -20px;
       font-family: 'Cormorant Garamond', serif;
@@ -527,8 +514,6 @@
       font-size: 0.88rem; color: rgba(255,255,255,0.78);
       line-height: 1.85; font-weight: 400;
     }
-
-    /* Italic text contrast patch */
     .expertise h2 em, .robotic h2 em {
       color: var(--gold-light) !important;
       font-weight: 400;
@@ -550,6 +535,44 @@
       font-size: 1rem; color: var(--charcoal);
       line-height: 1.9; margin-bottom: 36px; font-weight: 400;
     }
+
+    /* ─── FELICITATION IMAGES ─── */
+    .felicitation-block {
+      margin-bottom: 36px;
+    }
+    .felicitation-label {
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .felicitation-label::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+    .felicitation-imgs {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    }
+    .felicitation-img-wrap {
+      position: relative; overflow: hidden; border-radius: 3px;
+      aspect-ratio: 4/3;
+      background: var(--navy-mid);
+    }
+    .felicitation-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.5s ease, filter 0.5s ease;
+      filter: saturate(0.75);
+    }
+    .felicitation-img-wrap:hover img {
+      transform: scale(1.04);
+      filter: saturate(1);
+    }
+    .felicitation-img-wrap::after {
+      content: '';
+      position: absolute; inset: 0;
+      border: 1px solid rgba(184,150,96,0.25);
+      border-radius: 3px;
+      pointer-events: none;
+    }
+
     .hosp-imgs {
       display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;
     }
@@ -633,9 +656,7 @@
       display: grid; grid-template-columns: 5fr 7fr; gap: 80px;
       align-items: center;
     }
-    .research-num-block {
-      position: relative;
-    }
+    .research-num-block { position: relative; }
     .big-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(7rem, 12vw, 11rem);
@@ -665,6 +686,74 @@
       font-size: 0.67rem; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--sky); border-radius: 2px; font-weight: 400;
     }
+
+    /* ─── PUBLICATIONS (clean block) ─── */
+    .publications {
+      padding: 110px 64px;
+      background: var(--cream);
+    }
+    .pub-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .pub-block-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 3rem); font-weight: 300;
+      color: var(--navy); line-height: 1.22; margin-bottom: 22px;
+    }
+    .pub-block-left h2 em { font-style: italic; color: var(--blue); }
+    .pub-block-left p {
+      font-size: 1rem; color: var(--charcoal);
+      line-height: 1.9; margin-bottom: 0; font-weight: 400;
+    }
+    .pub-block-right {
+      display: flex; flex-direction: column;
+      align-items: flex-start; gap: 32px;
+    }
+    .pub-count-row {
+      display: flex; gap: 40px;
+    }
+    .pub-count-item {
+      display: flex; flex-direction: column; gap: 5px;
+    }
+    .pub-count-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem; font-weight: 600; line-height: 1;
+      color: var(--navy);
+    }
+    .pub-count-n span { color: var(--blue); font-size: 2rem; }
+    .pub-count-l {
+      font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--mid-grey);
+    }
+    .pub-divider {
+      width: 100%; height: 1px;
+      background: var(--cream-dark);
+    }
+    .pub-cta-text {
+      font-size: 0.92rem; color: var(--mid-grey); line-height: 1.7;
+    }
+    .btn-pub-download {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 15px 34px;
+      background: var(--navy); color: var(--white);
+      text-decoration: none; font-size: 0.72rem;
+      letter-spacing: 0.16em; text-transform: uppercase; font-weight: 400;
+      border-radius: 2px;
+      transition: background 0.3s, transform 0.2s;
+      border: 1px solid transparent;
+    }
+    .btn-pub-download:hover {
+      background: var(--blue);
+      transform: translateY(-2px);
+    }
+    .btn-pub-download svg {
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .btn-pub-download:hover svg { transform: translateY(2px); }
 
     /* ─── CONTACT ─── */
     .contact {
@@ -735,61 +824,7 @@
       font-size: 0.65rem; letter-spacing: 0.1em;
       color: rgba(255,255,255,0.22);
     }
-    
-    /* ─── PUBLICATIONS ─── */
-    .publications {
-      padding: 110px 64px;
-      background: var(--cream);
-    }
-    .publications h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3vw, 3rem); font-weight: 300;
-      color: var(--navy); line-height: 1.22; margin-bottom: 52px;
-    }
-    .publications h2 em { font-style: italic; color: var(--blue); }
-    .pub-group { margin-bottom: 52px; }
-    .pub-group-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem; font-weight: 600; color: var(--navy);
-      letter-spacing: 0.04em; margin-bottom: 22px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--cream-dark);
-    }
-    .pub-list {
-      list-style: decimal; padding-left: 22px;
-      display: flex; flex-direction: column; gap: 16px;
-    }
-    .pub-list li {
-      font-size: 0.95rem; color: var(--charcoal);
-      line-height: 1.75; font-weight: 400;
-    }
-    .pub-list li em { font-style: italic; color: var(--mid-grey); }
-    .pub-list li strong { font-weight: 700; color: var(--navy); }
 
-    @media (max-width: 1024px) {
-      .publications { padding: 80px 32px; }
-/* ─── NEW MOBILE LAYOUT CLEANUP ─── */
-      .nav-brand-name {
-        font-size: 1rem !important;
-      }
-      .nav-brand-title {
-      font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      transition: color 0.4s;
-      white-space: nowrap; /* Keeps the specialty title cleanly on one line */
-    }
-      .hero {
-        padding-top: 120px !important;
-        align-items: center !important;
-      }
-      .hero-content {
-        padding: 0 32px 60px !important;
-      }
-      .eyebrow {
-        margin-bottom: 15px !important;
-      }
-    }
-    
     /* ─── REVEAL ANIMATIONS ─── */
     .reveal, .reveal-l, .reveal-r {
       opacity: 0; transition: opacity 0.85s ease, transform 0.85s ease;
@@ -805,7 +840,7 @@
     .d5 { transition-delay: 0.54s; }
     .d6 { transition-delay: 0.64s; }
 
-    /* Sticky WhatsApp overlay positioning button */
+    /* Floating WhatsApp */
     .floating-whatsapp {
       position: fixed; bottom: 30px; right: 30px;
       background: #25d366; color: white;
@@ -816,9 +851,6 @@
       text-decoration: none;
     }
     .floating-whatsapp:hover { transform: scale(1.08); background: #20ba5a; }
-    @media (max-width: 768px) {
-      .floating-whatsapp { bottom: 20px; right: 20px; width: 50px; height: 50px; }
-    }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1024px) {
@@ -827,7 +859,14 @@
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .mobile-nav { display: flex; }
-      .hero-content { padding: 0 32px 140px; grid-template-columns: 1fr; gap: 36px; }
+      .nav-brand-name { font-size: 1rem !important; }
+      .nav-brand-title {
+        font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase;
+        color: rgba(255,255,255,0.55); transition: color 0.4s; white-space: nowrap;
+      }
+      .hero { padding-top: 120px !important; align-items: center !important; }
+      .hero-content { padding: 0 32px 140px !important; grid-template-columns: 1fr; gap: 36px; }
+      .eyebrow { margin-bottom: 15px !important; }
       .hero-profile-img, .hero-profile-fallback { width: 180px; height: 220px; }
       .hero-stats { flex-wrap: wrap; position: relative; right: auto; bottom: auto; width: 100%; margin-top: 0; }
       .hero-stats { position: absolute; }
@@ -848,6 +887,9 @@
       .contact-info, .contact-quote { padding: 64px 32px; }
       .contact-info { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
       footer { padding: 22px 32px; flex-direction: column; gap: 8px; text-align: center; }
+      .publications { padding: 80px 32px; }
+      .pub-block { grid-template-columns: 1fr; gap: 48px; }
+      .felicitation-imgs { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 640px) {
@@ -859,6 +901,9 @@
       .robotic-body { padding: 36px 24px; }
       .big-num { font-size: 6rem; }
       .expertise-ghost { display: none; }
+      .pub-count-row { gap: 24px; }
+      .felicitation-imgs { grid-template-columns: 1fr; }
+      .floating-whatsapp { bottom: 20px; right: 20px; width: 50px; height: 50px; }
     }
   </style>
 </head>
@@ -883,12 +928,12 @@
   </nav>
 
   <div class="mobile-nav" id="mobileNav">
-    <a href="#about"       onclick="closeMobile()">About</a>
-    <a href="#expertise"   onclick="closeMobile()">Expertise</a>
-    <a href="#experience"  onclick="closeMobile()">Experience</a>
-    <a href="#research"    onclick="closeMobile()">Research</a>
+    <a href="#about"        onclick="closeMobile()">About</a>
+    <a href="#expertise"    onclick="closeMobile()">Expertise</a>
+    <a href="#experience"   onclick="closeMobile()">Experience</a>
+    <a href="#research"     onclick="closeMobile()">Research</a>
     <a href="#publications" onclick="closeMobile()">Publications</a>
-    <a href="#contact"     onclick="closeMobile()">Contact</a>
+    <a href="#contact"      onclick="closeMobile()">Contact</a>
   </div>
 
   <section class="hero" id="home">
@@ -1038,7 +1083,31 @@
       <div class="sec-label reveal">Experience</div>
       <h2 class="reveal d1">Fourteen years at the<br><em>forefront of cancer care</em></h2>
       <p class="reveal d2">Based at Chittaranjan National Cancer Institute, Kolkata, Dr. Banerjee has managed thousands of complex gynaecological cancer cases across her distinguished career — combining surgical excellence with deep human compassion.</p>
-      <div class="hosp-imgs reveal d3">
+
+      <!-- Felicitation Images -->
+      <div class="felicitation-block reveal d3">
+        <div class="felicitation-label">Recognitions &amp; Felicitations</div>
+        <div class="felicitation-imgs">
+          <div class="felicitation-img-wrap">
+            <img
+              src="https://raw.githubusercontent.com/drdipanwitabanerjee/official/main/Felicitation%201.png"
+              alt="Dr. Dipanwita Banerjee receiving felicitation"
+              loading="lazy"
+              onerror="this.parentElement.style.background='linear-gradient(160deg,#2d4a6e,#1a2e4a)';this.style.display='none'"
+            >
+          </div>
+          <div class="felicitation-img-wrap">
+            <img
+              src="https://raw.githubusercontent.com/drdipanwitabanerjee/official/main/Felicitation%202.jpeg"
+              alt="Dr. Dipanwita Banerjee at felicitation ceremony"
+              loading="lazy"
+              onerror="this.parentElement.style.background='linear-gradient(160deg,#2d4a6e,#1a2e4a)';this.style.display='none'"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="hosp-imgs reveal d4">
         <img src="hospital1.png" alt="Chittaranjan National Cancer Institute - Cancer Care Unit Kolkata" loading="lazy" onerror="this.style.display='none'">
         <img src="hospital2.png" alt="Advanced Gynae Cancer Centre, Kolkata" loading="lazy" onerror="this.style.display='none'">
         <img src="hospital3.png" alt="Oncology Hospital, Kolkata" loading="lazy" onerror="this.style.display='none'">
@@ -1108,64 +1177,43 @@
       </div>
     </div>
   </section>
-  
+
+  <!-- ─── PUBLICATIONS — clean elegant block ─── -->
   <section class="publications" id="publications">
-    <div class="sec-label reveal">Research &amp; Publications</div>
-    <h2>Peer-reviewed <em>cervical &amp; ovarian cancer publications</em></h2>
-
-    <div class="pub-group reveal d2">
-      <h3 class="pub-group-title">Journal Publications</h3>
-      <ol class="pub-list">
-        <li><strong>Banerjee D</strong> et al. Diagnostic accuracy of artificial intelligence in detection of ovarian cancer — a pilot study. <em>Front. Med.</em> 2026;13:1729412.</li>
-        <li>Meena J, <strong>Banerjee D</strong> et al. Current status and challenges in training the next generation of gynecologic cancer care providers in Asia. <em>J Gynecol Oncol.</em> 2025 Nov;36(6):e103.</li>
-        <li>Sharma H, … <strong>Banerjee D</strong> et al. Immunogenicity and safety of a new quadrivalent HPV vaccine in girls and boys aged 9–14 years. <em>Lancet Oncol.</em> 2023 Dec;24(12):1321–1333.</li>
-        <li><strong>Banerjee D</strong>, Nandwani M. National and International HPV Vaccination program with special reference to LMIC. <em>J Curr Oncol Trends.</em> Accepted 2026.</li>
-        <li><strong>Banerjee D</strong>, Nandwani M, Reddy PM. Role of Sentinel Lymph Node in Gynaecological Cancers. <em>AOGD Bulletin.</em> 2024;24(8).</li>
-        <li>Chakrabarti J, Mandal R, Vernekar M, <strong>Banerjee D</strong> et al. Evaluating the Feasibility of Mobile Screening Units for Early Detection of Cancer. <em>J Curr Oncol Trends.</em> 2024;1(2):105–109.</li>
-        <li>Bose S, Basu P, Mandal R, <strong>Banerjee D</strong> et al. Impact and Restitutive Efforts of Cervical Cancer Screening during COVID-19 in Eastern India. <em>Asian Pac J Cancer Prev.</em> 2023;24(10):3495–3500.</li>
-        <li><strong>Banerjee D</strong>. Screening technologies for cervical cancer: Overview. <em>CytoJournal.</em> 2022;19:23.</li>
-        <li>Singhal S, … <strong>Banerjee D</strong> et al. Role of CT-based reporting system 'PAUSE' to predict surgical resectability in epithelial ovarian cancer. <em>Int J Gynecol Cancer.</em> 2022;32(Suppl 2).</li>
-        <li>Mandal R, <strong>Banerjee D</strong> et al. Experience of HPV Vaccination Project in a Community Set Up — An Indian Study. <em>Asian Pac J Cancer Prev.</em> 2021;22(3):699–704.</li>
-        <li><strong>Banerjee D</strong>, Bhatla N, Mathur S et al. HPV-independent squamous cell cancer of cervix: a case report. <em>J Gynecol Oncol.</em> 2021.</li>
-        <li>Kumari S, Chandra R, <strong>Banerjee D</strong>, Bhatla N. Perception of gynaecologic cancer patients undergoing surgery during COVID-19. <em>J Gynecol Oncol.</em> 2021.</li>
-        <li>Bhatla N, Meena J, Kumari S, <strong>Banerjee D</strong> et al. Cervical Cancer Prevention Efforts in India. <em>Indian J Gynecol Oncol.</em> 2021;19(3):41.</li>
-        <li><strong>Banerjee D</strong>, Mandal R et al. Randomized Trial Comparing Thermal Ablation and Cryotherapy in a Screen and Treat Setting. <em>Asian Pac J Cancer Prev.</em> 2020;21(5):1391–1398.</li>
-        <li>Chatterjee P, Dey R, <strong>Banerjee D</strong> et al. Point Prevalence Study in Female Sex Workers in Eastern India. <em>SAS J Surg.</em> 2021;7(4):201–206.</li>
-        <li>Chatterjee P, <strong>Banerjee D</strong>, Vernekar M, Mandal R. Primary Vaginal Clear Cell Adenocarcinoma: Case Report. <em>Sch J Med Case Rep.</em> 2021;9(4):393–397.</li>
-        <li>Mandal R, Ghosh I, <strong>Banerjee D</strong> et al. Correlation Between p16/Ki-67 Expression and the Grade of CIN. <em>Int J Gynecol Pathol.</em> 2020;39(4):384–390.</li>
-        <li><strong>Banerjee D</strong>, Taghavi K, Mandal R et al. Gynocular™ as a Field Colposcope in Rural India. <em>J South Asian Fed Menopause Soc.</em> 2018;6:52–56.</li>
-        <li>Mittal S, Basu P, Mandal R, Ghosh I, <strong>Banerjee D</strong> et al. Enablers and Barriers of Follow-Up in HPV-based Screening in Rural India. <em>J Glob Oncol.</em> 2018.</li>
-        <li><strong>Banerjee D</strong>, Mandal A, Chakraborty R. Bevacizumab in Gynaecological Malignancies. <em>FOGSI Focus.</em> April 2018.</li>
-        <li>Basu P, <strong>Banerjee D</strong>, Mittal S et al. Evaluation of a compact magnifying device to triage VIA and HPV positive women in Rural India. <em>Cancer Causes Control.</em> 2016;27(10):1253–1259.</li>
-        <li>Basu P, Muwonge R, Mittal S, <strong>Banerjee D</strong> et al. Implications of semi-quantitative HPV viral load by Hybrid Capture 2 in colposcopy. <em>J Med Screen.</em> 2015.</li>
-        <li>Ghosh I, Mittal S, <strong>Banerjee D</strong> et al. Association between HR-HPV and co-infection with Candida/Trichomonas in cervical lesions. <em>J Clin Virol.</em> 2017;87:43–48.</li>
-        <li>Mittal S, Basu P, Muwonge R, <strong>Banerjee D</strong> et al. Risk of high-grade precancerous lesions in HR-HPV positive women — a cohort study. <em>Int J Cancer.</em> 2017;140(8):1850–1859.</li>
-        <li>Roychowdhury A, … <strong>Banerjee D</strong> et al. Identification of HPV16 Genome Changes During Cervical Cancer Dissemination. <em>Pathol Oncol Res.</em> 2017;23(4):845–852.</li>
-        <li>Mandal D, Sircar G, Pandey A, <strong>Banerjee D</strong> et al. Menstrual and Gonadal Function Alterations in Women with SLE. <em>J Assoc Physicians India.</em> 2015;63.</li>
-        <li>Basu P, Jenson AB, Majhi T, <strong>Banerjee D</strong> et al. Phase 2 RCT of Radiation + Interferon-Alpha &amp; Retinoic Acid vs Cisplatin for Stage III Cervical Carcinoma. <em>Int J Radiat Oncol Biol Phys.</em> 2016;94(1):102–110.</li>
-        <li>Ghosh I, Mittal S, <strong>Banerjee D</strong> et al. Correlation of cervical epithelial thickness with colposcopic abnormality grade. <em>Int J Gynecol Pathol.</em> 2016;35(3):269–274.</li>
-        <li>Basu P, Mittal S, <strong>Banerjee D</strong> et al. Diagnostic accuracy of VIA and HPV detection as primary screening tests in India. <em>Int J Cancer.</em> 2015.</li>
-        <li>Basu P, <strong>Banerjee D</strong> et al. Sensitivity of APTIMA HPV E6/E7 mRNA vs Hybrid Capture 2 in 396 biopsy-confirmed cervical cancers. <em>J Med Virol.</em> 2016;88(7):1271–1278.</li>
-        <li>Mittal S, Ghosh I, <strong>Banerjee D</strong> et al. Reproducibility of CIN diagnosis on histological review. <em>Int J Gynecol Obstet.</em> 2014;126(3):227–231.</li>
-        <li>Basu P, <strong>Banerjee D</strong>. Efficacy and Safety of HPV Vaccine for Primary Prevention of Cervical Cancer. <em>South Asian J Cancer.</em> 2013;2(4).</li>
-        <li>Ghosh I, Mittal S, <strong>Banerjee D</strong> et al. Accuracy of colposcopy in VIA and HPV-based screening. <em>Aust N Z J Obstet Gynaecol.</em> 2014;54:570–575.</li>
-        <li><strong>Banerjee D</strong>, Ghosh I, Das P et al. Extra-genital Bowen's Disease co-existing with VIN — a case report. <em>J Obstet Gynecol India.</em> 2015;66(3).</li>
-        <li>Mittal S, <strong>Banerjee D</strong>, Chatterjee S, Biswas J, Basu P. Lessons from an HPV Detection-based Screening Program. <em>Asia Pac J Clin Oncol.</em> 2014;10(Suppl S9).</li>
-      </ol>
-    </div>
-
-    <div class="pub-group reveal d3">
-      <h3 class="pub-group-title">Book Chapters &amp; Reviews</h3>
-      <ol class="pub-list">
-        <li>Deb Kanango A, Reddy PM, <strong>Banerjee D</strong>. Invasive Adenocarcinoma of the Cervix: Molecular Categorization. In: Nigam A, Kriplani A (Eds). <em>Recent Advances in Obstetrics &amp; Gynecology.</em> Vol 4. Evangel Publishing; 2026. pp. 315–326.</li>
-        <li><strong>Banerjee D</strong>, Basu P. Screening for Cervical Cancer and the Role of AI. <em>FOGSI EEBR 2.0 Genital Malignancy.</em> FOGSI &amp; Globe Pharma Publications; 2025. ISBN 978-81-996712-2-5.</li>
-        <li><strong>Banerjee D</strong>. Tumours of the Cervix uteri. In: <em>Jeffcoate's Principles of Gynaecology,</em> 9th ed. pp. 553–572. Jaypee Publishers. ISBN 9789352704774.</li>
-        <li><strong>Banerjee D</strong>, Mandal R, Chhetri A. Cervical Cancer Screening in Pregnancy. In: Mehta S, Singla A (Eds). <em>Preventive Oncology for the Gynecologist.</em> Springer; 2019.</li>
-        <li><strong>Banerjee D</strong>. Controversies in Myoma Morcellation — An Update. In: <em>Textbook on Fibroids,</em> 1st ed. pp. 237–243. CBS Publishers; 2018. ISBN 9789387085138.</li>
-        <li><strong>Banerjee D</strong>, Barsode SD, Basu P. Management of Gestational Trophoblastic Diseases — An Update. <em>Reviews on Recent Clinical Trials.</em> 2015;10(4):255–262.</li>
-        <li><strong>Banerjee D</strong>, Basu P. Book review: Human Papillomavirus — Bench to Bedside (Karger, 2014). <em>Indian J Med Res.</em> 2015;141:373–375.</li>
-        <li><strong>Banerjee D</strong>. Management of Abnormal Pap Smear, Precancerous Lesions of Cervix. In: Ahuja M, Basu P (Eds). <em>Precancerous Lesions of Cervix — Prevention, Early Diagnosis and Management.</em> Jaypee Brothers, New Delhi.</li>
-      </ol>
+    <div class="pub-block">
+      <div class="pub-block-left">
+        <div class="sec-label reveal">Research &amp; Publications</div>
+        <h2 class="reveal d1">Peer-reviewed <em>publications &amp; book chapters</em></h2>
+        <p class="reveal d2">Dr. Banerjee's research spans gynaecological oncology surgery, cervical cancer prevention, HPV vaccination, colposcopy, and minimally invasive surgical outcomes — published in leading national and international journals including <em>The Lancet Oncology</em>, <em>International Journal of Cancer</em>, and <em>Journal of Gynecologic Oncology</em>.</p>
+      </div>
+      <div class="pub-block-right reveal d2">
+        <div class="pub-count-row">
+          <div class="pub-count-item">
+            <div class="pub-count-n">35<span>+</span></div>
+            <div class="pub-count-l">Journal Articles</div>
+          </div>
+          <div class="pub-count-item">
+            <div class="pub-count-n">8<span>+</span></div>
+            <div class="pub-count-l">Book Chapters &amp; Reviews</div>
+          </div>
+        </div>
+        <div class="pub-divider"></div>
+        <p class="pub-cta-text">The complete list of publications, book chapters, and reviews is available as a downloadable document.</p>
+        <a
+          href="https://raw.githubusercontent.com/drdipanwitabanerjee/official/main/Publications.pdf"
+          class="btn-pub-download"
+          target="_blank"
+          rel="noopener"
+          download="Dr_Dipanwita_Banerjee_Publications.pdf"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download Full Publication List
+        </a>
+      </div>
     </div>
   </section>
 
@@ -1183,11 +1231,9 @@
           <div>
             <div class="ci-label">Location</div>
             <div class="ci-value" style="margin-bottom: 15px;">Kolkata, West Bengal, India</div>
-            
             <div style="width: 100%; max-width: 480px; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); line-height: 0;">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.318859200783!2d88.46622187384955!3d22.567174633172005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02750a9b4291b9%3A0xc5a3944340fd7afc!2sDr.%20Dipanwita%20Banerjee%20%E2%80%94%20Gynaecological%20Oncologist%20(CNCI%20New%20Town)!5e0!3m2!1sen!2sin!4v1779694182140!5m2!1sen!2sin" width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            
           </div>
         </div>
         <div class="ci-row reveal d3">
