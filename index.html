@@ -487,7 +487,7 @@
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 1px; position: relative; z-index: 1;
     }
-    .exp-grid-item { display: contents; } /* Structural adjustment for validation */
+    .exp-grid-item { display: contents; }
     .exp-card {
       padding: 48px 38px;
       background: rgba(255,255,255,0.035);
@@ -522,6 +522,12 @@
     .exp-card p {
       font-size: 0.88rem; color: rgba(255,255,255,0.78);
       line-height: 1.85; font-weight: 400;
+    }
+
+    /* ─── CHANGE 1: Fix italic text contrast on dark sections ─── */
+    .expertise h2 em, .robotic h2 em {
+      color: var(--gold-light) !important;
+      font-weight: 400;
     }
 
     /* ─── EXPERIENCE ─── */
@@ -586,13 +592,15 @@
       position: absolute; inset: 0;
       background: url('robotic.png') center / cover no-repeat, linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
     }
+    /* ─── CHANGE 3: Lighter overlay — image breathes on right two-thirds ─── */
     .robotic-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(
         to right,
-        rgba(26,46,74,0.96) 0%,
-        rgba(26,46,74,0.72) 45%,
-        rgba(26,46,74,0.15) 100%
+        rgba(26,46,74,0.88) 0%,
+        rgba(26,46,74,0.55) 38%,
+        rgba(26,46,74,0.10) 65%,
+        transparent 100%
       );
     }
     .robotic-body {
@@ -604,7 +612,6 @@
       font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 400;
       color: var(--white); line-height: 1.15; margin-bottom: 20px;
     }
-    .robotic-body h2 em { font-style: italic; color: var(--sky); }
     .robotic-body p {
       font-size: 0.96rem; color: rgba(255,255,255,0.88);
       line-height: 1.9; margin-bottom: 34px; font-weight: 400;
@@ -775,6 +782,21 @@
     .d5 { transition-delay: 0.54s; }
     .d6 { transition-delay: 0.64s; }
 
+    /* ─── CHANGE 2: Floating WhatsApp button ─── */
+    .floating-whatsapp {
+      position: fixed; bottom: 30px; right: 30px;
+      background: #25d366; color: white;
+      width: 56px; height: 56px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      z-index: 999; transition: transform 0.3s ease, background-color 0.3s;
+      text-decoration: none;
+    }
+    .floating-whatsapp:hover { transform: scale(1.08); background: #20ba5a; }
+    @media (max-width: 768px) {
+      .floating-whatsapp { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+    }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1024px) {
       nav { padding: 20px 32px; }
@@ -795,9 +817,9 @@
       .exp-grid { grid-template-columns: 1fr 1fr; }
       .experience { grid-template-columns: 1fr; padding: 80px 32px; gap: 52px; }
       .robotic { flex-direction: column; height: auto; min-height: unset; }
-.robotic-bg { position: relative; inset: unset; height: 300px; width: 100%; flex-shrink: 0; background-attachment: scroll; }
-.robotic-overlay { position: absolute; inset: 0; top: 0; height: 300px; }
-.robotic-body { position: relative; z-index: 2; padding: 48px 32px; width: 100%; max-width: 100%; background: var(--navy); }
+      .robotic-bg { position: relative; inset: unset; height: 300px; width: 100%; flex-shrink: 0; background-attachment: scroll; }
+      .robotic-overlay { position: absolute; inset: 0; top: 0; height: 300px; }
+      .robotic-body { position: relative; z-index: 2; padding: 48px 32px; width: 100%; max-width: 100%; background: var(--navy); }
       .research { grid-template-columns: 1fr; padding: 80px 32px; gap: 36px; }
       .contact { grid-template-columns: 1fr; }
       .contact-info, .contact-quote { padding: 64px 32px; }
@@ -1082,7 +1104,7 @@
         <li>Singhal S, … <strong>Banerjee D</strong> et al. Role of CT-based reporting system 'PAUSE' to predict surgical resectability in epithelial ovarian cancer. <em>Int J Gynecol Cancer.</em> 2022;32(Suppl 2).</li>
         <li>Mandal R, <strong>Banerjee D</strong> et al. Experience of HPV Vaccination Project in a Community Set Up — An Indian Study. <em>Asian Pac J Cancer Prev.</em> 2021;22(3):699–704.</li>
         <li><strong>Banerjee D</strong>, Bhatla N, Mathur S et al. HPV-independent squamous cell cancer of cervix: a case report. <em>J Gynecol Oncol.</em> 2021.</li>
-        <li> Kumari S, Chandra R, <strong>Banerjee D</strong>, Bhatla N. Perception of gynaecologic cancer patients undergoing surgery during COVID-19. <em>J Gynecol Oncol.</em> 2021.</li>
+        <li>Kumari S, Chandra R, <strong>Banerjee D</strong>, Bhatla N. Perception of gynaecologic cancer patients undergoing surgery during COVID-19. <em>J Gynecol Oncol.</em> 2021.</li>
         <li>Bhatla N, Meena J, Kumari S, <strong>Banerjee D</strong> et al. Cervical Cancer Prevention Efforts in India. <em>Indian J Gynecol Oncol.</em> 2021;19(3):41.</li>
         <li><strong>Banerjee D</strong>, Mandal R et al. Randomized Trial Comparing Thermal Ablation and Cryotherapy in a Screen and Treat Setting. <em>Asian Pac J Cancer Prev.</em> 2020;21(5):1391–1398.</li>
         <li>Chatterjee P, Dey R, <strong>Banerjee D</strong> et al. Point Prevalence Study in Female Sex Workers in Eastern India. <em>SAS J Surg.</em> 2021;7(4):201–206.</li>
@@ -1196,10 +1218,21 @@
     </div>
   </section>
 
+  <!-- ─── CHANGE 4: Footer with site credit ─── -->
   <footer>
     <div class="footer-name">Dr. Dipanwita Banerjee</div>
-    <div class="footer-copy">© 2026 · Senior Consultant, Gynaecological Oncology · Kolkata, India</div>
+    <div style="text-align: right;">
+      <div class="footer-copy">© 2026 · Senior Consultant, Gynaecological Oncology · Kolkata, India</div>
+      <div class="footer-copy" style="margin-top:4px;">Site designed &amp; managed by Samrat Bhattacharya</div>
+    </div>
   </footer>
+
+  <!-- ─── CHANGE 2: Floating WhatsApp button ─── -->
+  <a href="https://wa.me/916291681013" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Book Consultation via WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.411 0 11.981 0c3.184.001 6.177 1.242 8.426 3.496 2.249 2.254 3.487 5.251 3.486 8.442-.003 6.634-5.354 11.982-11.922 11.982-2.006-.001-3.982-.507-5.732-1.47L0 24zm6.59-4.846c1.666.988 3.311 1.488 5.326 1.489 5.459 0 9.899-4.416 9.901-9.851.001-2.633-1.023-5.107-2.885-6.972C17.11 1.956 14.653.931 12.002.931 6.544.931 2.106 5.346 2.103 10.783c0 2.122.56 4.129 1.624 5.845l-.993 3.626 3.714-.969zM17.517 14.3c-.3-.15-1.776-.875-2.046-.975-.27-.1-.466-.15-.66.15-.194.3-.75.94-.919 1.13-.17.19-.34.21-.64.06-.3-.15-1.267-.467-2.414-1.493-.893-.795-1.496-1.777-1.671-2.077-.175-.3-.018-.463.13-.612.134-.133.3-.347.45-.52.15-.174.2-.294.3-.49.1-.2.05-.375-.025-.525-.075-.15-.66-1.59-.905-2.18-.239-.574-.482-.497-.66-.505-.17-.008-.365-.01-.56-.01-.196 0-.515.073-.784.365-.27.292-1.03 1.006-1.03 2.455 0 1.449 1.054 2.846 1.202 3.046.148.2 2.074 3.167 5.025 4.442.702.304 1.25.486 1.677.622.705.224 1.346.193 1.853.117.565-.084 1.777-.726 2.027-1.426.25-.7 2.5-1.426 1.9-1.576z"/>
+    </svg>
+  </a>
 
   <script>
     // ── Nav scroll ──
