@@ -662,14 +662,14 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(7rem, 12vw, 11rem);
       font-weight: 700; color: var(--navy);
-      line-height: 1; /* Increased from 0.85 to prevent text overlapping */
+      line-height: 0.95; /* Restores the container depth safely */
       letter-spacing: -0.04em;
     }
     .big-num span { color: var(--blue); }
     .big-num-sub {
       font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--mid-grey); 
-      margin-top: 5px; /* Tuned to provide a clean visual gap */
+      margin-top: 24px; /* INCREASED: Pushes the label safely clear of the 35+ baseline */
       font-weight: 400;
     }
     .research-body h2 {
@@ -720,12 +720,13 @@
       display: flex; gap: 40px;
     }
     .pub-count-item {
-      display: flex; flex-direction: column; gap: 5px;
+      display: flex; flex-direction: column; gap: 12px; /* INCREASED: Adds a crisp gap under both numbers */
+      align-items: flex-start;
     }
     .pub-count-n {
       font-family: 'Cormorant Garamond', serif;
       font-size: 3.2rem; font-weight: 600; 
-      line-height: 1.1; /* Explicitly set to cleanly space out the label text below */
+      line-height: 1; /* Locked at 1 so the text labels calculate spacing from the exact same starting point */
       color: var(--navy);
     }
     .pub-count-n span { color: var(--blue); font-size: 2rem; }
