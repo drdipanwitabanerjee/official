@@ -662,12 +662,15 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(7rem, 12vw, 11rem);
       font-weight: 700; color: var(--navy);
-      line-height: 0.85; letter-spacing: -0.04em;
+      line-height: 1; /* Increased from 0.85 to prevent text overlapping */
+      letter-spacing: -0.04em;
     }
     .big-num span { color: var(--blue); }
     .big-num-sub {
       font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--mid-grey); margin-top: 14px; font-weight: 400;
+      color: var(--mid-grey); 
+      margin-top: 5px; /* Tuned to provide a clean visual gap */
+      font-weight: 400;
     }
     .research-body h2 {
       font-family: 'Cormorant Garamond', serif;
@@ -721,7 +724,8 @@
     }
     .pub-count-n {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3.2rem; font-weight: 600; line-height: 1;
+      font-size: 3.2rem; font-weight: 600; 
+      line-height: 1.1; /* Explicitly set to cleanly space out the label text below */
       color: var(--navy);
     }
     .pub-count-n span { color: var(--blue); font-size: 2rem; }
