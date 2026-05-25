@@ -794,10 +794,10 @@
       .expertise-intro { grid-template-columns: 1fr; }
       .exp-grid { grid-template-columns: 1fr 1fr; }
       .experience { grid-template-columns: 1fr; padding: 80px 32px; gap: 52px; }
-      .robotic-body { padding: 48px 32px; width: 100%; background: var(--navy); position: relative; z-index: 2; }
-.robotic { flex-direction: column; height: auto; }
-.robotic-bg { position: relative; height: 280px; flex-shrink: 0; width: 100%; }
-.robotic-overlay { display: none; }
+      .robotic { flex-direction: column; height: auto; min-height: unset; }
+.robotic-bg { position: relative; inset: unset; height: 300px; width: 100%; flex-shrink: 0; background-attachment: scroll; }
+.robotic-overlay { position: absolute; inset: 0; top: 0; height: 300px; }
+.robotic-body { position: relative; z-index: 2; padding: 48px 32px; width: 100%; max-width: 100%; background: var(--navy); }
       .research { grid-template-columns: 1fr; padding: 80px 32px; gap: 36px; }
       .contact { grid-template-columns: 1fr; }
       .contact-info, .contact-quote { padding: 64px 32px; }
