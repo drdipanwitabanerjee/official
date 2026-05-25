@@ -716,11 +716,10 @@
       display: flex; flex-direction: column;
       align-items: flex-start; gap: 32px;
     }
-    ..pub-count-row {
+    .pub-count-row {
       display: flex;
-      gap: 56px;
-      /* Aligns the baseline of '35+' and '8+' mathematically, regardless of character shape */
-      align-items: baseline; 
+      gap: 56px; /* Clean tracking break between the two blocks */
+      align-items: flex-start; /* Aligns the structural containers cleanly */
     }
     .pub-count-item {
       display: flex;
@@ -729,10 +728,14 @@
     }
     .pub-count-n {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3.2rem; font-weight: 600; 
-      line-height: 1; /* Strips out any hidden vertical padding inside the font container */
+      font-size: 3.2rem;
+      font-weight: 600;
       color: var(--navy);
-      margin-bottom: 14px; /* Creates an identical spacing gap before labels begin */
+      line-height: 1;
+      height: 3.2rem; /* FORCES both number boxes to have the exact same structural height */
+      display: flex;
+      align-items: flex-end; /* LOCKS the bottom of '35+' and '8+' onto a perfectly flat baseline */
+      margin-bottom: 14px; /* Creates a uniform gap before the labels start */
     }
     .pub-count-n span { color: var(--blue); font-size: 2rem; }
     .pub-count-l {
