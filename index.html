@@ -931,6 +931,100 @@ footer > div { text-align: center; }
       .felicitation-imgs { grid-template-columns: 1fr; }
       .floating-whatsapp { bottom: 20px; right: 20px; width: 50px; height: 50px; }
     }
+
+    /* ─── BLOG PREVIEW ─── */
+    .blog-preview {
+      padding: 110px 64px;
+      background: var(--navy);
+      position: relative; overflow: hidden;
+    }
+    .blog-preview-ghost {
+      position: absolute; top: -30px; right: -20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16rem; font-weight: 700; letter-spacing: -0.04em;
+      color: rgba(255,255,255,0.025); line-height: 1;
+      pointer-events: none; user-select: none; white-space: nowrap;
+    }
+    .blog-preview-header {
+      display: grid; grid-template-columns: 1fr auto;
+      align-items: end; gap: 32px; margin-bottom: 56px;
+    }
+    .blog-preview-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 3.8vw, 3.4rem); font-weight: 400;
+      color: var(--white); line-height: 1.16;
+    }
+    .blog-preview-header h2 em { font-style: italic; color: var(--sky); }
+    .btn-all-blogs {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 28px;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.7); text-decoration: none;
+      font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase;
+      border-radius: 2px; white-space: nowrap;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn-all-blogs:hover { border-color: var(--gold-light); color: var(--gold-light); }
+    .btn-all-blogs:hover svg { transform: translateX(3px); }
+    .btn-all-blogs svg { transition: transform 0.3s; }
+
+    #blog-preview-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; position: relative; z-index: 1;
+    }
+    .blog-preview-card {
+      padding: 42px 34px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.06);
+      position: relative; overflow: hidden;
+      transition: background 0.4s, transform 0.4s;
+      display: flex; flex-direction: column;
+      text-decoration: none;
+    }
+    .blog-preview-card:hover { background: rgba(255,255,255,0.075); transform: translateY(-5px); }
+    .blog-preview-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(to right, var(--gold), var(--blue-light));
+      transform: scaleX(0); transform-origin: left; transition: transform 0.45s ease;
+    }
+    .blog-preview-card:hover::after { transform: scaleX(1); }
+    .bp-category {
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--blue-light); margin-bottom: 10px;
+    }
+    .bp-date {
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+    }
+    .blog-preview-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 400;
+      color: var(--white); line-height: 1.35; margin-bottom: 14px; flex-grow: 1;
+    }
+    .blog-preview-card p {
+      font-size: 0.93rem; color: rgba(255,255,255,0.48);
+      line-height: 1.8; margin-bottom: 24px;
+    }
+    .bp-read {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold-light);
+    }
+    .bp-loading {
+      grid-column: 1 / -1; padding: 60px 24px; text-align: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic;
+      color: rgba(255,255,255,0.25);
+    }
+
+    @media (max-width: 1024px) {
+      .blog-preview { padding: 80px 32px; }
+      .blog-preview-header { grid-template-columns: 1fr; gap: 24px; }
+      #blog-preview-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .blog-preview-ghost { display: none; }
+      #blog-preview-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -946,6 +1040,7 @@ footer > div { text-align: center; }
       <li><a href="#experience">Experience</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#publications">Publications</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
     <button class="hamburger" id="ham" aria-label="Menu">
@@ -959,6 +1054,7 @@ footer > div { text-align: center; }
     <a href="#experience"   onclick="closeMobile()">Experience</a>
     <a href="#research"     onclick="closeMobile()">Research</a>
     <a href="#publications" onclick="closeMobile()">Publications</a>
+    <a href="blogs.html"    onclick="closeMobile()">Blogs</a>
     <a href="#contact"      onclick="closeMobile()">Contact</a>
   </div>
 
@@ -1243,6 +1339,26 @@ footer > div { text-align: center; }
     </div>
   </section>
 
+  <!-- ─── BLOG PREVIEW ─── -->
+  <section class="blog-preview" id="blogs">
+    <div class="blog-preview-ghost">INSIGHTS</div>
+    <div class="blog-preview-header">
+      <div>
+        <div class="sec-label light reveal">Medical Insights</div>
+        <h2 class="reveal d1">Latest <em>articles & writing</em></h2>
+      </div>
+      <a href="blogs.html" class="btn-all-blogs reveal d2">
+        All Articles
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+    <div id="blog-preview-grid">
+      <div class="bp-loading">Loading articles&hellip;</div>
+    </div>
+  </section>
+
   <section class="contact" id="contact">
     <div class="contact-info">
       <div class="sec-label light reveal">Contact</div>
@@ -1362,6 +1478,33 @@ footer > div { text-align: center; }
       });
     }, { threshold: 0.05, rootMargin: '0px 0px 200px 0px' });
     revealEls.forEach(el => obs.observe(el));
+
+    // ── Blog preview ──
+    const previewGrid = document.getElementById('blog-preview-grid');
+    if (previewGrid) {
+      fetch('blogs.json')
+        .then(r => r.ok ? r.json() : Promise.reject())
+        .then(blogs => {
+          previewGrid.innerHTML = '';
+          blogs.slice(0, 3).forEach((blog, i) => {
+            const card = document.createElement('a');
+            card.className = 'blog-preview-card reveal d' + (i + 1);
+            card.href = 'blogs/' + blog.filename;
+            card.innerHTML = `
+              <div class="bp-category">${blog.category || 'Article'}</div>
+              <div class="bp-date">${blog.date}</div>
+              <h3>${blog.title}</h3>
+              <p>${blog.excerpt}</p>
+              <span class="bp-read">Read Article <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            `;
+            previewGrid.appendChild(card);
+            obs.observe(card);
+          });
+        })
+        .catch(() => {
+          previewGrid.innerHTML = '<div class="bp-loading">Articles coming soon.</div>';
+        });
+    }
   </script>
 </body>
 </html>
