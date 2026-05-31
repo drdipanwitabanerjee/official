@@ -933,97 +933,77 @@ footer > div { text-align: center; }
     }
 
     /* ─── BLOG PREVIEW ─── */
-    .blog-preview {
-      padding: 110px 64px;
-      background: var(--navy);
-      position: relative; overflow: hidden;
-    }
-    .blog-preview-ghost {
-      position: absolute; top: -30px; right: -20px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16rem; font-weight: 700; letter-spacing: -0.04em;
-      color: rgba(255,255,255,0.025); line-height: 1;
-      pointer-events: none; user-select: none; white-space: nowrap;
-    }
-    .blog-preview-header {
-      display: grid; grid-template-columns: 1fr auto;
-      align-items: end; gap: 32px; margin-bottom: 56px;
-    }
-    .blog-preview-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 3.8vw, 3.4rem); font-weight: 400;
-      color: var(--white); line-height: 1.16;
-    }
+    .blog-preview { padding: 110px 64px; background: var(--navy); position: relative; overflow: hidden; }
+    .blog-preview-ghost { position: absolute; top: -30px; right: -20px; font-family: 'Cormorant Garamond', serif; font-size: 16rem; font-weight: 700; letter-spacing: -0.04em; color: rgba(255,255,255,0.025); line-height: 1; pointer-events: none; user-select: none; white-space: nowrap; }
+    .blog-preview-header { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 32px; margin-bottom: 56px; }
+    .blog-preview-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.8vw, 3.4rem); font-weight: 400; color: var(--white); line-height: 1.16; }
     .blog-preview-header h2 em { font-style: italic; color: var(--sky); }
-    .btn-all-blogs {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 13px 28px;
-      border: 1px solid rgba(255,255,255,0.25);
-      color: rgba(255,255,255,0.7); text-decoration: none;
-      font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase;
-      border-radius: 2px; white-space: nowrap;
-      transition: border-color 0.3s, color 0.3s;
-    }
+    .btn-all-blogs { display: inline-flex; align-items: center; gap: 10px; padding: 13px 28px; border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; border-radius: 2px; white-space: nowrap; transition: border-color 0.3s, color 0.3s; }
     .btn-all-blogs:hover { border-color: var(--gold-light); color: var(--gold-light); }
-    .btn-all-blogs:hover svg { transform: translateX(3px); }
     .btn-all-blogs svg { transition: transform 0.3s; }
-
-    #blog-preview-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; position: relative; z-index: 1;
-    }
-    .blog-preview-card {
-      padding: 42px 34px;
-      background: rgba(255,255,255,0.035);
-      border: 1px solid rgba(255,255,255,0.06);
-      position: relative; overflow: hidden;
-      transition: background 0.4s, transform 0.4s;
-      display: flex; flex-direction: column;
-      text-decoration: none;
-    }
+    .btn-all-blogs:hover svg { transform: translateX(3px); }
+    #blog-preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; position: relative; z-index: 1; }
+    .blog-preview-card { padding: 42px 34px; background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.06); position: relative; overflow: hidden; transition: background 0.4s, transform 0.4s; display: flex; flex-direction: column; text-decoration: none; }
     .blog-preview-card:hover { background: rgba(255,255,255,0.075); transform: translateY(-5px); }
-    .blog-preview-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(to right, var(--gold), var(--blue-light));
-      transform: scaleX(0); transform-origin: left; transition: transform 0.45s ease;
-    }
+    .blog-preview-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold), var(--blue-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.45s ease; }
     .blog-preview-card:hover::after { transform: scaleX(1); }
-    .bp-category {
-      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--blue-light); margin-bottom: 10px;
-    }
-    .bp-date {
-      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 14px;
-    }
-    .blog-preview-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem; font-weight: 400;
-      color: var(--white); line-height: 1.35; margin-bottom: 14px; flex-grow: 1;
-    }
-    .blog-preview-card p {
-      font-size: 0.93rem; color: rgba(255,255,255,0.48);
-      line-height: 1.8; margin-bottom: 24px;
-    }
-    .bp-read {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--gold-light);
-    }
-    .bp-loading {
-      grid-column: 1 / -1; padding: 60px 24px; text-align: center;
-      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic;
-      color: rgba(255,255,255,0.25);
-    }
+    .bp-category { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px; }
+    .bp-date { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .blog-preview-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; color: var(--white); line-height: 1.35; margin-bottom: 14px; flex-grow: 1; }
+    .blog-preview-card p { font-size: 0.93rem; color: rgba(255,255,255,0.48); line-height: 1.8; margin-bottom: 24px; }
+    .bp-read { display: inline-flex; align-items: center; gap: 8px; font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-light); }
+    .bp-loading { grid-column: 1/-1; padding: 60px 24px; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: rgba(255,255,255,0.25); }
+
+    /* ─── VIDEO PREVIEW ─── */
+    .video-preview { padding: 110px 64px; background: var(--cream); position: relative; overflow: hidden; }
+    .video-preview-header { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 32px; margin-bottom: 56px; }
+    .video-preview-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.8vw, 3.4rem); font-weight: 400; color: var(--navy); line-height: 1.16; }
+    .video-preview-header h2 em { font-style: italic; color: var(--blue); }
+    .btn-all-videos { display: inline-flex; align-items: center; gap: 10px; padding: 13px 28px; border: 1px solid var(--navy); color: var(--navy); text-decoration: none; font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; border-radius: 2px; white-space: nowrap; transition: border-color 0.3s, color 0.3s, background 0.3s; }
+    .btn-all-videos:hover { border-color: var(--gold); color: var(--white); background: var(--gold); }
+    .btn-all-videos svg { transition: transform 0.3s; }
+    .btn-all-videos:hover svg { transform: translateX(3px); }
+    #video-preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; z-index: 1; }
+    .vp-card { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 3px; overflow: hidden; cursor: pointer; transition: transform 0.35s, box-shadow 0.35s; position: relative; }
+    .vp-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(26,46,74,0.13); }
+    .vp-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold), var(--blue-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.45s ease; }
+    .vp-card:hover::after { transform: scaleX(1); }
+    .vp-thumb { position: relative; aspect-ratio: 16/9; overflow: hidden; background: var(--navy); }
+    .vp-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s, opacity 0.4s; opacity: 0.88; }
+    .vp-card:hover .vp-thumb img { transform: scale(1.04); opacity: 1; }
+    .vp-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(26,46,74,0.25); transition: background 0.3s; }
+    .vp-card:hover .vp-play { background: rgba(26,46,74,0.1); }
+    .vp-play-circle { width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,0.92); display: flex; align-items: center; justify-content: center; transition: transform 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .vp-card:hover .vp-play-circle { transform: scale(1.1); }
+    .vp-body { padding: 20px 22px 24px; }
+    .vp-date { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .vp-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--navy); line-height: 1.35; }
+    .vp-loading { grid-column: 1/-1; padding: 60px 24px; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--light-grey); }
+
+    /* Lightbox */
+    .lightbox-overlay { position: fixed; inset: 0; z-index: 999; background: rgba(10,16,26,0.94); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; padding: 24px; }
+    .lightbox-overlay.open { opacity: 1; pointer-events: all; }
+    .lightbox-inner { position: relative; width: 100%; max-width: 900px; transform: scale(0.94); transition: transform 0.35s ease; }
+    .lightbox-overlay.open .lightbox-inner { transform: scale(1); }
+    .lightbox-video-wrap { position: relative; width: 100%; padding-top: 56.25%; background: #000; border-radius: 3px; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,0.7); }
+    .lightbox-video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .lightbox-close { position: absolute; top: -44px; right: 0; background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 8px; font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; transition: color 0.2s; padding: 4px 0; }
+    .lightbox-close:hover { color: white; }
+    .lightbox-title { margin-top: 18px; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: rgba(255,255,255,0.65); line-height: 1.4; }
 
     @media (max-width: 1024px) {
       .blog-preview { padding: 80px 32px; }
       .blog-preview-header { grid-template-columns: 1fr; gap: 24px; }
       #blog-preview-grid { grid-template-columns: 1fr 1fr; }
+      .video-preview { padding: 80px 32px; }
+      .video-preview-header { grid-template-columns: 1fr; gap: 24px; }
+      #video-preview-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
     }
     @media (max-width: 640px) {
       .blog-preview-ghost { display: none; }
       #blog-preview-grid { grid-template-columns: 1fr; }
+      #video-preview-grid { grid-template-columns: 1fr; }
+      .lightbox-close { top: -36px; }
     }
   </style>
 </head>
@@ -1041,6 +1021,7 @@ footer > div { text-align: center; }
       <li><a href="#research">Research</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="videos.html">Videos</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
     <button class="hamburger" id="ham" aria-label="Menu">
@@ -1055,6 +1036,7 @@ footer > div { text-align: center; }
     <a href="#research"     onclick="closeMobile()">Research</a>
     <a href="#publications" onclick="closeMobile()">Publications</a>
     <a href="blogs.html"    onclick="closeMobile()">Blogs</a>
+    <a href="videos.html"   onclick="closeMobile()">Videos</a>
     <a href="#contact"      onclick="closeMobile()">Contact</a>
   </div>
 
@@ -1345,19 +1327,48 @@ footer > div { text-align: center; }
     <div class="blog-preview-header">
       <div>
         <div class="sec-label light reveal">Medical Insights</div>
-        <h2 class="reveal d1">Latest <em>articles & writing</em></h2>
+        <h2 class="reveal d1">Latest <em>articles &amp; writing</em></h2>
       </div>
       <a href="blogs.html" class="btn-all-blogs reveal d2">
         All Articles
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
     <div id="blog-preview-grid">
       <div class="bp-loading">Loading articles&hellip;</div>
     </div>
   </section>
+
+  <!-- ─── VIDEO PREVIEW ─── -->
+  <section class="video-preview" id="videos">
+    <div class="video-preview-header">
+      <div>
+        <div class="sec-label reveal">Media &amp; Interviews</div>
+        <h2 class="reveal d1">Watch <em>recent appearances</em></h2>
+      </div>
+      <a href="videos.html" class="btn-all-videos reveal d2">
+        All Videos
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div id="video-preview-grid">
+      <div class="vp-loading">Loading videos&hellip;</div>
+    </div>
+  </section>
+
+  <!-- Lightbox (shared by homepage video preview) -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Close
+      </button>
+      <div class="lightbox-video-wrap">
+        <iframe id="lightboxIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="lightbox-title" id="lightboxTitle"></div>
+    </div>
+  </div>
 
   <section class="contact" id="contact">
     <div class="contact-info">
@@ -1480,12 +1491,12 @@ footer > div { text-align: center; }
     revealEls.forEach(el => obs.observe(el));
 
     // ── Blog preview ──
-    const previewGrid = document.getElementById('blog-preview-grid');
-    if (previewGrid) {
+    const blogGrid = document.getElementById('blog-preview-grid');
+    if (blogGrid) {
       fetch('blogs.json')
         .then(r => r.ok ? r.json() : Promise.reject())
         .then(blogs => {
-          previewGrid.innerHTML = '';
+          blogGrid.innerHTML = '';
           blogs.slice(0, 3).forEach((blog, i) => {
             const card = document.createElement('a');
             card.className = 'blog-preview-card reveal d' + (i + 1);
@@ -1497,13 +1508,67 @@ footer > div { text-align: center; }
               <p>${blog.excerpt}</p>
               <span class="bp-read">Read Article <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             `;
-            previewGrid.appendChild(card);
+            blogGrid.appendChild(card);
             obs.observe(card);
           });
         })
-        .catch(() => {
-          previewGrid.innerHTML = '<div class="bp-loading">Articles coming soon.</div>';
-        });
+        .catch(() => { blogGrid.innerHTML = '<div class="bp-loading">Articles coming soon.</div>'; });
+    }
+
+    // ── Lightbox ──
+    const lightbox  = document.getElementById('lightbox');
+    const lbIframe  = document.getElementById('lightboxIframe');
+    const lbTitle   = document.getElementById('lightboxTitle');
+    const lbClose   = document.getElementById('lightboxClose');
+    function openLightbox(youtubeId, title) {
+      lbIframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+      lbTitle.textContent = title;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lbIframe.src = '';
+      document.body.style.overflow = '';
+    }
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    // ── Video preview ──
+    const videoGrid = document.getElementById('video-preview-grid');
+    if (videoGrid) {
+      fetch('videos.json')
+        .then(r => r.ok ? r.json() : Promise.reject())
+        .then(videos => {
+          videoGrid.innerHTML = '';
+          videos.slice(0, 3).forEach((v, i) => {
+            const thumb = `https://img.youtube.com/vi/${v.youtube_id}/maxresdefault.jpg`;
+            const card = document.createElement('div');
+            card.className = 'vp-card reveal d' + (i + 1);
+            card.innerHTML = `
+              <div class="vp-thumb">
+                <img src="${thumb}" alt="${v.title}" loading="lazy"
+                  onerror="this.src='https://img.youtube.com/vi/${v.youtube_id}/hqdefault.jpg'">
+                <div class="vp-play">
+                  <div class="vp-play-circle">
+                    <svg width="17" height="17" viewBox="0 0 18 18" fill="none">
+                      <path d="M5 3l11 6-11 6V3z" fill="#1a2e4a"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="vp-body">
+                <div class="vp-date">${v.date || ''}</div>
+                <h3>${v.title}</h3>
+              </div>
+            `;
+            card.addEventListener('click', () => openLightbox(v.youtube_id, v.title));
+            videoGrid.appendChild(card);
+            obs.observe(card);
+          });
+        })
+        .catch(() => { videoGrid.innerHTML = '<div class="vp-loading">Videos coming soon.</div>'; });
     }
   </script>
 </body>
