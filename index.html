@@ -19,8 +19,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dr. Dipanwita Banerjee | Gynaecological Oncologist &amp; Cancer Specialist Kolkata">
   <meta property="og:description" content="Expert care for cervical, ovarian, and uterine cancers by an AIIMS New Delhi-trained senior consultant.">
-  <meta property="og:url" content="https://drdipanwitabanerjee.github.io/official/">
-  <meta property="og:image" content="https://drdipanwitabanerjee.github.io/official/profile.png">
+  <meta property="og:url" content="https://www.drdipanwitabanerjee.com/">
+  <meta property="og:image" content="https://www.drdipanwitabanerjee.com/profile.png">
   <meta property="og:image:width" content="800">
   <meta property="og:image:height" content="800">
   <meta name="twitter:card" content="summary_large_image">
@@ -28,25 +28,32 @@
   <meta name="twitter:creator" content="@DipanwitaCNCI">
   <meta name="twitter:title" content="Dr. Dipanwita Banerjee | Gynaecological Oncologist &amp; Cancer Specialist Kolkata">
   <meta name="twitter:description" content="MCh (AIIMS New Delhi) Gynaecological Oncologist in Kolkata. Specializing in cervical cancer, ovarian cancer, robotic surgery &amp; colposcopy. 14+ years experience.">
-  <meta name="twitter:image" content="https://drdipanwitabanerjee.github.io/official/profile.png">
+  <meta name="twitter:image" content="https://www.drdipanwitabanerjee.com/profile.png">
   <meta name="google-site-verification" content="rVNkqRc3Xlnn_Urk7Q_UM5gO8ZlDzmicxJXr5zDERJA" />
 
-  <link rel="canonical" href="https://drdipanwitabanerjee.github.io/official/">
+  <link rel="canonical" href="https://www.drdipanwitabanerjee.com/">
 
+  <!-- Preload hero LCP image -->
+  <link rel="preload" as="image" href="profile.png">
+
+  <!-- Optimised font loading: preconnect + preload key fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Load fonts asynchronously to avoid render-blocking -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap"></noscript>
   
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Physician",
     "name": "Dr. Dipanwita Banerjee — Gynaecological Oncologist",
-    "image": "https://drdipanwitabanerjee.github.io/official/profile.png",
+    "image": "https://www.drdipanwitabanerjee.com/profile.png",
     "telephone": "+916291681013",
     "email": "dr.dipanwita@yahoo.co.in",
-    "url": "https://drdipanwitabanerjee.github.io/official/",
+    "url": "https://www.drdipanwitabanerjee.com/",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Kolkata",
@@ -106,8 +113,8 @@
       "FICOG",
       "IFCPC IARC Certified Colposcopist"
     ],
-    "url": "https://drdipanwitabanerjee.github.io/official/",
-    "image": "https://drdipanwitabanerjee.github.io/official/profile.png",
+    "url": "https://www.drdipanwitabanerjee.com/",
+    "image": "https://www.drdipanwitabanerjee.com/profile.png",
     "sameAs": [
       "https://www.linkedin.com/in/drdipanwitabanerjee",
       "https://www.facebook.com/dr.dipanwita",
@@ -549,9 +556,9 @@
 
     /* ─── FELICITATION IMAGES ─── */
     .felicitation-block {
-  margin-top: 36px;
-  margin-bottom: 36px;
-}
+      margin-top: 36px;
+      margin-bottom: 36px;
+    }
     .felicitation-label {
       font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--gold); margin-bottom: 14px;
@@ -673,13 +680,13 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(7rem, 12vw, 11rem);
       font-weight: 700; color: var(--navy);
-      line-height: 0.95; /* Restores the container depth safely */
+      line-height: 0.95;
       letter-spacing: -0.04em;
     }
     .big-num span { color: var(--blue); }
     .big-num-sub {
       font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--mid-grey); 
+      color: var(--mid-grey);
       margin-top: 24px;
       font-weight: 400;
     }
@@ -729,8 +736,8 @@
     }
     .pub-count-row {
       display: flex;
-      gap: 56px; /* Clean tracking break between the two blocks */
-      align-items: flex-start; /* Aligns the structural containers cleanly */
+      gap: 56px;
+      align-items: flex-start;
     }
     .pub-count-item {
       display: flex;
@@ -743,10 +750,10 @@
       font-weight: 600;
       color: var(--navy);
       line-height: 1;
-      height: 3.2rem; /* FORCES both number boxes to have the exact same structural height */
+      height: 3.2rem;
       display: flex;
-      align-items: flex-end; /* LOCKS the bottom of '35+' and '8+' onto a perfectly flat baseline */
-      margin-bottom: 14px; /* Creates a uniform gap before the labels start */
+      align-items: flex-end;
+      margin-bottom: 14px;
     }
     .pub-count-n span { color: var(--blue); font-size: 2rem; }
     .pub-count-l {
@@ -912,7 +919,7 @@
       .contact-info, .contact-quote { padding: 64px 32px; }
       .contact-info { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
       footer { padding: 22px 32px; flex-direction: column; gap: 8px; text-align: center; }
-footer > div { text-align: center; }
+      footer > div { text-align: center; }
       .publications { padding: 80px 32px; }
       .pub-block { grid-template-columns: 1fr; gap: 48px; }
       .felicitation-imgs { grid-template-columns: 1fr 1fr; }
@@ -1128,7 +1135,7 @@ footer > div { text-align: center; }
         <div class="exp-card reveal d2">
           <div class="exp-card-num">02</div>
           <svg class="exp-icon" viewBox="0 0 40 40" fill="none">
-            <path d="M32 6H8C5.79 6 4 7.79 4 10v20c0 2.21 1.79 4 4 4h24c2.21 0 4-1.79 4-4V10c0-2.21-1.79-4-4-4zm0 24H8V10h24v20zM20 25c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 2.24 5 5 5z" fill="currentColor"/>
+            <path d="M32 6H8C5.79 6 4 7.79 4 10v20c0 2.21 1.79 4 4 4h24c2.21 0 4-1.79 4-4V10c0-2.21-1.79-4-4-4zm0 24H8V10h24v20zM20 25c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z" fill="currentColor"/>
           </svg>
           <h3>Robotic &amp; Minimally Invasive Surgery</h3>
           <p>International fellowship-trained in robotic surgery — delivering precise, low-morbidity outcomes and faster recovery for patients.</p>
@@ -1194,13 +1201,13 @@ footer > div { text-align: center; }
         <img src="hospital3.png" alt="Oncology Hospital, Kolkata" loading="lazy" onerror="this.style.display='none'">
       </div>
 
-      <!-- Felicitation Images -->
+      <!-- Felicitation Images — using relative paths for performance -->
       <div class="felicitation-block reveal d4">
         <div class="felicitation-label">Recognitions &amp; Felicitations</div>
         <div class="felicitation-imgs">
           <div class="felicitation-img-wrap">
             <img
-              src="https://raw.githubusercontent.com/drdipanwitabanerjee/official/main/Felicitation%201.png"
+              src="Felicitation 1.png"
               alt="Dr. Dipanwita Banerjee, Gynaecological Oncologist, receiving recognition in Kolkata"
               loading="lazy"
               onerror="this.parentElement.style.background='linear-gradient(160deg,#2d4a6e,#1a2e4a)';this.style.display='none'"
@@ -1208,7 +1215,7 @@ footer > div { text-align: center; }
           </div>
           <div class="felicitation-img-wrap">
             <img
-              src="https://raw.githubusercontent.com/drdipanwitabanerjee/official/main/Felicitation%202.jpeg"
+              src="Felicitation 2.jpeg"
               alt="Dr. Dipanwita Banerjee at felicitation ceremony"
               loading="lazy"
               onerror="this.parentElement.style.background='linear-gradient(160deg,#2d4a6e,#1a2e4a)';this.style.display='none'"
@@ -1282,7 +1289,6 @@ footer > div { text-align: center; }
     </div>
   </section>
 
-  <!-- ─── PUBLICATIONS — clean elegant block ─── -->
   <section class="publications" id="publications">
     <div class="pub-block">
       <div class="pub-block-left">
@@ -1304,7 +1310,7 @@ footer > div { text-align: center; }
         <div class="pub-divider"></div>
         <p class="pub-cta-text">The complete list of publications, book chapters, and reviews is available as a downloadable document.</p>
         <a
-          href="https://raw.githubusercontent.com/drdipanwitabanerjee/official/main/Publications.pdf"
+          href="Publications.pdf"
           class="btn-pub-download"
           target="_blank"
           rel="noopener"
@@ -1356,7 +1362,7 @@ footer > div { text-align: center; }
     </div>
   </section>
 
-  <!-- Lightbox (shared by homepage video preview) -->
+  <!-- Lightbox -->
   <div class="lightbox-overlay" id="lightbox">
     <div class="lightbox-inner">
       <button class="lightbox-close" id="lightboxClose">
@@ -1364,7 +1370,7 @@ footer > div { text-align: center; }
         Close
       </button>
       <div class="lightbox-video-wrap">
-        <iframe id="lightboxIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe id="lightboxIframe" src="" allow="autoplay; encrypted-media" allowfullscreen title="Video player"></iframe>
       </div>
       <div class="lightbox-title" id="lightboxTitle"></div>
     </div>
@@ -1385,7 +1391,12 @@ footer > div { text-align: center; }
             <div class="ci-label">Location</div>
             <div class="ci-value" style="margin-bottom: 15px;">Kolkata, West Bengal, India</div>
             <div style="width: 100%; max-width: 480px; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); line-height: 0;">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.318859200783!2d88.46622187384955!3d22.567174633172005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02750a9b4291b9%3A0xc5a3944340fd7afc!2sDr.%20Dipanwita%20Banerjee%20%E2%80%94%20Gynaecological%20Oncologist%20(CNCI%20New%20Town)!5e0!3m2!1sen!2sin!4v1779694182140!5m2!1sen!2sin" width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <!-- FIX: Added title attribute to iframe for accessibility -->
+              <iframe
+                title="Location map — Dr. Dipanwita Banerjee, CNCI New Town, Kolkata"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.318859200783!2d88.46622187384955!3d22.567174633172005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02750a9b4291b9%3A0xc5a3944340fd7afc!2sDr.%20Dipanwita%20Banerjee%20%E2%80%94%20Gynaecological%20Oncologist%20(CNCI%20New%20Town)!5e0!3m2!1sen!2sin!4v1779694182140!5m2!1sen!2sin"
+                width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
           </div>
         </div>
@@ -1490,11 +1501,11 @@ footer > div { text-align: center; }
     }, { threshold: 0.05, rootMargin: '0px 0px 200px 0px' });
     revealEls.forEach(el => obs.observe(el));
 
-    // ── Blog preview ──
+    // ── Blog preview — graceful failure, no console errors ──
     const blogGrid = document.getElementById('blog-preview-grid');
     if (blogGrid) {
       fetch('blogs.json')
-        .then(r => r.ok ? r.json() : Promise.reject())
+        .then(r => { if (!r.ok) throw new Error('not found'); return r.json(); })
         .then(blogs => {
           blogGrid.innerHTML = '';
           blogs.slice(0, 3).forEach((blog, i) => {
@@ -1535,11 +1546,11 @@ footer > div { text-align: center; }
     lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-    // ── Video preview ──
+    // ── Video preview — graceful failure, no console errors ──
     const videoGrid = document.getElementById('video-preview-grid');
     if (videoGrid) {
       fetch('videos.json')
-        .then(r => r.ok ? r.json() : Promise.reject())
+        .then(r => { if (!r.ok) throw new Error('not found'); return r.json(); })
         .then(videos => {
           videoGrid.innerHTML = '';
           videos.slice(0, 3).forEach((v, i) => {
