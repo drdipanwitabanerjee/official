@@ -634,9 +634,37 @@
       display: flex; align-items: center; overflow: hidden;
     }
     .robotic-bg {
-      position: absolute; inset: 0;
-      background: url('robotic.webp') center / cover no-repeat, linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
-    }
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
+}
+.robotic-bg::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url('robotic.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  animation: rotateBg 8s ease-in-out infinite;
+}
+.robotic-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url('robotic2.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: rotateBg2 8s ease-in-out infinite;
+}
+@keyframes rotateBg {
+  0%, 40%   { opacity: 1; }
+  50%, 90%  { opacity: 0; }
+  100%      { opacity: 1; }
+}
+@keyframes rotateBg2 {
+  0%, 40%   { opacity: 0; }
+  50%, 90%  { opacity: 1; }
+  100%      { opacity: 0; }
+}
     .robotic-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(
