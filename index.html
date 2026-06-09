@@ -1144,7 +1144,7 @@
     .btn-all-blogs:hover { border-color: var(--gold-light); color: var(--gold-light); }
     .btn-all-blogs svg { transition: transform 0.3s; }
     .btn-all-blogs:hover svg { transform: translateX(3px); }
-    #blog-preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; position: relative; z-index: 1; }
+    #blog-preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; position: relative; z-index: 1; min-height: 420px; }
     .blog-preview-card { padding: 42px 34px; background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.06); position: relative; overflow: hidden; transition: background 0.4s, transform 0.4s; display: flex; flex-direction: column; text-decoration: none; }
     .blog-preview-card:hover { background: rgba(255,255,255,0.075); transform: translateY(-5px); }
     .blog-preview-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold), var(--blue-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.45s ease; }
@@ -1165,7 +1165,7 @@
     .btn-all-videos:hover { border-color: var(--gold); color: var(--white); background: var(--gold); }
     .btn-all-videos svg { transition: transform 0.3s; }
     .btn-all-videos:hover svg { transform: translateX(3px); }
-    #video-preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; z-index: 1; }
+    #video-preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; z-index: 1; min-height: 380px; }
     .vp-card { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 3px; overflow: hidden; cursor: pointer; transition: transform 0.35s, box-shadow 0.35s; position: relative; }
     .vp-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(26,46,74,0.13); }
     .vp-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold), var(--blue-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.45s ease; }
