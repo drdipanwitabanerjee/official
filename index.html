@@ -178,82 +178,99 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap"></noscript>
   
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Physician",
-    "name": "Dr. Dipanwita Banerjee — Gynaecological Oncologist",
-    "image": "https://www.drdipanwitabanerjee.com/profile.webp",
-    "telephone": "+916291681013",
-    "email": "dr.dipanwita@yahoo.co.in",
-    "url": "https://www.drdipanwitabanerjee.com/",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Kolkata",
-      "addressRegion": "West Bengal",
-      "addressCountry": "India"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "22.5726",
-      "longitude": "88.3639"
-    },
-    "medicalSpecialty": ["Oncology", "ObstetricsAndGynecology"],
-    "description": "Senior Consultant Gynaecological Oncologist in Kolkata specializing in complex cancer surgeries, robotic surgery, and cervical cancer prevention. Gyane cancer doctor and gynae cancer specialist in Kolkata. Trusted lady cancer doctor in Kolkata. Best women cancer surgeon in Kolkata. Kolkata's most qualified gyanecological oncologist. AIIMS Doctor in Kolkata. Most experienced cancer surgeon.",
-    "hasMap": "https://maps.google.com/?q=Chittaranjan+National+Cancer+Institute+Kolkata",
-    "priceRange": "$$",
-    "openingHours": "Mo-Sa 09:00-17:00",
-    "sameAs": [
-      "https://www.linkedin.com/in/drdipanwitabanerjee",
-      "https://www.facebook.com/dr.dipanwita",
-      "https://www.instagram.com/dr.dipanwita",
-      "https://x.com/DipanwitaCNCI"
-    ],
-    "knowsAbout": [
-      "Gynaecological Oncology",
-      "Cervical Cancer Surgery",
-      "Ovarian Cancer Treatment",
-      "Robotic Surgery",
-      "Colposcopy",
-      "HPV Vaccination"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Dr. Dipanwita Banerjee",
-    "honorificPrefix": "Dr.",
-    "jobTitle": "Senior Consultant Gynaecological Oncologist",
-    "worksFor": {
-      "@type": "MedicalOrganization",
-      "name": "Chittaranjan National Cancer Institute",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Physician",
+      "@id": "https://www.drdipanwitabanerjee.com/#physician",
+      "name": "Dr. Dipanwita Banerjee",
+      "image": "https://www.drdipanwitabanerjee.com/profile.webp",
+      "telephone": "+916291681013",
+      "email": "dr.dipanwita@yahoo.co.in",
+      "url": "https://www.drdipanwitabanerjee.com/",
+      "priceRange": "$$",
+      "openingHours": "Mo-Sa 09:00-17:00",
+      "medicalSpecialty": [
+        "Oncology",
+        "ObstetricsAndGynecology",
+        "SurgicalOncology"
+      ],
+      "knowsAbout": [
+        "Gynaecological Oncology",
+        "Cervical Cancer Surgery",
+        "Ovarian Cancer Treatment",
+        "Robotic Surgery",
+        "Colposcopy",
+        "HPV Vaccination",
+        "Cytoreductive Surgery",
+        "HIPEC"
+      ],
+      "description": "Senior Consultant Gynaecological Oncologist in Kolkata. MCh (AIIMS New Delhi) trained specialist in cervical, ovarian, and uterine cancers, complex cytoreductive surgeries, and advanced robotic gynaecological surgery.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Kolkata",
         "addressRegion": "West Bengal",
         "addressCountry": "India"
-      }
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.5726",
+        "longitude": "88.3639"
+      },
+      "hospitalAffiliation": {
+        "@type": "MedicalOrganization",
+        "name": "Chittaranjan National Cancer Institute (CNCI)",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kolkata",
+          "addressRegion": "West Bengal",
+          "addressCountry": "India"
+        }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/drdipanwitabanerjee",
+        "https://www.facebook.com/dr.dipanwita",
+        "https://www.instagram.com/dr.dipanwita",
+        "https://x.com/DipanwitaCNCI"
+      ]
     },
-    "alumniOf": [
-      { "@type": "CollegeOrUniversity", "name": "AIIMS New Delhi" },
-      { "@type": "CollegeOrUniversity", "name": "IPGME&R Kolkata" }
-    ],
-    "hasCredential": [
-      "MCh Gynaecological Oncology — AIIMS New Delhi",
-      "MS OBG — IPGME&R Kolkata",
-      "FICOG",
-      "IFCPC IARC Certified Colposcopist"
-    ],
-    "url": "https://www.drdipanwitabanerjee.com/",
-    "image": "https://www.drdipanwitabanerjee.com/profile.webp",
-    "sameAs": [
-      "https://www.linkedin.com/in/drdipanwitabanerjee",
-      "https://www.facebook.com/dr.dipanwita",
-      "https://www.instagram.com/dr.dipanwita"
-    ]
-  }
-  </script>
+    {
+      "@type": "Person",
+      "@id": "https://www.drdipanwitabanerjee.com/#person",
+      "name": "Dr. Dipanwita Banerjee",
+      "honorificPrefix": "Dr.",
+      "jobTitle": "Senior Consultant Gynaecological Oncologist",
+      "worksFor": {
+        "@type": "MedicalOrganization",
+        "name": "Chittaranjan National Cancer Institute"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "All India Institute of Medical Sciences (AIIMS), New Delhi"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "IPGME&R Kolkata"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Degree",
+          "name": "MCh Gynaecological Oncology — AIIMS New Delhi"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Degree",
+          "name": "MS Obstetrics and Gynaecology — IPGME&R Kolkata"
+        }
+      ]
+    }
+  ]
+}
+</script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1164,6 +1181,8 @@
     .vp-date { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
     .vp-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--navy); line-height: 1.35; }
     .vp-loading { grid-column: 1/-1; padding: 60px 24px; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--light-grey); }
+     #video-preview-grid { min-height: 380px; }
+     #blog-preview-grid { min-height: 380px; }
 
     /* Lightbox */
     .lightbox-overlay { position: fixed; inset: 0; z-index: 999; background: rgba(10,16,26,0.94); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; padding: 24px; }
