@@ -258,7 +258,7 @@
     }
     .nav-brand {
       display: flex; flex-direction: column; gap: 2px; text-decoration: none;
-      min-width: 320px;
+      min-width: 220px;
       flex-shrink: 0;
     }
     .nav-brand-name {
@@ -1422,64 +1422,5 @@
         });
     }
   </script>
-<!-- ─── Language Switcher Pill (mobile-visible) ─── -->
-<div id="lang-pill" style="
-  position: fixed; top: 14px; right: 68px; z-index: 201;
-  display: flex; gap: 0; border-radius: 4px;
-  overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.35);
-">
-  <a href="https://www.drdipanwitabanerjee.com/"
-     style="padding: 6px 10px; font-size: 0.70rem; font-family: Lato, sans-serif;
-            font-weight: 700; text-decoration: none; letter-spacing: 0.08em;
-            background: #1a2e4a; color: rgba(255,255,255,0.45); border-right: 1px solid rgba(255,255,255,0.1);">
-    EN
-  </a>
-  <a href="https://www.drdipanwitabanerjee.com/bn/"
-     style="padding: 6px 10px; font-size: 0.70rem; font-family: Lato, sans-serif;
-            font-weight: 700; text-decoration: none; letter-spacing: 0.04em;
-            background: #1a2e4a; color: rgba(255,255,255,0.45); border-right: 1px solid rgba(255,255,255,0.1);">
-    বাং
-  </a>
-  <a href="https://www.drdipanwitabanerjee.com/hi/"
-     style="padding: 6px 10px; font-size: 0.70rem; font-family: Lato, sans-serif;
-            font-weight: 700; text-decoration: none; letter-spacing: 0.04em;
-            background: #1a2e4a; color: rgba(255,255,255,0.45);">
-    हि
-  </a>
-</div>
-
-<script>
-  // Highlight the active language
-  (function() {
-    var path = window.location.pathname;
-    var links = document.querySelectorAll('#lang-pill a');
-    links.forEach(function(a) {
-      var href = a.getAttribute('href');
-      var isActive =
-        (href.endsWith('/bn/') && path.startsWith('/bn')) ||
-        (href.endsWith('/hi/') && path.startsWith('/hi')) ||
-        (href.endsWith('.com/') && !path.startsWith('/bn') && !path.startsWith('/hi'));
-      if (isActive) {
-        a.style.background = '#b89660';
-        a.style.color = '#ffffff';
-      }
-    });
-    // Sync pill colour with nav scroll state
-    var nav = document.getElementById('nav');
-    if (nav) {
-      var pill = document.getElementById('lang-pill');
-      var observer = new MutationObserver(function() {
-        var scrolled = nav.classList.contains('scrolled');
-        document.querySelectorAll('#lang-pill a').forEach(function(a) {
-          if (!a.style.background.includes('b89660')) {
-            a.style.background = scrolled ? '#ece8e0' : '#1a2e4a';
-            a.style.color = scrolled ? '#5a6070' : 'rgba(255,255,255,0.45)';
-          }
-        });
-      });
-      observer.observe(nav, { attributes: true, attributeFilter: ['class'] });
-    }
-  })();
-</script>
 </body>
 </html>
