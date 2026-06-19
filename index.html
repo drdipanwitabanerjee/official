@@ -352,7 +352,7 @@
     }
     .nav-brand {
       display: flex; flex-direction: column; gap: 2px; text-decoration: none;
-      min-width: 320px;
+      min-width: 220px;
       flex-shrink: 0;
     }
     .nav-brand-name {
@@ -371,7 +371,7 @@
       white-space: nowrap;
     }
     nav.scrolled .nav-brand-title { color: var(--light-grey); }
-    .nav-links { display: flex; gap: 34px; list-style: none; align-items: center; }
+    .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
     .nav-links a {
       font-size: 0.80rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 400;
       color: rgba(255,255,255,0.75); text-decoration: none;
@@ -435,6 +435,9 @@
       transition: transform 0.4s ease;
     }
     .mobile-nav.open { transform: translateY(0); }
+    .mobile-lang { display: flex; gap: 12px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .mobile-lang a { font-size: 0.80rem; color: rgba(255,255,255,0.45); text-decoration: none; font-family: 'Lato', sans-serif; }
+    .mobile-lang a.active, .mobile-lang a:hover { color: var(--gold-light); }
     .mobile-nav a {
       display: block; padding: 16px 0;
       font-size: 1.1rem; letter-spacing: 0.08em;
@@ -1311,6 +1314,11 @@
   </nav>
 
   <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-lang">
+      <a href="/" class="active">EN</a>
+      <a href="/bn/">বাংলা</a>
+      <a href="/hi/">हिन्दी</a>
+    </div>
     <a href="#about"        onclick="closeMobile()">About</a>
     <a href="#expertise"    onclick="closeMobile()">Expertise</a>
     <a href="#experience"   onclick="closeMobile()">Experience</a>
