@@ -7,7 +7,43 @@
   <meta name="description" content="Watch interviews and educational videos featuring Dr. Dipanwita Banerjee, MCh AIIMS — Gynaecological Oncologist at CNCI Kolkata, speaking on women's cancer care, cervical cancer, and HPV vaccination.">
   <meta name="author" content="Dr. Dipanwita Banerjee">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://drdipanwitabanerjee.com/official/videos.html">
+
+  <!-- ═══ FIXED: canonical stripped of /official/ repo path ═══ -->
+  <link rel="canonical" href="https://drdipanwitabanerjee.com/videos.html">
+
+  <!-- ═══ Open Graph (was entirely missing) ═══ -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://drdipanwitabanerjee.com/videos.html">
+  <meta property="og:title"       content="Videos & Interviews | Dr. Dipanwita Banerjee — Gynaecological Oncologist Kolkata">
+  <meta property="og:description" content="Watch interviews and educational talks by Dr. Dipanwita Banerjee, MCh AIIMS — Senior Consultant Gynaecological Oncologist at CNCI Kolkata, on women's cancer care, HPV vaccination, and cervical cancer prevention.">
+  <meta property="og:image"       content="https://drdipanwitabanerjee.com/og-image.jpg">
+  <meta property="og:site_name"   content="Dr. Dipanwita Banerjee">
+  <meta name="twitter:card"       content="summary_large_image">
+  <meta name="twitter:title"      content="Videos & Interviews | Dr. Dipanwita Banerjee">
+  <meta name="twitter:description" content="Interviews and educational talks on gynaecological oncology, HPV vaccination, and women's cancer care.">
+  <meta name="twitter:image"      content="https://drdipanwitabanerjee.com/og-image.jpg">
+
+  <!-- ═══ BreadcrumbList — static, always present ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://drdipanwitabanerjee.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Videos & Interviews",
+        "item": "https://drdipanwitabanerjee.com/videos.html"
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -290,9 +326,106 @@
       </div>
       <div class="video-count" id="video-count"></div>
     </div>
+
+    <!--
+      STATIC FALLBACK GRID — visible to non-JS crawlers (Googlebot, AI bots).
+      JS fetches videos.json and replaces this innerHTML on load; live users
+      always see the dynamic cards. When you add a video to videos.json,
+      add a matching card here too.
+    -->
     <div id="video-grid">
-      <div class="video-loading">Loading videos&hellip;</div>
-    </div>
+
+      <!-- STATIC CARD 1 — mirrors videos.json entry 1 -->
+      <article class="video-card reveal d1" data-static="true">
+        <div class="video-thumb">
+          <img
+            src="https://img.youtube.com/vi/iIFHIy0Hg8E/maxresdefault.jpg"
+            alt="Interview with Dr. Dipanwita Banerjee — Gynaecological Oncologist"
+            width="480" height="270"
+            onerror="this.src='https://img.youtube.com/vi/iIFHIy0Hg8E/hqdefault.jpg'"
+          >
+          <div class="video-play-btn">
+            <div class="play-circle">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M5 3l11 6-11 6V3z" fill="#1a2e4a"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="video-card-body">
+          <div class="video-date">Aug 2024</div>
+          <h3>Interview with Dr. Dipanwita Banerjee — Gynaecological Oncologist</h3>
+          <p>Dr. Dipanwita Banerjee speaks about gynaecological cancer care, early detection, and the importance of cervical cancer screening for women in India.</p>
+          <span class="video-watch-label">
+            Watch Video
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+      </article>
+
+      <!-- STATIC CARD 2 — mirrors videos.json entry 2 -->
+      <article class="video-card reveal d2" data-static="true">
+        <div class="video-thumb">
+          <img
+            src="https://img.youtube.com/vi/48JkSTWtYks/maxresdefault.jpg"
+            alt="Virtual Session on Anaemia Mukt Bharat"
+            width="480" height="270"
+            onerror="this.src='https://img.youtube.com/vi/48JkSTWtYks/hqdefault.jpg'"
+          >
+          <div class="video-play-btn">
+            <div class="play-circle">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M5 3l11 6-11 6V3z" fill="#1a2e4a"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="video-card-body">
+          <div class="video-date">April 2025</div>
+          <h3>Virtual Session on Anaemia Mukt Bharat</h3>
+          <p>As part of our National Awareness Campaign, this session brings together expert voices to highlight how Next Generation IV Therapy is reshaping treatment outcomes—faster, safer, and more impactful.</p>
+          <span class="video-watch-label">
+            Watch Video
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+      </article>
+
+      <!-- STATIC CARD 3 — mirrors videos.json entry 3 -->
+      <article class="video-card reveal d3" data-static="true">
+        <div class="video-thumb">
+          <img
+            src="https://img.youtube.com/vi/vrBHq8jivY8/maxresdefault.jpg"
+            alt="Cervical Cancer and Papillomavirus — Dr. Dipanwita Banerjee"
+            width="480" height="270"
+            onerror="this.src='https://img.youtube.com/vi/vrBHq8jivY8/hqdefault.jpg'"
+          >
+          <div class="video-play-btn">
+            <div class="play-circle">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M5 3l11 6-11 6V3z" fill="#1a2e4a"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="video-card-body">
+          <div class="video-date">May 2025</div>
+          <h3>Cervical Cancer and Papillomavirus</h3>
+          <p>Dr. Dipanwita Banerjee shares her thoughts on India's significant burden of HPV-related diseases, particularly cervical cancer, which remains the second most common cancer among women in the country.</p>
+          <span class="video-watch-label">
+            Watch Video
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+      </article>
+
+    </div><!-- /#video-grid -->
   </section>
 
   <footer>
@@ -310,23 +443,23 @@
   </a>
 
   <!-- Lightbox -->
-  <div class="lightbox-overlay" id="lightbox">
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Video player">
     <div class="lightbox-inner">
-      <button class="lightbox-close" id="lightboxClose">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close video">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
         Close
       </button>
       <div class="lightbox-video-wrap">
-        <iframe id="lightboxIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe id="lightboxIframe" src="" allow="autoplay; encrypted-media" allowfullscreen title="Video player"></iframe>
       </div>
       <div class="lightbox-title" id="lightboxTitle"></div>
     </div>
   </div>
 
   <script>
-    // Nav
+    // ── Nav ──────────────────────────────────────────────────────────────────
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => nav.classList.toggle('compact', window.scrollY > 50), { passive: true });
     const ham = document.getElementById('ham');
@@ -342,17 +475,17 @@
       document.body.style.overflow = '';
     }
 
-    // Reveal
+    // ── Reveal observer ──────────────────────────────────────────────────────
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('revealed'); });
     }, { threshold: 0.05, rootMargin: '0px 0px 200px 0px' });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    // Lightbox
-    const lightbox   = document.getElementById('lightbox');
-    const lbIframe   = document.getElementById('lightboxIframe');
-    const lbTitle    = document.getElementById('lightboxTitle');
-    const lbClose    = document.getElementById('lightboxClose');
+    // ── Lightbox ─────────────────────────────────────────────────────────────
+    const lightbox = document.getElementById('lightbox');
+    const lbIframe = document.getElementById('lightboxIframe');
+    const lbTitle  = document.getElementById('lightboxTitle');
+    const lbClose  = document.getElementById('lightboxClose');
 
     function openLightbox(youtubeId, title) {
       lbIframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
@@ -370,58 +503,128 @@
     lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-    // Load videos
-    const grid     = document.getElementById('video-grid');
-    const countEl  = document.getElementById('video-count');
+    // ── Video card builder ───────────────────────────────────────────────────
+    function buildCard(v, i) {
+      const thumb = `https://img.youtube.com/vi/${v.youtube_id}/maxresdefault.jpg`;
+      const card = document.createElement('article');
+      card.className = 'video-card reveal d' + Math.min(i + 1, 3);
+      card.innerHTML = `
+        <div class="video-thumb">
+          <img
+            src="${thumb}"
+            alt="${v.title}"
+            width="480" height="270"
+            loading="lazy"
+            onerror="this.src='https://img.youtube.com/vi/${v.youtube_id}/hqdefault.jpg'"
+          >
+          <div class="video-play-btn">
+            <div class="play-circle">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M5 3l11 6-11 6V3z" fill="#1a2e4a"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="video-card-body">
+          <div class="video-date">${v.date || ''}</div>
+          <h3>${v.title}</h3>
+          <p>${v.description}</p>
+          <span class="video-watch-label">
+            Watch Video
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+      `;
+      card.addEventListener('click', () => openLightbox(v.youtube_id, v.title));
+      return card;
+    }
+
+    // ── Inject VideoObject + ItemList schema ─────────────────────────────────
+    // Called AFTER the grid is rendered so schema only describes visible content.
+    function injectVideoSchema(videos) {
+      const pageUrl = 'https://drdipanwitabanerjee.com/videos.html';
+
+      const itemListEl = videos.map((v, i) => ({
+        '@type': 'ListItem',
+        'position': i + 1,
+        'url': `https://www.youtube.com/watch?v=${v.youtube_id}`
+      }));
+
+      const videoObjects = videos.map(v => ({
+        '@type': 'VideoObject',
+        'name': v.title,
+        'description': v.description,
+        'thumbnailUrl': `https://img.youtube.com/vi/${v.youtube_id}/maxresdefault.jpg`,
+        'uploadDate': v.date || '',
+        'embedUrl': `https://www.youtube.com/embed/${v.youtube_id}`,
+        'url': `https://www.youtube.com/watch?v=${v.youtube_id}`,
+        'publisher': {
+          '@type': 'Person',
+          'name': 'Dr. Dipanwita Banerjee',
+          'url': 'https://drdipanwitabanerjee.com/'
+        }
+      }));
+
+      const schema = [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          'name': 'Videos & Interviews — Dr. Dipanwita Banerjee',
+          'url': pageUrl,
+          'numberOfItems': videos.length,
+          'itemListElement': itemListEl
+        },
+        ...videoObjects.map(vo => ({ '@context': 'https://schema.org', ...vo }))
+      ];
+
+      const tag = document.createElement('script');
+      tag.type = 'application/ld+json';
+      tag.textContent = JSON.stringify(schema);
+      document.head.appendChild(tag);
+    }
+
+    // ── Load videos from JSON, replace static grid ───────────────────────────
+    const grid    = document.getElementById('video-grid');
+    const countEl = document.getElementById('video-count');
 
     fetch('videos.json')
-      .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+      .then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); })
       .then(videos => {
+        // Replace static fallback cards with live data
         grid.innerHTML = '';
+
         if (!videos.length) {
           grid.innerHTML = '<div class="video-loading">No videos available yet. Check back soon.</div>';
           return;
         }
+
         countEl.textContent = videos.length + ' video' + (videos.length !== 1 ? 's' : '');
+
         videos.forEach((v, i) => {
-          const thumb = `https://img.youtube.com/vi/${v.youtube_id}/maxresdefault.jpg`;
-          const card = document.createElement('div');
-          card.className = 'video-card reveal d' + Math.min(i + 1, 3);
-          card.innerHTML = `
-            <div class="video-thumb">
-              <img
-                src="${thumb}"
-                alt="${v.title}"
-                loading="lazy"
-                onerror="this.src='https://img.youtube.com/vi/${v.youtube_id}/hqdefault.jpg'"
-              >
-              <div class="video-play-btn">
-                <div class="play-circle">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path d="M5 3l11 6-11 6V3z" fill="#1a2e4a"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="video-card-body">
-              <div class="video-date">${v.date || ''}</div>
-              <h3>${v.title}</h3>
-              <p>${v.description}</p>
-              <span class="video-watch-label">
-                Watch Video
-                <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                  <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </div>
-          `;
-          card.addEventListener('click', () => openLightbox(v.youtube_id, v.title));
+          const card = buildCard(v, i);
           grid.appendChild(card);
           obs.observe(card);
         });
+
+        // Schema injection AFTER DOM is populated — content/schema now match
+        injectVideoSchema(videos);
       })
       .catch(() => {
-        grid.innerHTML = '<div class="video-loading">Videos could not be loaded. Please try again later.</div>';
+        // Fetch failed: keep the static cards in place (they're already in the DOM)
+        // so the page degrades gracefully rather than showing an error.
+        // Just quietly add click handlers to the static cards if they have real IDs.
+        document.querySelectorAll('.video-card[data-static]').forEach(card => {
+          const img = card.querySelector('img');
+          if (img) {
+            const src = img.src || '';
+            const match = src.match(/\/vi\/([^/]+)\//);
+            const id = match && !match[1].startsWith('PLACEHOLDER') ? match[1] : null;
+            const title = card.querySelector('h3')?.textContent || '';
+            if (id) card.addEventListener('click', () => openLightbox(id, title));
+          }
+        });
       });
   </script>
 </body>
