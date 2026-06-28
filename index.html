@@ -1415,7 +1415,7 @@
       <li><a href="#expertise">Expertise</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#research">Research</a></li>
-      <li><a href="#publications">Publications</a></li>
+      <li><a href="publications.html">Publications</a></li>
       <li><a href="blogs.html">Blogs</a></li>
       <li><a href="videos.html">Videos</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -1440,7 +1440,7 @@
     <a href="#expertise"    onclick="closeMobile()">Expertise</a>
     <a href="#experience"   onclick="closeMobile()">Experience</a>
     <a href="#research"     onclick="closeMobile()">Research</a>
-    <a href="#publications" onclick="closeMobile()">Publications</a>
+    <a href="publications.html" onclick="closeMobile()">Publications</a>
     <a href="blogs.html"    onclick="closeMobile()">Blogs</a>
     <a href="videos.html"   onclick="closeMobile()">Videos</a>
     <a href="#contact"      onclick="closeMobile()">Contact</a>
@@ -1706,21 +1706,31 @@
           </div>
         </div>
         <div class="pub-divider"></div>
-        <p class="pub-cta-text">The complete list of publications, book chapters, and reviews is available as a downloadable document.</p>
-        <a
-          href="Publications.pdf"
-          class="btn-pub-download"
-          target="_blank"
-          rel="noopener"
-          download="Dr_Dipanwita_Banerjee_Publications.pdf"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-          </svg>
-          Download Full Publication List
-        </a>
+        <p class="pub-cta-text">Browse the complete list online, or download it as a document.</p>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="publications.html" class="btn-pub-download">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            View Full List
+          </a>
+          
+            href="Publications.pdf"
+            class="btn-pub-download"
+            style="background: transparent; border: 1px solid var(--navy); color: var(--navy);"
+            target="_blank"
+            rel="noopener"
+            download="Dr_Dipanwita_Banerjee_Publications.pdf"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download PDF
+          </a>
+        </div>
       </div>
     </div>
   </section>
