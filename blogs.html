@@ -173,6 +173,12 @@
       border-radius: 2px;
       transition: background 0.3s, border-color 0.3s, color 0.3s !important;
     }
+    .lang-switcher { display: flex; align-items: center; gap: 6px; margin-left: 16px; }
+    .lang-switcher a { font-size: 0.70rem; letter-spacing: 0.1em; color: var(--light-grey); text-decoration: none; padding: 4px 8px; border-radius: 2px; transition: color 0.2s, background 0.2s; font-family: 'Lato', sans-serif; }
+    .lang-switcher a.active, .lang-switcher a:hover { color: var(--gold) !important; background: rgba(184,150,96,0.10); }
+    .mobile-lang { display: flex; gap: 12px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .mobile-lang a { font-size: 0.80rem; color: rgba(255,255,255,0.45); text-decoration: none; font-family: 'Lato', sans-serif; }
+    .mobile-lang a.active, .mobile-lang a:hover { color: var(--gold-light); }
     .nav-cta:hover {
       background: var(--gold) !important;
       border-color: var(--gold) !important;
@@ -389,6 +395,7 @@
       #blog-grid { grid-template-columns: 1fr 1fr; }
       footer { padding: 22px 32px; flex-direction: column; gap: 8px; text-align: center; }
       footer > div { text-align: center; }
+      .lang-switcher { display: none; }
     }
     @media (max-width: 640px) {
       .page-hero { padding: 120px 24px 60px; }
@@ -415,12 +422,22 @@
       <li><a href="blogs.html" class="active">Blogs</a></li>
       <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
     </ul>
+    <div class="lang-switcher">
+      <a href="/blogs.html" class="active">EN</a>
+      <a href="/bn/blogs.html">বাং</a>
+      <a href="/hi/blogs.html">हि</a>
+    </div>
     <button class="hamburger" id="ham" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-lang">
+      <a href="/blogs.html" class="active">EN</a>
+      <a href="/bn/blogs.html">বাংলা</a>
+      <a href="/hi/blogs.html">हिन्दी</a>
+    </div>
     <a href="index.html#about"        onclick="closeMobile()">About</a>
     <a href="index.html#expertise"    onclick="closeMobile()">Expertise</a>
     <a href="index.html#experience"   onclick="closeMobile()">Experience</a>
