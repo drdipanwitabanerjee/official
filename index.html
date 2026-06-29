@@ -839,6 +839,24 @@
       font-weight: 400;
     }
 
+    /* ─── GYNAE COMPARISON TABLE ─── */
+    .gynae-comparison { padding: 110px 64px; background: var(--cream-dark); }
+    .gynae-comparison .sec-label { color: var(--gold); }
+    .gynae-comparison h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 3rem); font-weight: 400; color: var(--navy); line-height: 1.2; margin-bottom: 18px; }
+    .gynae-comparison h2 em { font-style: italic; color: var(--blue); }
+    .gynae-comparison > p { font-size: 1rem; color: var(--mid-grey); line-height: 1.8; max-width: 640px; margin-bottom: 48px; }
+    .gynae-table-wrap { overflow-x: auto; }
+    .gynae-table { width: 100%; border-collapse: collapse; font-size: 0.96rem; background: var(--cream); }
+    .gynae-table th { background: var(--navy); color: var(--white); text-align: left; padding: 16px 20px; font-weight: 600; letter-spacing: 0.04em; font-size: 0.78rem; text-transform: uppercase; }
+    .gynae-table td { padding: 16px 20px; border-bottom: 1px solid var(--cream-dark); color: var(--charcoal); }
+    .gynae-table tr:nth-child(even) td { background: var(--cream-dark); }
+    .gynae-table td:first-child { font-weight: 700; color: var(--navy); }
+    @media (max-width: 1024px) {
+      .gynae-comparison { padding: 80px 32px; }
+      .gynae-table { font-size: 0.86rem; }
+      .gynae-table th, .gynae-table td { padding: 12px 14px; }
+    }
+
     /* ─── EXPERIENCE ─── */
     .experience {
       padding: 110px 64px;
@@ -1591,6 +1609,32 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <section class="gynae-comparison" id="conditions">
+    <div class="sec-label reveal">Conditions We Treat</div>
+    <h2 class="reveal d1">Gynaecological cancers <em>at a glance</em></h2>
+    <p class="reveal d2">A quick reference to common symptoms, risk factors, and screening availability across the five gynaecological cancers Dr. Banerjee treats.</p>
+
+    <div class="gynae-table-wrap reveal d3">
+      <table class="gynae-table">
+        <thead>
+          <tr>
+            <th>Cancer Type</th>
+            <th>Most Common Symptom</th>
+            <th>Key Risk Factor</th>
+            <th>Routine Screening</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Cervical</td><td>Abnormal bleeding or discharge</td><td>HPV infection</td><td>Yes — Pap smear + HPV test</td></tr>
+          <tr><td>Ovarian</td><td>Persistent bloating or fullness</td><td>BRCA mutation, family history</td><td>No routine screening</td></tr>
+          <tr><td>Uterine</td><td>Post-menopausal bleeding</td><td>Obesity, diabetes, PCOS</td><td>No routine screening</td></tr>
+          <tr><td>Vulval</td><td>Persistent itch or lump</td><td>HPV, lichen sclerosus</td><td>No routine screening</td></tr>
+          <tr><td>Vaginal</td><td>Abnormal vaginal bleeding</td><td>HPV infection, prior cervical cancer</td><td>No routine screening</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
