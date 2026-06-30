@@ -665,7 +665,7 @@
         <div class="sec-label light reveal">मेडिकल इनसाइट्स</div>
         <h2 class="reveal d1">नवीनतम <em>लेख एवं लेखन</em></h2>
       </div>
-      <a href="../blogs.html" class="btn-all-blogs reveal d2">सभी लेख <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="blogs.html" class="btn-all-blogs reveal d2">सभी लेख <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
     <div id="blog-preview-grid"><div class="bp-loading">लेख लोड हो रहे हैं&hellip;</div></div>
   </section>
@@ -763,12 +763,12 @@
 
     const blogGrid = document.getElementById('blog-preview-grid');
     if (blogGrid) {
-      fetch('../blogs.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(blogs => {
+      fetch('blogs.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(blogs => {
         blogGrid.innerHTML = '';
         blogs.slice(0, 3).forEach((blog, i) => {
           const card = document.createElement('a');
           card.className = 'blog-preview-card reveal d' + (i + 1);
-          card.href = '../blogs/' + blog.filename;
+          card.href = 'blogs/' + blog.filename;
           card.innerHTML = `<div class="bp-category">${blog.category || 'लेख'}</div><div class="bp-date">${blog.date}</div><h3>${blog.title}</h3><p>${blog.excerpt}</p><span class="bp-read">पढ़ें <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`;
           blogGrid.appendChild(card); obs.observe(card);
         });
