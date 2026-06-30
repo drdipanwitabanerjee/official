@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home pages -->
   <url>
     <loc>https://www.drdipanwitabanerjee.com/</loc>
     <lastmod>2026-06-29</lastmod>
@@ -31,15 +33,27 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/"/>
   </url>
+
+  <!-- Publications -->
   <url>
     <loc>https://www.drdipanwitabanerjee.com/publications.html</loc>
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Videos -->
+  <url>
+    <loc>https://www.drdipanwitabanerjee.com/videos.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog index pages -->
   <url>
     <loc>https://www.drdipanwitabanerjee.com/blogs.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs.html"/>
@@ -49,7 +63,7 @@
   </url>
   <url>
     <loc>https://www.drdipanwitabanerjee.com/bn/blogs.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs.html"/>
@@ -59,7 +73,7 @@
   </url>
   <url>
     <loc>https://www.drdipanwitabanerjee.com/hi/blogs.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs.html"/>
@@ -67,28 +81,133 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/blogs.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/blogs.html"/>
   </url>
+
+  <!-- Article: Ovarian Cancer Symptoms -->
+  <url>
+    <loc>https://www.drdipanwitabanerjee.com/blogs/ovarian-cancer-symptoms-diagnosis-india.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs/ovarian-cancer-symptoms-diagnosis-india.html"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.drdipanwitabanerjee.com/bn/blogs/ovarian-cancer-symptoms-diagnosis-india.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/blogs/ovarian-cancer-symptoms-diagnosis-india.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/blogs/ovarian-cancer-symptoms-diagnosis-india.html"/>
+  </url>
+  <url>
+    <loc>https://www.drdipanwitabanerjee.com/bn/blogs/ovarian-cancer-symptoms-diagnosis-india.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs/ovarian-cancer-symptoms-diagnosis-india.html"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.drdipanwitabanerjee.com/bn/blogs/ovarian-cancer-symptoms-diagnosis-india.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/blogs/ovarian-cancer-symptoms-diagnosis-india.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/blogs/ovarian-cancer-symptoms-diagnosis-india.html"/>
+  </url>
+  <url>
+    <loc>https://www.drdipanwitabanerjee.com/hi/blogs/ovarian-cancer-symptoms-diagnosis-india.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs/ovarian-cancer-symptoms-diagnosis-india.html"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.drdipanwitabanerjee.com/bn/blogs/ovarian-cancer-symptoms-diagnosis-india.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/blogs/ovarian-cancer-symptoms-diagnosis-india.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/blogs/ovarian-cancer-symptoms-diagnosis-india.html"/>
+  </url>
+
+  <!-- Article: Uterine Cancer -->
   <url>
     <loc>https://www.drdipanwitabanerjee.com/blogs/uterine-cancer-awareness-month.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs/uterine-cancer-awareness-month.html"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.drdipanwitabanerjee.com/bn/blogs/uterine-cancer-awareness-month.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/blogs/uterine-cancer-awareness-month.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/blogs/uterine-cancer-awareness-month.html"/>
   </url>
+  <url>
+    <loc>https://www.drdipanwitabanerjee.com/bn/blogs/uterine-cancer-awareness-month.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs/uterine-cancer-awareness-month.html"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.drdipanwitabanerjee.com/bn/blogs/uterine-cancer-awareness-month.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/blogs/uterine-cancer-awareness-month.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/blogs/uterine-cancer-awareness-month.html"/>
+  </url>
+  <url>
+    <loc>https://www.drdipanwitabanerjee.com/hi/blogs/uterine-cancer-awareness-month.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs/uterine-cancer-awareness-month.html"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.drdipanwitabanerjee.com/bn/blogs/uterine-cancer-awareness-month.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/blogs/uterine-cancer-awareness-month.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/blogs/uterine-cancer-awareness-month.html"/>
+  </url>
+
+  <!-- Article: HPV Vaccine Journey -->
   <url>
     <loc>https://www.drdipanwitabanerjee.com/blogs/hpv-vaccine-journey-india.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs/hpv-vaccine-journey-india.html"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.drdipanwitabanerjee.com/bn/blogs/hpv-vaccine-journey-india.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/blogs/hpv-vaccine-journey-india.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/blogs/hpv-vaccine-journey-india.html"/>
   </url>
+  <url>
+    <loc>https://www.drdipanwitabanerjee.com/bn/blogs/hpv-vaccine-journey-india.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs/hpv-vaccine-journey-india.html"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.drdipanwitabanerjee.com/bn/blogs/hpv-vaccine-journey-india.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/blogs/hpv-vaccine-journey-india.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/blogs/hpv-vaccine-journey-india.html"/>
+  </url>
+  <url>
+    <loc>https://www.drdipanwitabanerjee.com/hi/blogs/hpv-vaccine-journey-india.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs/hpv-vaccine-journey-india.html"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.drdipanwitabanerjee.com/bn/blogs/hpv-vaccine-journey-india.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/blogs/hpv-vaccine-journey-india.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/blogs/hpv-vaccine-journey-india.html"/>
+  </url>
+
+  <!-- Article: Cervical Cancer Screening -->
   <url>
     <loc>https://www.drdipanwitabanerjee.com/blogs/cervical-cancer-screening-hpv-vaccination.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs/cervical-cancer-screening-hpv-vaccination.html"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.drdipanwitabanerjee.com/bn/blogs/cervical-cancer-screening-hpv-vaccination.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/blogs/cervical-cancer-screening-hpv-vaccination.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/blogs/cervical-cancer-screening-hpv-vaccination.html"/>
   </url>
   <url>
-    <loc>https://www.drdipanwitabanerjee.com/videos.html</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.drdipanwitabanerjee.com/bn/blogs/cervical-cancer-screening-hpv-vaccination.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs/cervical-cancer-screening-hpv-vaccination.html"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.drdipanwitabanerjee.com/bn/blogs/cervical-cancer-screening-hpv-vaccination.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/blogs/cervical-cancer-screening-hpv-vaccination.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/blogs/cervical-cancer-screening-hpv-vaccination.html"/>
   </url>
+  <url>
+    <loc>https://www.drdipanwitabanerjee.com/hi/blogs/cervical-cancer-screening-hpv-vaccination.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drdipanwitabanerjee.com/blogs/cervical-cancer-screening-hpv-vaccination.html"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.drdipanwitabanerjee.com/bn/blogs/cervical-cancer-screening-hpv-vaccination.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.drdipanwitabanerjee.com/hi/blogs/cervical-cancer-screening-hpv-vaccination.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drdipanwitabanerjee.com/blogs/cervical-cancer-screening-hpv-vaccination.html"/>
+  </url>
+
 </urlset>
