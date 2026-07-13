@@ -1025,7 +1025,11 @@ nav {
       display: grid; grid-template-columns: 5fr 7fr; gap: 80px;
       align-items: center;
     }
-    .research-num-block { position: relative; }
+    .research-num-block {
+      position: relative;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center;
+    }
 .research-photo {
   width: 210px; aspect-ratio: 3/4;
   border-radius: 3px; overflow: hidden;
