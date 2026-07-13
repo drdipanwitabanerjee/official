@@ -475,7 +475,7 @@
       white-space: nowrap;
     }
     nav.scrolled .nav-brand-title { color: var(--light-grey); }
-    .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+    .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
     .nav-links a {
       font-size: 0.80rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 400;
       color: rgba(255,255,255,0.75); text-decoration: none;
@@ -501,10 +501,12 @@
     }
 
     /* Language switcher */
-    .lang-switcher {
-      display: flex; align-items: center; gap: 6px;
-      margin-left: 18px;
-    }
+.lang-switcher {
+  display: flex; align-items: center; gap: 6px;
+  margin-left: 28px;
+  padding-left: 18px;
+  border-left: 1px solid rgba(255,255,255,0.15);
+}
     .lang-switcher a {
       font-size: 0.70rem; letter-spacing: 0.1em;
       color: rgba(255,255,255,0.5); text-decoration: none;
@@ -615,13 +617,13 @@
       color: var(--gold-light); margin-bottom: 30px;
     }
     .eyebrow-line { width: 36px; height: 1px; background: var(--gold); }
-    .hero-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 5.5vw, 6rem);
-      font-weight: 400; line-height: 1.02;
-      color: var(--white); margin-bottom: 12px;
-      letter-spacing: -0.01em;
-    }
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4.2vw, 5rem);
+  font-weight: 400; line-height: 1.08;
+  color: var(--white); margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
     .hero-name em { font-style: italic; color: var(--sky); font-weight: 400; }
     .hero-credential {
       font-size: 0.78rem; letter-spacing: 0.12em;
