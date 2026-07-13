@@ -720,6 +720,7 @@
     .about {
       display: grid; grid-template-columns: 1fr 1fr;
       min-height: 85vh; overflow: hidden;
+      position: relative;
     }
     .about-img-wrap {
       position: relative; overflow: hidden; min-height: 480px;
@@ -741,6 +742,17 @@
       position: absolute; bottom: 22px; left: 24px;
       font-size: 0.70rem; letter-spacing: 0.14em; text-transform: uppercase;
       color: rgba(255,255,255,0.45);
+    }
+    .about-accent {
+      position: absolute; left: calc(50% - 88px); bottom: 56px;
+      width: 176px; aspect-ratio: 3/4; z-index: 5;
+      border-radius: 3px; overflow: hidden;
+      border: 6px solid var(--cream);
+      box-shadow: 0 20px 46px rgba(15,25,40,0.4);
+    }
+    .about-accent img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+      display: block;
     }
     .about-body {
       padding: 88px 72px;
@@ -1271,6 +1283,7 @@
       .about { grid-template-columns: 1fr; }
       .about-img-wrap { min-height: 56vw; max-height: 420px; }
       .about-img-fade { display: none; }
+      .about-accent { left: auto; right: 24px; bottom: -44px; width: 130px; border-width: 5px; }
       .about-body { padding: 56px 32px; }
       .expertise { padding: 80px 32px; }
       .expertise-intro { grid-template-columns: 1fr; }
@@ -1304,6 +1317,7 @@
       .felicitation-imgs { grid-template-columns: 1fr; }
       .floating-whatsapp { bottom: 76px; right: 20px; width: 50px; height: 50px; }
       footer { padding-bottom: 130px; }
+      .about-accent { width: 108px; bottom: -32px; right: 16px; border-width: 4px; }
     }
 
     /* ─── BLOG PREVIEW ─── */
@@ -1514,6 +1528,9 @@
         <img src="image.webp" alt="Dr. Dipanwita Banerjee receiving her MCh certificate at AIIMS New Delhi" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#2d4a6e,#1a2e4a)';this.style.display='none'">
         <div class="about-img-fade"></div>
         <div class="img-caption">MCh · AIIMS New Delhi</div>
+      </div>
+      <div class="about-accent reveal d3">
+        <img src="portrait2.webp" alt="Dr. Dipanwita Banerjee, Gynaecological Oncologist, at Chittaranjan National Cancer Institute, Kolkata" loading="lazy" onerror="this.parentElement.style.display='none'">
       </div>
       <div class="about-body">
         <div class="sec-label reveal">About the Oncologist</div>
