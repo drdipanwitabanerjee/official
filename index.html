@@ -591,18 +591,20 @@ nav {
     }
     .hero-text { max-width: 780px; }
     .hero-profile-img {
-      width: 260px;
-      height: 320px;
+      width: 300px;
+      height: 400px;
       object-fit: cover;
       object-position: center top;
       border-radius: 3px;
       border: 1px solid rgba(255,255,255,0.12);
       display: block;
       flex-shrink: 0;
+      align-self: center;
+      margin-right: 60px;
       filter: drop-shadow(0 8px 32px rgba(0,0,0,0.45));
     }
     .hero-profile-fallback {
-      width: 260px; height: 320px;
+      width: 300px; height: 400px;
       background: linear-gradient(160deg, rgba(58,111,168,0.35), rgba(26,46,74,0.8));
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: 3px;
@@ -610,6 +612,8 @@ nav {
       color: rgba(255,255,255,0.2);
       font-family: 'Cormorant Garamond', serif;
       font-size: 4rem;
+      align-self: center;
+      margin-right: 60px;
     }
     .eyebrow {
       display: inline-flex; align-items: center; gap: 14px;
@@ -1282,7 +1286,7 @@ nav {
       .hero { padding-top: 120px !important; align-items: center !important; }
       .hero-content { padding: 0 32px 140px !important; grid-template-columns: 1fr; gap: 36px; }
       .eyebrow { margin-bottom: 15px !important; }
-      .hero-profile-img, .hero-profile-fallback { width: 180px; height: 220px; }
+      .hero-profile-img, .hero-profile-fallback { width: 180px; height: 220px; margin-right: 0; }
       .hero-stats { flex-wrap: wrap; position: relative; right: auto; bottom: auto; width: 100%; margin-top: 0; }
       .hero-stats { position: absolute; }
       .about { grid-template-columns: 1fr; }
@@ -1512,7 +1516,7 @@ nav {
           <a href="#about" class="btn-outline">Learn More</a>
         </div>
       </div>
-      <img src="profile.webp" alt="Dr. Dipanwita Banerjee - Gynaecological Cancer Specialist and Oncologist in Kolkata" class="hero-profile-img" width="260" height="320" fetchpriority="high" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="profile.webp" alt="Dr. Dipanwita Banerjee - Gynaecological Cancer Specialist and Oncologist in Kolkata" class="hero-profile-img" width="300" height="400" fetchpriority="high" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="hero-profile-fallback" style="display:none">DB</div>
     </div>
     <div class="hero-stats">
