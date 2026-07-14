@@ -152,8 +152,8 @@
     .hero-pattern { position: absolute; inset: 0; background-image: radial-gradient(rgba(200,221,240,0.08) 1px, transparent 1px); background-size: 28px 28px; }
     .hero-content { position: relative; z-index: 2; padding: 120px 80px 130px; max-width: 1280px; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 60px; width: 100%; }
     .hero-text { max-width: 780px; }
-    .hero-profile-img { width: 260px; height: 320px; object-fit: cover; object-position: center top; border-radius: 3px; border: 1px solid rgba(255,255,255,0.12); display: block; flex-shrink: 0; filter: drop-shadow(0 8px 32px rgba(0,0,0,0.45)); }
-    .hero-profile-fallback { width: 260px; height: 320px; background: linear-gradient(160deg, rgba(58,111,168,0.35), rgba(26,46,74,0.8)); border: 1px solid rgba(255,255,255,0.12); border-radius: 3px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.2); font-family: 'Tiro Devanagari',serif; font-size: 4rem; }
+    .hero-profile-img { width: 300px; height: 400px; object-fit: cover; object-position: center top; border-radius: 3px; border: 1px solid rgba(255,255,255,0.12); display: block; flex-shrink: 0; align-self: center; margin-right: 60px; filter: drop-shadow(0 8px 32px rgba(0,0,0,0.45)); }
+.hero-profile-fallback { width: 300px; height: 400px; background: linear-gradient(160deg, rgba(58,111,168,0.35), rgba(26,46,74,0.8)); border: 1px solid rgba(255,255,255,0.12); border-radius: 3px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.2); font-family: 'Tiro Devanagari',serif; font-size: 4rem; align-self: center; margin-right: 60px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 14px; font-size: 0.84rem; letter-spacing: 0.04em; color: var(--gold-light); margin-bottom: 30px; font-family: 'Noto Sans Devanagari','Lato',sans-serif; }
     .eyebrow-line { width: 36px; height: 1px; background: var(--gold); flex-shrink: 0; }
     .hero-name { font-family: 'Tiro Devanagari','Cormorant Garamond',serif; font-size: clamp(2rem, 4.5vw, 5rem); font-weight: 400; line-height: 1.25; color: var(--white); margin-bottom: 12px; }
@@ -245,6 +245,9 @@
     .robotic-body p { font-size: 0.96rem; color: rgba(255,255,255,0.88); line-height: 2.1; margin-bottom: 34px; font-weight: 400; font-family: 'Noto Sans Devanagari','Lato',sans-serif; }
     .badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 22px; background: var(--gold); font-size: 0.82rem; letter-spacing: 0.02em; color: var(--navy); font-weight: 700; border-radius: 2px; font-family: 'Noto Sans Devanagari','Lato',sans-serif; }
     .research { padding: 110px 64px; background: var(--cream-dark); display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: center; }
+.research-num-block { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.research-photo { width: 210px; aspect-ratio: 3/4; border-radius: 3px; overflow: hidden; border: 1px solid rgba(26,46,74,0.1); box-shadow: 0 20px 44px rgba(26,46,74,0.32); margin-bottom: 20px; }
+.research-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
     .big-num { font-family: 'Lato',sans-serif; font-size: clamp(7rem, 12vw, 11rem); font-weight: 700; color: var(--navy); line-height: 0.95; letter-spacing: -0.04em; }
     .big-num span { color: var(--blue); }
     .big-num-sub { font-size: 0.84rem; letter-spacing: 0.02em; color: var(--mid-grey); margin-top: 24px; font-weight: 400; font-family: 'Noto Sans Devanagari','Lato',sans-serif; }
@@ -379,7 +382,7 @@
     @media (max-width: 1024px) {
       nav { padding: 20px 32px; } nav.scrolled { padding: 12px 32px; } .nav-links { display: none; } .lang-switcher { display: none; } .hamburger { display: flex; } .mobile-nav { display: flex; }
       .nav-brand-name { font-size: 1rem !important; }
-      .hero-content { padding: 100px 32px 140px !important; grid-template-columns: 1fr; gap: 36px; } .hero-profile-img, .hero-profile-fallback { width: 180px; height: 220px; }
+      .hero-content { padding: 100px 32px 140px !important; grid-template-columns: 1fr; gap: 36px; } .hero-profile-img, .hero-profile-fallback { width: 180px; height: 220px; margin-right: 0; }
       .hero-stats { flex-wrap: wrap; position: absolute; } .about { grid-template-columns: 1fr; } .about-img-wrap { min-height: 56vw; max-height: 420px; } .about-img-fade { display: none; } .about-body { padding: 56px 32px; }
       .expertise { padding: 80px 32px; } .expertise-intro { grid-template-columns: 1fr; } .exp-grid { grid-template-columns: 1fr 1fr; }
       .experience { grid-template-columns: 1fr; padding: 80px 32px; gap: 52px; }
@@ -395,7 +398,7 @@
     }
     @media (max-width: 640px) {
       .hero-name { font-size: clamp(1.8rem, 7vw, 2.6rem); } .hero-stats { display: none; } .exp-grid { grid-template-columns: 1fr; } .hosp-imgs { grid-template-columns: 1fr; }
-      .robotic-bg { height: 240px; } .robotic-body { padding: 36px 24px; } .big-num { font-size: 6rem; } .expertise-ghost { display: none; } .pub-count-row { gap: 24px; } .felicitation-imgs { grid-template-columns: 1fr; }
+      .robotic-bg { height: 240px; } .robotic-body { padding: 36px 24px; } .big-num { font-size: 6rem; } .research-photo { width: 150px; margin-bottom: 16px; } .expertise-ghost { display: none; } .pub-count-row { gap: 24px; } .felicitation-imgs { grid-template-columns: 1fr; }
       .floating-whatsapp { bottom: 76px; right: 20px; width: 50px; height: 50px; } footer { padding-bottom: 130px; }
       #blog-preview-grid { grid-template-columns: 1fr; } #video-preview-grid { grid-template-columns: 1fr; } .lightbox-close { top: -36px; }
       .review-card-header { padding: 24px 24px 0; } .review-preview { padding: 12px 24px 0; } .review-full-inner { padding: 12px 24px 0; } .review-toggle { margin: 16px 24px 24px; }
@@ -465,7 +468,7 @@
           <a href="#about" class="btn-outline">अधिक जानें</a>
         </div>
       </div>
-      <img src="../profile.webp" alt="डॉ. दीपान्विता बैनर्जी - कोलकाता में गायनेकोलॉजिकल कैंसर विशेषज्ञ" class="hero-profile-img" width="260" height="320" fetchpriority="high" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="../profile.webp" alt="डॉ. दीपान्विता बैनर्जी - कोलकाता में गायनेकोलॉजिकल कैंसर विशेषज्ञ" class="hero-profile-img" width="300" height="400" fetchpriority="high" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="hero-profile-fallback" style="display:none">DB</div>
     </div>
     <div class="hero-stats">
@@ -612,6 +615,9 @@
 
   <section class="research" id="research">
     <div class="research-num-block reveal-l">
+      <div class="research-photo">
+        <img src="../portrait2.webp" alt="डॉ. दीपान्विता बैनर्जी, गायनेकोलॉजिकल ऑन्कोलॉजिस्ट एवं शोधकर्ता, चित्तरंजन नेशनल कैंसर इंस्टीट्यूट" loading="lazy">
+      </div>
       <div class="big-num">35<span>+</span></div>
       <div class="big-num-sub">पीयर-रिव्यूड ऑन्कोलॉजी प्रकाशन</div>
     </div>
