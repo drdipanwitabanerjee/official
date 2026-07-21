@@ -533,6 +533,41 @@
       .review-card-header { padding: 24px 24px 0; } .review-preview { padding: 12px 24px 0; } .review-full-inner { padding: 12px 24px 0; } .review-toggle { margin: 16px 24px 24px; }
       .floating-review { bottom: 20px; right: 20px; padding: 0 12px; font-size: 0.74rem; height: 44px; }
     }
+/* ─── FAQ ─── */
+.faq { padding: 110px 64px; background: var(--cream); }
+.faq-header { margin-bottom: 48px; max-width: 640px; }
+.faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--cream-dark); border: 1px solid var(--cream-dark); }
+.faq-item { background: var(--cream); }
+.faq-question {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 26px 34px; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.faq-question h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-weight: 400;
+  color: var(--navy); line-height: 1.5; margin: 0;
+}
+.faq-icon {
+  flex-shrink: 0; width: 22px; height: 22px; color: var(--blue);
+  transition: transform 0.35s ease;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); color: var(--gold); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
+.faq-item.open .faq-answer { max-height: 400px; }
+.faq-answer-inner {
+  padding: 0 34px 28px; font-size: 0.96rem; color: var(--charcoal); line-height: 1.9;
+  max-width: 780px;
+}
+.faq-item::after {
+  content: ''; display: block; height: 2px; background: linear-gradient(to right, var(--gold), var(--blue-light));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+}
+.faq-item.open::after { transform: scaleX(1); }
+
+@media (max-width: 1024px) {
+  .faq { padding: 80px 32px; }
+  .faq-question { padding: 22px 24px; }
+  .faq-answer-inner { padding: 0 24px 24px; }
+}
   </style>
 </head>
 <body>
@@ -843,7 +878,61 @@
     </div>
   </section>
 
-  <section class="contact" id="contact">
+<section class="faq" id="faq">
+  <div class="faq-header">
+    <div class="sec-label reveal">अक्सर पूछे जाने वाले प्रश्न</div>
+    <h2 class="reveal d1" style="font-family:'Tiro Devanagari','Cormorant Garamond',serif;font-size:clamp(1.8rem,2.8vw,2.8rem);font-weight:400;color:var(--navy);line-height:1.45;">सामान्य प्रश्नों के <em style="font-style:italic;color:var(--blue);">सीधे उत्तर</em></h2>
+  </div>
+  <div class="faq-list reveal d2">
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Tiro Devanagari','Cormorant Garamond',serif;">कोलकाता में सबसे अच्छी गायनेकोलॉजिकल ऑन्कोलॉजिस्ट कौन हैं?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Devanagari','Lato',sans-serif;">डॉ. दीपान्विता बैनर्जी कोलकाता के Chittaranjan National Cancer Institute (CNCI) में सीनियर कंसल्टेंट गायनेकोलॉजिकल ऑन्कोलॉजिस्ट हैं। उन्होंने AIIMS New Delhi से गायनेकोलॉजिकल ऑन्कोलॉजी में MCh किया है और सर्वाइकल, ओवेरियन, यूटेराइन और वल्वर कैंसर के उपचार में उनका 14 वर्षों से अधिक का अनुभव है।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Tiro Devanagari','Cormorant Garamond',serif;">डॉ. दीपान्विता बैनर्जी किन कैंसर का उपचार करती हैं?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Devanagari','Lato',sans-serif;">डॉ. बैनर्जी सभी गायनेकोलॉजिकल कैंसर में विशेषज्ञ हैं: सर्वाइकल, ओवेरियन, यूटेराइन (एंडोमेट्रियल), वल्वर और वेजाइनल कैंसर। वे रोबोटिक सर्जरी, HIPEC सहित साइटोरिडक्टिव सर्जरी, और कॉल्पोस्कोपी-निर्देशित स्क्रीनिंग भी करती हैं।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Tiro Devanagari','Cormorant Garamond',serif;">गायनेकोलॉजिस्ट और गायनेकोलॉजिकल ऑन्कोलॉजिस्ट में क्या अंतर है?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Devanagari','Lato',sans-serif;">एक सामान्य गायनेकोलॉजिस्ट नियमित प्रजनन स्वास्थ्य का प्रबंधन करते हैं। एक गायनेकोलॉजिकल ऑन्कोलॉजिस्ट, जैसे डॉ. बैनर्जी, अतिरिक्त वर्षों का विशेष सर्जिकल ऑन्कोलॉजी प्रशिक्षण (MCh) पूरा करते हैं। संदिग्ध या पुष्ट गायनेकोलॉजिकल कैंसर के मामले में, सीधे एक गायनेकोलॉजिकल ऑन्कोलॉजिस्ट से परामर्श अधिक सटीक स्टेजिंग और बेहतर परिणामों से जुड़ा है।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Tiro Devanagari','Cormorant Garamond',serif;">ओवेरियन कैंसर के शुरुआती लक्षण क्या हैं, और क्या यह वंशानुगत है?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Devanagari','Lato',sans-serif;">ओवेरियन कैंसर के लक्षण अक्सर सूक्ष्म होते हैं — लगातार पेट फूलना, पेल्विक दर्द, जल्दी पेट भरा महसूस होना। कोई नियमित स्क्रीनिंग टेस्ट न होने के कारण जागरूकता ज़रूरी है। पारिवारिक इतिहास या BRCA1/BRCA2 म्यूटेशन जोखिम बढ़ाता है। डॉ. बैनर्जी की टीम आनुवंशिक जोखिम मूल्यांकन में मार्गदर्शन दे सकती है।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Tiro Devanagari','Cormorant Garamond',serif;">डॉ. दीपान्विता बैनर्जी से परामर्श कैसे बुक करें?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Devanagari','Lato',sans-serif;">आप +91 62916 81013 पर कॉल या WhatsApp करके, या dr.dipanwita@yahoo.co.in पर ईमेल करके परामर्श बुक कर सकते हैं। वे कोलकाता के न्यू टाउन स्थित CNCI में मरीज़ देखती हैं।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Tiro Devanagari','Cormorant Garamond',serif;">CNCI न्यू टाउन कोलकाता क्या है?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Devanagari','Lato',sans-serif;">CNCI न्यू टाउन, कोलकाता के 299, DJ Block, Action Area 1D, New Town, 700160 में स्थित एक प्रमुख कैंसर देखभाल केंद्र है — भारत सरकार के स्वास्थ्य मंत्रालय के अंतर्गत सरकारी-सहायता प्राप्त स्वायत्त संस्थान।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Tiro Devanagari','Cormorant Garamond',serif;">क्या डॉ. दीपान्विता बैनर्जी गायनेकोलॉजिकल कैंसर के लिए रोबोटिक सर्जरी करती हैं?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Devanagari','Lato',sans-serif;">हाँ। डॉ. बैनर्जी रोबोटिक गायनेकोलॉजिकल सर्जरी में प्रशिक्षित हैं और सर्वाइकल, एंडोमेट्रियल और अन्य गायनेकोलॉजिकल मैलिग्नेंसी के लिए मिनिमली इनवेसिव रोबोटिक प्रक्रियाएँ करती हैं।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Tiro Devanagari','Cormorant Garamond',serif;">HPV वैक्सीन क्या है और क्या भारत में महिलाओं को यह लगवानी चाहिए?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Devanagari','Lato',sans-serif;">HPV वैक्सीन उन स्ट्रेन्स से सुरक्षा देती है जो 95% से अधिक सर्वाइकल कैंसर का कारण बनते हैं। डॉ. बैनर्जी 9-26 वर्ष की लड़कियों के लिए HPV टीकाकरण की सिफारिश करती हैं। भारत में अब स्वदेशी HPV वैक्सीन (Cervavac) उपलब्ध है।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Tiro Devanagari','Cormorant Garamond',serif;">कॉल्पोस्कोपी क्या है और यह कब आवश्यक है?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Devanagari','Lato',sans-serif;">कॉल्पोस्कोपी, कॉल्पोस्कोप नामक उपकरण का उपयोग करके गर्भाशय ग्रीवा की विस्तृत जांच है। Pap smear या HPV टेस्ट में असामान्य परिणाम आने पर इसकी सिफारिश की जाती है।</div></div>
+    </div>
+
+  </div>
+</section>  
+<section class="contact" id="contact">
     <div class="contact-info">
       <div class="sec-label light reveal">संपर्क</div>
       <h2>परामर्श के लिए <em>संपर्क करें</em></h2>
@@ -961,6 +1050,11 @@
         });
       }).catch(() => { reviewsList.innerHTML = '<div class="reviews-loading">रिव्यू लोड नहीं हो सके।</div>'; });
     }
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-question');
+  q.addEventListener('click', () => item.classList.toggle('open'));
+});
   </script>
 </body>
 </html>
