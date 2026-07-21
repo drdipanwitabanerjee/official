@@ -342,10 +342,11 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Colposcopy is a detailed examination of the cervix using a magnifying instrument called a colposcope. It is recommended when a Pap smear or HPV test shows abnormal results. Dr. Banerjee performs colposcopy to identify pre-cancerous changes in the cervix early, enabling treatment before cancer develops."
-          },
-         {
-  "@type": "Question",
-  "name": "What's the difference between a gynaecologist and a gynaecologic oncologist?",
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between a gynaecologist and a gynaecologic oncologist?",
   "acceptedAnswer": {
     "@type": "Answer",
     "text": "A general gynaecologist manages routine reproductive health — periods, pregnancy, fibroids, and standard screening. A gynaecologic oncologist, like Dr. Banerjee, completes additional years of specialised surgical oncology training (MCh) focused exclusively on cancers of the female reproductive organs — cervix, ovaries, uterus, vulva, and vagina. This includes complex cancer staging surgery, cytoreductive surgery, and coordinating chemotherapy and radiation with other specialists — training a general gynaecologist does not receive. For a suspected or confirmed gynaecological cancer, being seen directly by a gynaecologic oncologist is associated with more accurate staging and better surgical outcomes."
@@ -1452,6 +1453,41 @@ nav {
       .review-full-inner { padding: 12px 24px 0; }
       .review-toggle { margin: 16px 24px 24px; }
     }
+/* ─── FAQ ─── */
+.faq { padding: 110px 64px; background: var(--cream); }
+.faq-header { margin-bottom: 48px; max-width: 640px; }
+.faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--cream-dark); border: 1px solid var(--cream-dark); }
+.faq-item { background: var(--cream); }
+.faq-question {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 26px 34px; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.faq-question h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-weight: 400;
+  color: var(--navy); line-height: 1.5; margin: 0;
+}
+.faq-icon {
+  flex-shrink: 0; width: 22px; height: 22px; color: var(--blue);
+  transition: transform 0.35s ease;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); color: var(--gold); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
+.faq-item.open .faq-answer { max-height: 400px; }
+.faq-answer-inner {
+  padding: 0 34px 28px; font-size: 0.96rem; color: var(--charcoal); line-height: 1.9;
+  max-width: 780px;
+}
+.faq-item::after {
+  content: ''; display: block; height: 2px; background: linear-gradient(to right, var(--gold), var(--blue-light));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+}
+.faq-item.open::after { transform: scaleX(1); }
+
+@media (max-width: 1024px) {
+  .faq { padding: 80px 32px; }
+  .faq-question { padding: 22px 24px; }
+  .faq-answer-inner { padding: 0 24px 24px; }
+}
   </style>
 </head>
 <body>
@@ -1895,7 +1931,88 @@ nav {
     </div>
   </section>
 
-  <section class="contact" id="contact">
+<section class="faq" id="faq">
+  <div class="faq-header">
+    <div class="sec-label reveal">Frequently Asked Questions</div>
+    <h2 class="reveal d1" style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,3rem);font-weight:400;color:var(--navy);line-height:1.2;">Common questions, <em style="font-style:italic;color:var(--blue);">answered directly</em></h2>
+  </div>
+  <div class="faq-list reveal d2">
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>Who is the best gynaecological oncologist in Kolkata?</h3>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+      <div class="faq-answer"><div class="faq-answer-inner">Dr. Dipanwita Banerjee is a Senior Consultant Gynaecological Oncologist at Chittaranjan National Cancer Institute (CNCI), Kolkata. She holds an MCh in Gynaecological Oncology from AIIMS New Delhi — the highest surgical qualification in the field — and has over 14 years of experience treating cervical, ovarian, uterine, and vulvar cancers.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>What cancers does Dr. Dipanwita Banerjee treat?</h3>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+      <div class="faq-answer"><div class="faq-answer-inner">Dr. Banerjee specialises in all gynaecological cancers: cervical cancer, ovarian cancer, uterine (endometrial) cancer, vulvar cancer, and vaginal cancer. She also performs advanced procedures including robotic surgery, cytoreductive surgery with HIPEC, and colposcopy-guided cervical cancer screening.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>What's the difference between a gynaecologist and a gynaecologic oncologist?</h3>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+      <div class="faq-answer"><div class="faq-answer-inner">A general gynaecologist manages routine reproductive health — periods, pregnancy, fibroids, and standard screening. A gynaecologic oncologist, like Dr. Banerjee, completes additional years of specialised surgical oncology training (MCh) focused exclusively on cancers of the female reproductive organs — cervix, ovaries, uterus, vulva, and vagina. This includes complex cancer staging surgery, cytoreductive surgery, and coordinating chemotherapy and radiation with other specialists. For a suspected or confirmed gynaecological cancer, being seen directly by a gynaecologic oncologist is associated with more accurate staging and better surgical outcomes.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>What are the early symptoms of ovarian cancer, and is it hereditary?</h3>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+      <div class="faq-answer"><div class="faq-answer-inner">Ovarian cancer symptoms are often subtle and easy to mistake for common digestive or menstrual issues — persistent bloating, pelvic or abdominal pain, feeling full quickly after eating, and changes in urinary frequency or urgency. Because there is no routine screening test for ovarian cancer, awareness of these symptoms and prompt evaluation matter. A family history of ovarian or breast cancer, or a BRCA1/BRCA2 gene mutation, significantly increases risk. Dr. Banerjee's team can guide patients through genetic risk assessment and counselling where relevant.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>How can I book a consultation with Dr. Dipanwita Banerjee?</h3>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+      <div class="faq-answer"><div class="faq-answer-inner">You can book a consultation by calling or WhatsApp at +91 62916 81013, or by emailing dr.dipanwita@yahoo.co.in. She consults at Chittaranjan National Cancer Institute (CNCI) New Town, Kolkata.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>What is CNCI New Town Kolkata?</h3>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+      <div class="faq-answer"><div class="faq-answer-inner">Chittaranjan National Cancer Institute (CNCI) New Town is a premier cancer care centre located at 299, DJ Block, Action Area 1D, New Town, Kolkata 700160. It is a government-aided autonomous institute under the Ministry of Health, Government of India, specialising exclusively in cancer diagnosis and treatment.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>Does Dr. Dipanwita Banerjee perform robotic surgery for gynaecological cancers?</h3>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+      <div class="faq-answer"><div class="faq-answer-inner">Yes. Dr. Banerjee is trained in robotic gynaecological surgery and performs minimally invasive robotic procedures for cervical cancer, endometrial cancer, and other gynaecological malignancies, offering patients faster recovery and reduced surgical trauma compared to open surgery.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>What is the HPV vaccine and should women in India get it?</h3>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+      <div class="faq-answer"><div class="faq-answer-inner">The HPV (Human Papillomavirus) vaccine protects against the strains of HPV that cause over 95% of cervical cancers. Dr. Banerjee strongly recommends HPV vaccination for girls aged 9–26 years, and in some cases up to age 45. India now has a domestically produced HPV vaccine (Cervavac), making it more accessible. Vaccination combined with regular cervical screening is the most effective prevention strategy.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>What is colposcopy and when is it needed?</h3>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+      <div class="faq-answer"><div class="faq-answer-inner">Colposcopy is a detailed examination of the cervix using a magnifying instrument called a colposcope. It is recommended when a Pap smear or HPV test shows abnormal results. Dr. Banerjee performs colposcopy to identify pre-cancerous changes in the cervix early, enabling treatment before cancer develops.</div></div>
+    </div>
+
+  </div>
+</section>  
+<section class="contact" id="contact">
     <div class="contact-info">
       <div class="sec-label light reveal">Contact</div>
       <h2>Connect for consultation</h2>
@@ -2166,6 +2283,11 @@ nav {
         })
         .catch(() => { reviewsList.innerHTML = '<div class="reviews-loading">Reviews could not be loaded. Please try again later.</div>'; });
     }
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-question');
+  q.addEventListener('click', () => item.classList.toggle('open'));
+});
   </script>
 </body>
 </html>
