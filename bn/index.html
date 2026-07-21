@@ -535,6 +535,41 @@
       .review-card-header { padding: 24px 24px 0; } .review-preview { padding: 12px 24px 0; } .review-full-inner { padding: 12px 24px 0; } .review-toggle { margin: 16px 24px 24px; }
       .floating-review { bottom: 20px; right: 20px; padding: 0 12px; font-size: 0.72rem; height: 44px; }
     }
+/* ─── FAQ ─── */
+.faq { padding: 110px 64px; background: var(--cream); }
+.faq-header { margin-bottom: 48px; max-width: 640px; }
+.faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--cream-dark); border: 1px solid var(--cream-dark); }
+.faq-item { background: var(--cream); }
+.faq-question {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 26px 34px; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.faq-question h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-weight: 400;
+  color: var(--navy); line-height: 1.5; margin: 0;
+}
+.faq-icon {
+  flex-shrink: 0; width: 22px; height: 22px; color: var(--blue);
+  transition: transform 0.35s ease;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); color: var(--gold); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
+.faq-item.open .faq-answer { max-height: 400px; }
+.faq-answer-inner {
+  padding: 0 34px 28px; font-size: 0.96rem; color: var(--charcoal); line-height: 1.9;
+  max-width: 780px;
+}
+.faq-item::after {
+  content: ''; display: block; height: 2px; background: linear-gradient(to right, var(--gold), var(--blue-light));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+}
+.faq-item.open::after { transform: scaleX(1); }
+
+@media (max-width: 1024px) {
+  .faq { padding: 80px 32px; }
+  .faq-question { padding: 22px 24px; }
+  .faq-answer-inner { padding: 0 24px 24px; }
+}
   </style>
 </head>
 <body>
@@ -845,7 +880,61 @@
     </div>
   </section>
 
-  <section class="contact" id="contact">
+<section class="faq" id="faq">
+  <div class="faq-header">
+    <div class="sec-label reveal">সচরাচর জিজ্ঞাসিত প্রশ্ন</div>
+    <h2 class="reveal d1" style="font-family:'Noto Serif Bengali','Cormorant Garamond',serif;font-size:clamp(1.8rem,2.8vw,2.8rem);font-weight:400;color:var(--navy);line-height:1.4;">সাধারণ প্রশ্নের <em style="font-style:italic;color:var(--blue);">সরাসরি উত্তর</em></h2>
+  </div>
+  <div class="faq-list reveal d2">
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Noto Serif Bengali','Cormorant Garamond',serif;">কলকাতার সেরা গাইনোকোলজিক্যাল অনকোলজিস্ট কে?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Bengali','Lato',sans-serif;">ডা. দীপান্বিতা ব্যানার্জী কলকাতার Chittaranjan National Cancer Institute (CNCI)-এর একজন সিনিয়র কনসালট্যান্ট গাইনোকোলজিক্যাল অনকোলজিস্ট। তিনি AIIMS New Delhi থেকে গাইনোকোলজিক্যাল অনকোলজিতে MCh সম্পন্ন করেছেন — এই ক্ষেত্রে সর্বোচ্চ সার্জিক্যাল যোগ্যতা — এবং জরায়ুমুখ, ডিম্বাশয়, জরায়ু ও ভালভা ক্যান্সারের চিকিৎসায় তাঁর 14 বছরেরও বেশি অভিজ্ঞতা রয়েছে।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Noto Serif Bengali','Cormorant Garamond',serif;">ডা. দীপান্বিতা ব্যানার্জী কোন কোন ক্যান্সারের চিকিৎসা করেন?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Bengali','Lato',sans-serif;">ডা. ব্যানার্জী সমস্ত গাইনোকোলজিক্যাল ক্যান্সারে বিশেষজ্ঞ: জরায়ুমুখ ক্যান্সার, ডিম্বাশয়ের ক্যান্সার, জরায়ু (এন্ডোমেট্রিয়াল) ক্যান্সার, ভালভা ক্যান্সার এবং ভ্যাজাইনাল ক্যান্সার। তিনি রোবোটিক সার্জারি, HIPEC-সহ সাইটোরিডাক্টিভ সার্জারি এবং কলপোস্কোপি-নির্দেশিত জরায়ুমুখ ক্যান্সার স্ক্রিনিং-সহ অ্যাডভান্সড পদ্ধতিও সম্পাদন করেন।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Noto Serif Bengali','Cormorant Garamond',serif;">গাইনোকোলজিস্ট এবং গাইনোকোলজিক্যাল অনকোলজিস্টের মধ্যে পার্থক্য কী?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Bengali','Lato',sans-serif;">একজন সাধারণ গাইনোকোলজিস্ট নিয়মিত প্রজনন স্বাস্থ্য — মাসিক, গর্ভাবস্থা, ফাইব্রয়েড এবং সাধারণ স্ক্রিনিং — দেখাশোনা করেন। একজন গাইনোকোলজিক্যাল অনকোলজিস্ট, যেমন ডা. ব্যানার্জী, অতিরিক্ত বছরের বিশেষায়িত সার্জিক্যাল অনকোলজি প্রশিক্ষণ (MCh) সম্পন্ন করেন, যা একচেটিয়াভাবে নারীর প্রজনন অঙ্গের ক্যান্সার নিয়ে কাজ করে। সন্দেহভাজন বা নিশ্চিত গাইনোকোলজিক্যাল ক্যান্সারের ক্ষেত্রে সরাসরি একজন গাইনোকোলজিক্যাল অনকোলজিস্টের কাছে যাওয়া অধিক সঠিক স্টেজিং এবং ভালো সার্জিক্যাল ফলাফলের সাথে যুক্ত।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Noto Serif Bengali','Cormorant Garamond',serif;">ডিম্বাশয়ের ক্যান্সারের প্রাথমিক লক্ষণ কী এবং এটি কি বংশগত?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Bengali','Lato',sans-serif;">ডিম্বাশয়ের ক্যান্সারের লক্ষণগুলি প্রায়ই সূক্ষ্ম এবং সাধারণ হজম বা মাসিকের সমস্যা বলে ভুল হতে পারে — ক্রমাগত পেট ফোলা, পেলভিক বা পেটে ব্যথা, খাওয়ার পর দ্রুত পেট ভরা অনুভব করা। যেহেতু কোনো নিয়মিত স্ক্রিনিং টেস্ট নেই, তাই সচেতনতা এবং দ্রুত মূল্যায়ন গুরুত্বপূর্ণ। পারিবারিক ইতিহাস বা BRCA1/BRCA2 জিন মিউটেশন ঝুঁকি উল্লেখযোগ্যভাবে বাড়িয়ে দেয়। ডা. ব্যানার্জীর টিম রোগীদের জেনেটিক ঝুঁকি মূল্যায়ন ও কাউন্সেলিংয়ের মধ্য দিয়ে গাইড করতে পারে।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Noto Serif Bengali','Cormorant Garamond',serif;">ডা. দীপান্বিতা ব্যানার্জীর সাথে কীভাবে পরামর্শের জন্য বুকিং করব?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Bengali','Lato',sans-serif;">আপনি +91 62916 81013 নম্বরে কল বা WhatsApp করে, অথবা dr.dipanwita@yahoo.co.in-এ ইমেল করে পরামর্শ বুক করতে পারেন। তিনি কলকাতার নিউ টাউনে Chittaranjan National Cancer Institute (CNCI)-এ রোগী দেখেন।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Noto Serif Bengali','Cormorant Garamond',serif;">CNCI নিউ টাউন কলকাতা কী?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Bengali','Lato',sans-serif;">Chittaranjan National Cancer Institute (CNCI) নিউ টাউন কলকাতার 299, DJ Block, Action Area 1D, New Town, 700160-এ অবস্থিত একটি শীর্ষস্থানীয় ক্যান্সার কেয়ার সেন্টার। এটি ভারত সরকারের স্বাস্থ্য মন্ত্রকের অধীনে একটি সরকার-সাহায্যপ্রাপ্ত স্বায়ত্তশাসিত প্রতিষ্ঠান।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Noto Serif Bengali','Cormorant Garamond',serif;">ডা. দীপান্বিতা ব্যানার্জী কি গাইনোকোলজিক্যাল ক্যান্সারের জন্য রোবোটিক সার্জারি করেন?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Bengali','Lato',sans-serif;">হ্যাঁ। ডা. ব্যানার্জী রোবোটিক গাইনোকোলজিক্যাল সার্জারিতে প্রশিক্ষিত এবং জরায়ুমুখ ক্যান্সার, এন্ডোমেট্রিয়াল ক্যান্সার এবং অন্যান্য গাইনোকোলজিক্যাল ম্যালিগন্যান্সির জন্য মিনিমালি ইনভেসিভ রোবোটিক পদ্ধতি সম্পাদন করেন।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Noto Serif Bengali','Cormorant Garamond',serif;">HPV ভ্যাকসিন কী এবং ভারতে নারীদের এটি নেওয়া উচিত কি?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Bengali','Lato',sans-serif;">HPV (Human Papillomavirus) ভ্যাকসিন সেই সব HPV স্ট্রেনের বিরুদ্ধে সুরক্ষা দেয় যা 95%-এরও বেশি জরায়ুমুখ ক্যান্সারের কারণ হয়। ডা. ব্যানার্জী 9-26 বছর বয়সী মেয়েদের জন্য HPV টিকাকরণের জোরালো সুপারিশ করেন। ভারতে এখন দেশীয়ভাবে তৈরি HPV ভ্যাকসিন (Cervavac) রয়েছে।</div></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question"><h3 style="font-family:'Noto Serif Bengali','Cormorant Garamond',serif;">কলপোস্কোপি কী এবং কখন প্রয়োজন?</h3><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div class="faq-answer"><div class="faq-answer-inner" style="font-family:'Noto Sans Bengali','Lato',sans-serif;">কলপোস্কোপি হল কলপোস্কোপ নামক একটি ম্যাগনিফাইং যন্ত্র ব্যবহার করে জরায়ুমুখের বিস্তারিত পরীক্ষা। Pap smear বা HPV টেস্টে অস্বাভাবিক ফলাফল দেখা গেলে এটি সুপারিশ করা হয়।</div></div>
+    </div>
+
+  </div>
+</section>  
+<section class="contact" id="contact">
     <div class="contact-info">
       <div class="sec-label light reveal">যোগাযোগ</div>
       <h2>পরামর্শের জন্য <em>যোগাযোগ করুন</em></h2>
@@ -963,6 +1052,11 @@
         });
       }).catch(() => { reviewsList.innerHTML = '<div class="reviews-loading">রিভিউ লোড করা যায়নি।</div>'; });
     }
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-question');
+  q.addEventListener('click', () => item.classList.toggle('open'));
+});
   </script>
 </body>
 </html>
