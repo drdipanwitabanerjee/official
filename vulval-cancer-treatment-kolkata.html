@@ -449,6 +449,58 @@
       color: var(--blue); border-radius: 100px; font-weight: 400;
     }
 
+    /* ─── PHOTO BANNER ─── */
+    .photo-banner {
+      position: relative;
+      min-height: 460px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .photo-banner-image {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+    .photo-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(16,29,46,0.88) 0%, rgba(16,29,46,0.35) 45%, rgba(16,29,46,0.05) 100%);
+    }
+    .photo-banner-caption {
+      position: relative; z-index: 1;
+      padding: 48px 64px;
+      max-width: 620px;
+    }
+    .photo-banner-caption .sec-label { margin-bottom: 12px; }
+    .photo-banner-caption p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.35rem; font-weight: 400;
+      color: var(--white); line-height: 1.5;
+    }
+    @media (max-width: 1024px) {
+      .photo-banner { min-height: 340px; }
+      .photo-banner-caption { padding: 32px; }
+      .photo-banner-caption p { font-size: 1.1rem; }
+    }
+    @media (max-width: 640px) {
+      .photo-banner {
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 0;
+      }
+      .photo-banner-image { position: static; height: 200px; width: 100%; }
+      .photo-banner::before { display: none; }
+      .photo-banner-caption {
+        position: static;
+        max-width: none;
+        background: var(--navy);
+        padding: 28px 24px;
+      }
+      .photo-banner-caption p { font-size: 1rem; color: rgba(255,255,255,0.85); }
+    }
+
     /* ─── FAQ ─── */
     .faq { padding: 100px 64px; background: var(--cream); }
     .faq-header { margin-bottom: 48px; max-width: 640px; }
@@ -711,6 +763,14 @@
     </div>
   </section>
 
+  <section class="photo-banner">
+    <div class="photo-banner-image" style="background-image:url('robotic.webp');"></div>
+    <div class="photo-banner-caption">
+      <div class="sec-label light">Precision-Led Surgical Care</div>
+      <p>"Every vulval cancer case is planned with the same surgical precision and attention to detail — prioritising both complete treatment and preservation of function."</p>
+    </div>
+  </section>
+
   <section class="card-section">
     <div class="page-hero-ghost">VULVAL</div>
     <div class="card-section-intro">
@@ -745,6 +805,14 @@
       <div class="sec-label reveal">Risk Factors</div>
       <h2 class="reveal d1">Risk factors & <em>vulval skin conditions</em></h2>
       <p class="reveal d2">Vulval cancer follows two broad risk pathways. In younger women, persistent <strong>HPV infection</strong> is the key driver, similar to cervical cancer. In older women, it is more often linked to <strong>lichen sclerosus</strong> or vulval intraepithelial neoplasia (VIN) — chronic vulval skin conditions unrelated to HPV.</p><p class="reveal d3">Other contributing factors include smoking, a prior history of cervical or vaginal intraepithelial neoplasia, and increasing age. Women with diagnosed lichen sclerosus benefit from regular follow-up, since it modestly raises long-term risk.</p>
+    </div>
+  </section>
+
+  <section class="photo-banner">
+    <div class="photo-banner-image" style="background-image:url('robotic2.webp');"></div>
+    <div class="photo-banner-caption">
+      <div class="sec-label light">Surgical Oncology Expertise</div>
+      <p>Fellowship-trained in advanced gynaecological surgical oncology at Roswell Park Comprehensive Cancer Centre, New York — bringing that same depth of training to reconstructive and function-preserving vulval cancer surgery.</p>
     </div>
   </section>
 
