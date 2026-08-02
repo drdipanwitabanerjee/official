@@ -453,11 +453,14 @@
     .photo-banner {
       position: relative;
       min-height: 460px;
-      background-size: cover;
-      background-position: center;
       display: flex;
       align-items: flex-end;
       overflow: hidden;
+    }
+    .photo-banner-image {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
     }
     .photo-banner::before {
       content: '';
@@ -482,7 +485,20 @@
       .photo-banner-caption p { font-size: 1.1rem; }
     }
     @media (max-width: 640px) {
-      .photo-banner { min-height: 260px; }
+      .photo-banner {
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 0;
+      }
+      .photo-banner-image { position: static; height: 200px; width: 100%; }
+      .photo-banner::before { display: none; }
+      .photo-banner-caption {
+        position: static;
+        max-width: none;
+        background: var(--navy);
+        padding: 28px 24px;
+      }
+      .photo-banner-caption p { font-size: 1rem; color: rgba(255,255,255,0.85); }
     }
 
     /* ─── FAQ ─── */
@@ -747,7 +763,8 @@
     </div>
   </section>
 
-  <section class="photo-banner" style="background-image:url('robotic.webp');">
+  <section class="photo-banner">
+    <div class="photo-banner-image" style="background-image:url('robotic.webp');"></div>
     <div class="photo-banner-caption">
       <div class="sec-label light">Advanced Surgical Care</div>
       <p>"Every screening decision and every surgical plan is guided by the same precision and compassion — whether the approach is conventional or robotic."</p>
@@ -791,7 +808,8 @@
     </div>
   </section>
 
-  <section class="photo-banner" style="background-image:url('robotic2.webp');">
+  <section class="photo-banner">
+    <div class="photo-banner-image" style="background-image:url('robotic2.webp');"></div>
     <div class="photo-banner-caption">
       <div class="sec-label light">Robotic Precision</div>
       <p>Fellowship-trained in robotic gynaecological surgery at Roswell Park Comprehensive Cancer Centre, New York — bringing minimally invasive precision to complex cervical cancer cases.</p>
