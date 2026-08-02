@@ -449,6 +449,42 @@
       color: var(--blue); border-radius: 100px; font-weight: 400;
     }
 
+    /* ─── PHOTO BANNER ─── */
+    .photo-banner {
+      position: relative;
+      min-height: 460px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .photo-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(16,29,46,0.88) 0%, rgba(16,29,46,0.35) 45%, rgba(16,29,46,0.05) 100%);
+    }
+    .photo-banner-caption {
+      position: relative; z-index: 1;
+      padding: 48px 64px;
+      max-width: 620px;
+    }
+    .photo-banner-caption .sec-label { margin-bottom: 12px; }
+    .photo-banner-caption p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.35rem; font-weight: 400;
+      color: var(--white); line-height: 1.5;
+    }
+    @media (max-width: 1024px) {
+      .photo-banner { min-height: 340px; }
+      .photo-banner-caption { padding: 32px; }
+      .photo-banner-caption p { font-size: 1.1rem; }
+    }
+    @media (max-width: 640px) {
+      .photo-banner { min-height: 260px; }
+    }
+
     /* ─── FAQ ─── */
     .faq { padding: 100px 64px; background: var(--cream); }
     .faq-header { margin-bottom: 48px; max-width: 640px; }
@@ -711,6 +747,13 @@
     </div>
   </section>
 
+  <section class="photo-banner" style="background-image:url('robotic.webp');">
+    <div class="photo-banner-caption">
+      <div class="sec-label light">Advanced Surgical Care</div>
+      <p>"Every screening decision and every surgical plan is guided by the same precision and compassion — whether the approach is conventional or robotic."</p>
+    </div>
+  </section>
+
   <section class="card-section">
     <div class="page-hero-ghost">CERVICAL</div>
     <div class="card-section-intro">
@@ -745,6 +788,13 @@
       <div class="sec-label reveal">Risk Factors</div>
       <h2 class="reveal d1">Risk factors & <em>HPV</em></h2>
       <p class="reveal d2"><strong>HPV infection</strong> is the key risk factor for cervical cancer. The HPV vaccine protects against the strains of HPV responsible for over 95% of cervical cancers, and Dr. Banerjee strongly recommends vaccination for girls aged 9–26 years, and in some cases up to age 45.</p><p class="reveal d3">India now has a domestically produced HPV vaccine, <strong>Cervavac</strong>, which has made vaccination more accessible. Vaccination combined with regular cervical screening remains the most effective prevention strategy available.</p>
+    </div>
+  </section>
+
+  <section class="photo-banner" style="background-image:url('robotic2.webp');">
+    <div class="photo-banner-caption">
+      <div class="sec-label light">Robotic Precision</div>
+      <p>Fellowship-trained in robotic gynaecological surgery at Roswell Park Comprehensive Cancer Centre, New York — bringing minimally invasive precision to complex cervical cancer cases.</p>
     </div>
   </section>
 
