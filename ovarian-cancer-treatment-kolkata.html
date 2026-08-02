@@ -449,6 +449,58 @@
       color: var(--blue); border-radius: 100px; font-weight: 400;
     }
 
+    /* ─── PHOTO BANNER ─── */
+    .photo-banner {
+      position: relative;
+      min-height: 460px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .photo-banner-image {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+    .photo-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(16,29,46,0.88) 0%, rgba(16,29,46,0.35) 45%, rgba(16,29,46,0.05) 100%);
+    }
+    .photo-banner-caption {
+      position: relative; z-index: 1;
+      padding: 48px 64px;
+      max-width: 620px;
+    }
+    .photo-banner-caption .sec-label { margin-bottom: 12px; }
+    .photo-banner-caption p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.35rem; font-weight: 400;
+      color: var(--white); line-height: 1.5;
+    }
+    @media (max-width: 1024px) {
+      .photo-banner { min-height: 340px; }
+      .photo-banner-caption { padding: 32px; }
+      .photo-banner-caption p { font-size: 1.1rem; }
+    }
+    @media (max-width: 640px) {
+      .photo-banner {
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 0;
+      }
+      .photo-banner-image { position: static; height: 200px; width: 100%; }
+      .photo-banner::before { display: none; }
+      .photo-banner-caption {
+        position: static;
+        max-width: none;
+        background: var(--navy);
+        padding: 28px 24px;
+      }
+      .photo-banner-caption p { font-size: 1rem; color: rgba(255,255,255,0.85); }
+    }
+
     /* ─── FAQ ─── */
     .faq { padding: 100px 64px; background: var(--cream); }
     .faq-header { margin-bottom: 48px; max-width: 640px; }
@@ -712,6 +764,14 @@
     </div>
   </section>
 
+  <section class="photo-banner">
+    <div class="photo-banner-image" style="background-image:url('robotic.webp');"></div>
+    <div class="photo-banner-caption">
+      <div class="sec-label light">Precision Staging Surgery</div>
+      <p>"Ovarian cancer surgery calls for exact staging and careful judgment — every decision weighed with the same rigour, whether the case needs an open or a robotic approach."</p>
+    </div>
+  </section>
+
   <section class="card-section">
     <div class="page-hero-ghost">OVARIAN</div>
     <div class="card-section-intro">
@@ -752,6 +812,14 @@
       <div class="sec-label reveal">Risk Factors</div>
       <h2 class="reveal d1">Risk factors & <em>genetic counselling</em></h2>
       <p class="reveal d2">A family history of ovarian or breast cancer, or a <strong>BRCA1 or BRCA2 gene mutation</strong>, significantly increases a woman's risk of developing ovarian cancer. Because there is no routine population screening programme for this cancer, understanding personal and family risk is one of the few tools available for earlier detection.</p><p class="reveal d3">Dr. Banerjee's team can guide patients through <strong>genetic risk assessment and counselling</strong> where relevant — helping women with a strong family history understand their options, which may include closer surveillance or risk-reducing discussions with the appropriate specialists.</p>
+    </div>
+  </section>
+
+  <section class="photo-banner">
+    <div class="photo-banner-image" style="background-image:url('robotic2.webp');"></div>
+    <div class="photo-banner-caption">
+      <div class="sec-label light">Robotic & Minimally Invasive Options</div>
+      <p>Fellowship-trained in robotic surgery at Roswell Park Comprehensive Cancer Centre, New York — applying minimally invasive techniques for ovarian cancer where they offer lower morbidity and faster recovery.</p>
     </div>
   </section>
 
