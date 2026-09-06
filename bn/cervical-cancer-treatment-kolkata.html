@@ -306,9 +306,19 @@
     .page-hero h1 em { font-style: italic; color: var(--sky); }
     .page-hero-sub {
       font-size: 1.02rem; color: rgba(255,255,255,0.6); line-height: 2;
-      max-width: 680px; margin-bottom: 40px; position: relative; z-index: 1;
+      max-width: 680px; margin-bottom: 28px; position: relative; z-index: 1;
       font-family: 'Noto Sans Bengali','Lato',sans-serif;
     }
+    .page-hero-note {
+      display: inline-flex; align-items: baseline; gap: 8px;
+      font-size: 0.94rem; color: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.05);
+      border-left: 2px solid var(--gold);
+      padding: 10px 16px; margin-bottom: 40px; max-width: 640px;
+      position: relative; z-index: 1; line-height: 1.85;
+      font-family: 'Noto Sans Bengali','Lato',sans-serif;
+    }
+    .page-hero-note strong { color: var(--gold-light); font-weight: 600; }
     .page-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; position: relative; z-index: 1; }
 
     .btn-primary {
@@ -405,6 +415,42 @@
       line-height: 1.95; font-weight: 400;
       font-family: 'Noto Sans Bengali','Lato',sans-serif;
     }
+
+    /* ─── পেশেন্ট জার্নি (ক্রমিক ধাপ — নম্বরিং একটি প্রকৃত পরিচর্যা পথকে নির্দেশ করে) ─── */
+    .journey {
+      display: flex; flex-direction: column; gap: 60px;
+      position: relative; z-index: 1; margin-top: 12px;
+      counter-reset: stage;
+    }
+    .journey-stage { position: relative; padding-left: 78px; }
+    .journey-stage:not(:last-child)::before {
+      content: ''; position: absolute; left: 27px; top: 58px; bottom: -60px;
+      width: 1px; background: rgba(255,255,255,0.1);
+    }
+    .journey-stage-num {
+      counter-increment: stage;
+      position: absolute; left: 0; top: 0;
+      width: 54px; height: 54px; border-radius: 50%;
+      border: 1px solid rgba(184,150,96,0.45);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+      color: var(--gold-light); background: rgba(255,255,255,0.02);
+    }
+    .journey-stage-num::before { content: counter(stage, decimal-leading-zero); }
+    .journey-stage-head { margin-bottom: 26px; max-width: 660px; }
+    .journey-stage-who {
+      font-size: 0.82rem; letter-spacing: 0.02em; color: var(--blue-light); margin-bottom: 6px;
+      font-family: 'Noto Sans Bengali','Lato',sans-serif;
+    }
+    .journey-stage-title {
+      font-family: 'Noto Serif Bengali','Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400;
+      color: var(--white); margin-bottom: 10px; line-height: 1.4;
+    }
+    .journey-stage-desc {
+      font-size: 0.96rem; color: rgba(255,255,255,0.58); line-height: 1.95;
+      font-family: 'Noto Sans Bengali','Lato',sans-serif;
+    }
+    .journey-stage .exp-grid { grid-template-columns: repeat(3, 1fr); }
 
     .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
     .pill {
@@ -630,6 +676,10 @@
       .card-section { padding: 72px 32px; }
       .exp-grid { grid-template-columns: 1fr 1fr; }
       .exp-grid.two-col { grid-template-columns: 1fr; }
+      .journey-stage { padding-left: 60px; }
+      .journey-stage-num { width: 44px; height: 44px; font-size: 1.1rem; }
+      .journey-stage:not(:last-child)::before { left: 21px; top: 48px; bottom: -60px; }
+      .journey-stage .exp-grid { grid-template-columns: 1fr; }
       .faq { padding: 72px 32px; }
       .faq-question { padding: 22px 24px; }
       .faq-answer-inner { padding: 0 24px 24px; }
@@ -643,6 +693,9 @@
       .page-hero-ghost { display: none; }
       .exp-grid { grid-template-columns: 1fr; }
       .exp-grid.two-col { grid-template-columns: 1fr; }
+      .journey-stage { padding-left: 0; }
+      .journey-stage-num { position: static; margin-bottom: 14px; }
+      .journey-stage:not(:last-child)::before { display: none; }
       .floating-whatsapp { bottom: 76px; right: 20px; width: 50px; height: 50px; }
       footer { padding-bottom: 130px; }
     }
@@ -701,6 +754,7 @@
     <div class="sec-label light">গাইনোকোলজিক্যাল অনকোলজি</div>
     <h1>কলকাতায় জরায়ুমুখ ক্যান্সার চিকিৎসা ও <em>স্ক্রিনিং</em></h1>
     <p class="page-hero-sub">জরায়ুমুখ ক্যান্সার হল একমাত্র গাইনোকোলজিক্যাল ক্যান্সার যার একটি প্রতিষ্ঠিত, কার্যকর স্ক্রিনিং পথ রয়েছে — Pap smear ও HPV টেস্ট — এবং একটি ভ্যাকসিন যা বেশিরভাগ ক্ষেত্রে প্রতিরোধ করে। ডা. দীপান্বিতা ব্যানার্জী, একজন IFCPC IARC সার্টিফাইড কলপোস্কোপিস্ট, একজন বিশেষজ্ঞের অধীনে স্ক্রিনিং, প্রাথমিক শনাক্তকরণ ও চিকিৎসা একত্রিত করেন।</p>
+    <p class="page-hero-note">আপনি যে পর্যায়েই থাকুন না কেন — নিয়মিত স্ক্রিনিং সংক্রান্ত প্রশ্ন, একটি অস্বাভাবিক Pap smear, নিশ্চিত রোগ নির্ণয়, বা চিকিৎসার পর ফলো-আপ — <strong>নিচে আপনার পরিস্থিতি খুঁজে নিন</strong>, দেখুন ডা. ব্যানার্জী কীভাবে তার সমাধান করেন।</p>
     <div class="page-hero-btns">
       <a href="index.html#contact" class="btn-primary">
         পরামর্শের জন্য বুক করুন
@@ -732,95 +786,117 @@
     </div>
   </section>
 
-  <section class="card-section">
-    <div class="page-hero-ghost">CERVICAL</div>
+  <section class="card-section" id="journey">
+    <div class="page-hero-ghost">SCREENING</div>
     <div class="card-section-intro">
-      <div class="sec-label light reveal">লক্ষণ</div>
-      <h2 class="reveal d1">লক্ষণ ও <em>স্ক্রিনিং</em></h2>
-      <p class="reveal d2">জরায়ুমুখের প্রাথমিক কোষ পরিবর্তন প্রায়ই কোনো লক্ষণ সৃষ্টি করে না, যে কারণে লক্ষণের জন্য অপেক্ষা না করে নিয়মিত স্ক্রিনিং করার পরামর্শ দেওয়া হয়।</p>
+      <div class="sec-label light reveal">আপনার পরিচর্যার পথ</div>
+      <h2 class="reveal d1">জরায়ুমুখ ক্যান্সার পরিচর্যা, <em>ধাপে ধাপে</em></h2>
+      <p class="reveal d2">জরায়ুমুখ ক্যান্সার হল সেই কয়েকটি গাইনোকোলজিক্যাল ক্যান্সারের একটি যেখানে স্ক্রিনিং, প্রতিরোধ ও চিকিৎসা — সবকিছু আগে থেকেই সুনির্দিষ্ট। ডা. ব্যানার্জীর পদ্ধতি এই পথ অনুসরণ করে — কোনো লক্ষণ ছাড়া নিয়মিত স্ক্রিনিং থেকে শুরু করে চিকিৎসা শেষ হওয়ার পরের পর্যবেক্ষণ পর্যন্ত।</p>
     </div>
-    <div class="exp-grid two-col">
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d1">
-          <h3>অস্বাভাবিক রক্তপাত বা স্রাব</h3>
-          <p>জরায়ুমুখ ক্যান্সারের সবচেয়ে সাধারণ লক্ষণ হল অস্বাভাবিক যোনি রক্তপাত — মাসিকের মাঝে, সহবাসের পর বা মেনোপজের পরে রক্তপাত সহ — অথবা অস্বাভাবিক স্রাব।</p>
+
+    <div class="journey">
+
+      <div class="journey-stage" id="stage-screening">
+        <div class="journey-stage-num"></div>
+        <div class="journey-stage-head">
+          <div class="journey-stage-who">যদি আপনার কোনো লক্ষণ না থাকে — নিয়মিত স্ক্রিনিং ও প্রতিরোধ</div>
+          <h3 class="journey-stage-title">স্ক্রিনিং ও HPV টিকাকরণ</h3>
+          <p class="journey-stage-desc">প্রাথমিক জরায়ুমুখ কোষ পরিবর্তন খুব কমই কোনো লক্ষণ সৃষ্টি করে, যে কারণে জরায়ুমুখ ক্যান্সারকে লক্ষণের সমস্যা নয়, স্ক্রিনিং-এর সমস্যা হিসেবে দেখা হয়। বেশিরভাগ নারীর জন্য এই পর্যায়ই একমাত্র প্রয়োজনীয় পর্যায়।</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card reveal d1">
+            <h3>Pap Smear ও HPV টেস্ট</h3>
+            <p>নিয়মিত Pap smear ও HPV টেস্টের ফলাফল ব্যাখ্যা, এবং বয়স ও পূর্ববর্তী ফলাফলের ভিত্তিতে কত ঘন ঘন পুনরাবৃত্তি করা উচিত সে বিষয়ে পরামর্শ।</p>
+          </div>
+          <div class="exp-card reveal d2">
+            <h3>HPV টিকাকরণ পরামর্শ</h3>
+            <p>Cervavac সহ HPV টিকাকরণ সম্পর্কে পরামর্শ, যা ভারতের দেশীয়ভাবে তৈরি ভ্যাকসিন — 9-26 বছর বয়সী মেয়েদের জন্য, এবং নির্বাচিত ক্ষেত্রে 45 বছর বয়স পর্যন্তও।</p>
+          </div>
+          <div class="exp-card reveal d3">
+            <h3>গবেষণা-সমর্থিত প্রতিরোধ</h3>
+            <p>ডা. ব্যানার্জী Serum Institute HPV ভ্যাকসিন ট্রায়ালের Site Principal Investigator হিসেবে দায়িত্ব পালন করেছেন, যা তাঁকে HPV প্রতিরোধে সরাসরি গবেষণা ভিত্তি দিয়েছে।</p>
+          </div>
         </div>
       </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d2">
-          <h3>নিয়মিত স্ক্রিনিং উপলব্ধ</h3>
-          <p>ডা. ব্যানার্জী যে পাঁচটি গাইনোকোলজিক্যাল ক্যান্সার চিকিৎসা করেন তার মধ্যে জরায়ুমুখ ক্যান্সারই একমাত্র যার একটি নিয়মিত স্ক্রিনিং পথ রয়েছে: Pap smear ও HPV টেস্ট।</p>
+
+      <div class="journey-stage" id="stage-abnormal-result">
+        <div class="journey-stage-num"></div>
+        <div class="journey-stage-head">
+          <div class="journey-stage-who">যদি আপনার Pap smear বা HPV টেস্ট অস্বাভাবিক এসে থাকে</div>
+          <h3 class="journey-stage-title">কলপোস্কোপি ও প্রাক-ক্যান্সার চিকিৎসা</h3>
+          <p class="journey-stage-desc">অস্বাভাবিক স্ক্রিনিং ফলাফলের অর্থ ক্যান্সার নয়। এর অর্থ আরও কাছ থেকে পরীক্ষা প্রয়োজন — এবং বেশিরভাগ ক্ষেত্রে, এই পর্যায়ে চিকিৎসা জরায়ুমুখ ক্যান্সারকে বিকশিত হওয়ার আগেই থামিয়ে দেয়।</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card reveal d1">
+            <h3>কলপোস্কোপি-নির্দেশিত নির্ণয়</h3>
+            <p>একজন IFCPC IARC সার্টিফাইড কলপোস্কোপিস্ট হিসেবে, ডা. ব্যানার্জী ম্যাগনিফিকেশনের মাধ্যমে জরায়ুমুখ পরীক্ষা করে কোথায় ও কতটা গুরুতর প্রাক-ক্যান্সারাস পরিবর্তন রয়েছে তা শনাক্ত করেন।</p>
+          </div>
+          <div class="exp-card reveal d2">
+            <h3>বায়োপ্সি ও গ্রেডিং</h3>
+            <p>সন্দেহজনক স্থানের টার্গেটেড বায়োপ্সি, প্যাথলজি গ্রেডিং সহ, যা নির্ধারণ করে পরিবর্তনটি পর্যবেক্ষণ করা যাবে নাকি চিকিৎসার প্রয়োজন।</p>
+          </div>
+          <div class="exp-card reveal d3">
+            <h3>প্রাক-ক্যান্সারাস পরিবর্তনের চিকিৎসা</h3>
+            <p>জরায়ুমুখ সংরক্ষণ ও ভবিষ্যতের উর্বরতা যতটা সম্ভব বজায় রাখার লক্ষ্যে, প্রাক-ক্যান্সারাস টিস্যু অপসারণ বা চিকিৎসার জন্য ছোট পদ্ধতি।</p>
+          </div>
         </div>
       </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d3">
-          <h3>অস্বাভাবিক ফলাফলের জন্য কলপোস্কোপি</h3>
-          <p>Pap smear বা HPV টেস্টের ফলাফল অস্বাভাবিক হলে, কলপোস্কোপি — জরায়ুমুখের একটি বিস্তারিত ম্যাগনিফাইড পরীক্ষা — প্রাক-ক্যান্সারাস পরিবর্তন প্রাথমিক পর্যায়ে শনাক্ত করার জন্য সুপারিশকৃত পরবর্তী পদক্ষেপ।</p>
+
+      <div class="journey-stage" id="stage-confirmed-cancer">
+        <div class="journey-stage-num"></div>
+        <div class="journey-stage-head">
+          <div class="journey-stage-who">যদি আপনার জরায়ুমুখ ক্যান্সার নিশ্চিত হয়ে থাকে</div>
+          <h3 class="journey-stage-title">স্টেজিং ও সার্জিক্যাল চিকিৎসা</h3>
+          <p class="journey-stage-desc">নিশ্চিত রোগ নির্ণয়ের পর স্টেজিং এবং ক্যান্সারের ব্যাপ্তির উপর ভিত্তি করে চিকিৎসা পরিকল্পনা তৈরি হয়, যা আন্তর্জাতিকভাবে স্বীকৃত, প্রমাণ-ভিত্তিক গাইডলাইন অনুসরণ করে।</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card reveal d1">
+            <h3>স্টেজিং ওয়ার্কআপ</h3>
+            <p>ক্যান্সার কতদূর ছড়িয়েছে তা নির্ধারণের জন্য ইমেজিং ও ক্লিনিক্যাল মূল্যায়ন, যা সার্জারি, রেডিয়েশন, কেমোথেরাপি বা সমন্বিত পদ্ধতি উপযুক্ত কিনা তা ঠিক করে।</p>
+          </div>
+          <div class="exp-card reveal d2">
+            <h3>র‍্যাডিক্যাল ও রিকনস্ট্রাক্টিভ সার্জারি</h3>
+            <p>নিশ্চিত রোগের জন্য র‍্যাডিক্যাল হিস্টেরেক্টমি ও সংশ্লিষ্ট পদ্ধতি, আন্তর্জাতিকভাবে স্বীকৃত অনকোলজিক সার্জিক্যাল মান অনুযায়ী সম্পাদিত।</p>
+          </div>
+          <div class="exp-card reveal d3">
+            <h3>রোবোটিক ও মিনিমালি ইনভেসিভ সার্জারি</h3>
+            <p>New York-এর Roswell Park Comprehensive Cancer Centre-এ ফেলোশিপ প্রশিক্ষণপ্রাপ্ত, উপযুক্ত ক্ষেত্রে জরায়ুমুখ ক্যান্সারের জন্য রোবোটিক সার্জারি — ওপেন সার্জারির তুলনায় দ্রুত আরোগ্য ও কম সার্জিক্যাল ট্রমা।</p>
+          </div>
         </div>
       </div>
+
+      <div class="journey-stage" id="stage-after-treatment">
+        <div class="journey-stage-num"></div>
+        <div class="journey-stage-head">
+          <div class="journey-stage-who">যদি আপনার চিকিৎসা সম্পন্ন হয়ে থাকে</div>
+          <h3 class="journey-stage-title">উর্বরতা, ফলো-আপ ও চিকিৎসা-পরবর্তী জীবন</h3>
+          <p class="journey-stage-desc">পরিচর্যা সার্জারিতেই শেষ হয় না। অল্পবয়সী নারীদের জন্য রোগ নির্ণয়ের মুহূর্ত থেকেই উর্বরতার বিষয়টি বিবেচনা করা হয়; সবার জন্যই চিকিৎসার অনেক পরেও কাঠামোবদ্ধ ফলো-আপ চলতে থাকে।</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card reveal d1">
+            <h3>অনকোফার্টিলিটি কাউন্সেলিং</h3>
+            <p>প্রাথমিক পর্যায়ের রোগে আক্রান্ত অল্পবয়সী নারীদের জন্য, চিকিৎসা পরিকল্পনা তৈরির সময়ই ফার্টিলিটি-স্পেয়ারিং সার্জিক্যাল বিকল্প নিয়ে কাউন্সেলিং।</p>
+          </div>
+          <div class="exp-card reveal d2">
+            <h3>কাঠামোবদ্ধ ফলো-আপ</h3>
+            <p>পুনরাবৃত্তি প্রাথমিক পর্যায়ে, যখন তা সবচেয়ে বেশি চিকিৎসাযোগ্য, শনাক্ত করার জন্য চিকিৎসার পর একটি সুনির্দিষ্ট নজরদারি সময়সূচি।</p>
+          </div>
+          <div class="exp-card reveal d3">
+            <h3>সার্ভাইভরশিপ সাপোর্ট</h3>
+            <p>দীর্ঘমেয়াদী সার্ভাইভরশিপ পরিচর্যার অংশ হিসেবে চিকিৎসার পার্শ্বপ্রতিক্রিয়া নিয়ন্ত্রণ এবং জরায়ুমুখ/পেলভিক স্বাস্থ্যের চলমান পর্যবেক্ষণ।</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <section class="text-section alt">
     <div class="text-section-inner">
-      <div class="sec-label reveal">ঝুঁকির কারণ</div>
-      <h2 class="reveal d1">ঝুঁকির কারণ ও <em>HPV</em></h2>
-      <p class="reveal d2"><strong>HPV সংক্রমণ</strong> জরায়ুমুখ ক্যান্সারের প্রধান ঝুঁকির কারণ। HPV ভ্যাকসিন সেই সব HPV স্ট্রেনের বিরুদ্ধে সুরক্ষা দেয় যা 95%-এরও বেশি জরায়ুমুখ ক্যান্সারের কারণ হয়, এবং ডা. ব্যানার্জী 9-26 বছর বয়সী মেয়েদের জন্য টিকাকরণের জোরালো সুপারিশ করেন, এবং কিছু ক্ষেত্রে 45 বছর বয়স পর্যন্তও।</p><p class="reveal d3">ভারতে এখন দেশীয়ভাবে তৈরি HPV ভ্যাকসিন, <strong>Cervavac</strong>, রয়েছে, যা টিকাকরণকে আরও সহজলভ্য করে তুলেছে। নিয়মিত জরায়ুমুখ স্ক্রিনিং-এর সাথে টিকাকরণ এখনও পর্যন্ত সবচেয়ে কার্যকর প্রতিরোধ কৌশল।</p>
-    </div>
-  </section>
-
-  <section class="photo-banner">
-    <div class="photo-banner-image" style="background-image:url('../robotic2.webp');"></div>
-    <div class="photo-banner-caption">
-      <div class="sec-label light">রোবোটিক নির্ভুলতা</div>
-      <p>New York-এর Roswell Park Comprehensive Cancer Centre-এ রোবোটিক গাইনোকোলজিক্যাল সার্জারিতে ফেলোশিপ প্রশিক্ষণপ্রাপ্ত — জটিল জরায়ুমুখ ক্যান্সার কেসে মিনিমালি ইনভেসিভ নির্ভুলতা নিয়ে আসা।</p>
-    </div>
-  </section>
-
-  <section class="card-section">
-    <div class="page-hero-ghost">SCREENING</div>
-    <div class="card-section-intro">
-      <div class="sec-label light reveal">চিকিৎসা পদ্ধতি</div>
-      <h2 class="reveal d1">ডা. ব্যানার্জীর <em>জরায়ুমুখ ক্যান্সার পরিচর্যা</em>র পদ্ধতি</h2>
-      <p class="reveal d2">স্ক্রিনিং ফলাফল ব্যাখ্যা থেকে শুরু করে সার্জিক্যাল চিকিৎসা পর্যন্ত, ডা. ব্যানার্জীর জরায়ুমুখ ক্যান্সার প্র্যাকটিস তাঁর কলপোস্কোপিস্ট সার্টিফিকেশন, HPV-তে গবেষণার পটভূমি এবং রোবোটিক সার্জারিতে ফেলোশিপ প্রশিক্ষণের উপর নির্ভর করে।</p>
-    </div>
-    <div class="exp-grid">
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d1">
-          <h3>কলপোস্কোপি-নির্দেশিত স্ক্রিনিং</h3>
-          <p>একজন IFCPC IARC সার্টিফাইড কলপোস্কোপিস্ট হিসেবে, ডা. ব্যানার্জী অস্বাভাবিক Pap smear বা HPV টেস্টের পর জরায়ুমুখের প্রাক-ক্যান্সারাস পরিবর্তন ক্যান্সারে পরিণত হওয়ার আগেই শনাক্ত করতে কলপোস্কোপি সম্পাদন করেন।</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d2">
-          <h3>HPV টিকাকরণ পরামর্শ</h3>
-          <p>তিনি উপযুক্ত বয়সীদের জন্য প্রতিরোধমূলক পরিচর্যার অংশ হিসেবে Cervavac-সহ HPV টিকাকরণ সম্পর্কে পরামর্শ দেন, যা ভারতের দেশীয়ভাবে তৈরি ভ্যাকসিন।</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d3">
-          <h3>HPV ভ্যাকসিন ট্রায়াল অভিজ্ঞতা</h3>
-          <p>ডা. ব্যানার্জী Serum Institute HPV ভ্যাকসিন ট্রায়ালের Site Principal Investigator হিসেবে দায়িত্ব পালন করেছেন, যা তাঁর ক্লিনিক্যাল প্র্যাকটিসের পাশাপাশি HPV প্রতিরোধে সরাসরি গবেষণা অভিজ্ঞতা দিয়েছে।</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d1">
-          <h3>র‍্যাডিক্যাল সার্জারি</h3>
-          <p>নিশ্চিত জরায়ুমুখ ক্যান্সারের জন্য, তিনি আন্তর্জাতিকভাবে স্বীকৃত, প্রমাণ-ভিত্তিক গাইডলাইন অনুসরণ করে র‍্যাডিক্যাল ও রিকনস্ট্রাক্টিভ সার্জারি সম্পাদন করেন।</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d2">
-          <h3>রোবোটিক ও মিনিমালি ইনভেসিভ সার্জারি</h3>
-          <p>New York-এর Roswell Park Comprehensive Cancer Centre-এ ফেলোশিপ প্রশিক্ষণপ্রাপ্ত, তিনি উপযুক্ত ক্ষেত্রে জরায়ুমুখ ক্যান্সারের জন্য মিনিমালি ইনভেসিভ রোবোটিক পদ্ধতি সম্পাদন করেন — ওপেন সার্জারির তুলনায় দ্রুত আরোগ্য ও কম সার্জিক্যাল ট্রমা প্রদান করে।</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d3">
-          <h3>অনকোফার্টিলিটি কাউন্সেলিং</h3>
-          <p>প্রাথমিক পর্যায়ের রোগে আক্রান্ত অল্পবয়সী নারীদের জন্য, ক্লিনিক্যাল পরিস্থিতি অনুমতি দিলে তিনি ফার্টিলিটি-স্পেয়ারিং সার্জিক্যাল বিকল্প সম্পর্কে কাউন্সেলিং প্রদান করেন।</p>
-        </div>
-      </div>
+      <div class="sec-label reveal">যেসব লক্ষণে সতর্ক থাকবেন</div>
+      <h2 class="reveal d1">কখন আরও দ্রুত <em>বিশেষজ্ঞের সাথে</em> দেখা করবেন</h2>
+      <p class="reveal d2">বেশিরভাগ জরায়ুমুখ কোষ পরিবর্তন লক্ষণ সৃষ্টি করার অনেক আগেই স্ক্রিনিং-এ ধরা পড়ে। কিন্তু অস্বাভাবিক যোনি রক্তপাত — মাসিকের মাঝে, সহবাসের পর, বা মেনোপজের পরে — অথবা অস্বাভাবিক যোনি স্রাব পরবর্তী নির্ধারিত স্ক্রিনিং-এর জন্য অপেক্ষা করা উচিত নয়।</p>
+      <p class="reveal d3">এই লক্ষণগুলি লক্ষ্য করলে, বা স্ক্রিনিং টেস্ট ইতিমধ্যে অস্বাভাবিক এসে থাকলে, অপেক্ষা না করে পরামর্শের জন্য বুক করুন।</p>
     </div>
   </section>
 
