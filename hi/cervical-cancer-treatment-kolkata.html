@@ -306,9 +306,19 @@
     .page-hero h1 em { font-style: italic; color: var(--sky); }
     .page-hero-sub {
       font-size: 1.02rem; color: rgba(255,255,255,0.6); line-height: 2.1;
-      max-width: 680px; margin-bottom: 40px; position: relative; z-index: 1;
+      max-width: 680px; margin-bottom: 28px; position: relative; z-index: 1;
       font-family: 'Noto Sans Devanagari','Lato',sans-serif;
     }
+    .page-hero-note {
+      display: inline-flex; align-items: baseline; gap: 8px;
+      font-size: 0.96rem; color: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.05);
+      border-left: 2px solid var(--gold);
+      padding: 10px 16px; margin-bottom: 40px; max-width: 640px;
+      position: relative; z-index: 1; line-height: 1.95;
+      font-family: 'Noto Sans Devanagari','Lato',sans-serif;
+    }
+    .page-hero-note strong { color: var(--gold-light); font-weight: 600; }
     .page-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; position: relative; z-index: 1; }
 
     .btn-primary {
@@ -405,6 +415,42 @@
       line-height: 2; font-weight: 400;
       font-family: 'Noto Sans Devanagari','Lato',sans-serif;
     }
+
+    /* ─── मरीज़ की यात्रा (क्रमिक चरण — नंबरिंग एक वास्तविक देखभाल राह को दर्शाती है) ─── */
+    .journey {
+      display: flex; flex-direction: column; gap: 60px;
+      position: relative; z-index: 1; margin-top: 12px;
+      counter-reset: stage;
+    }
+    .journey-stage { position: relative; padding-left: 78px; }
+    .journey-stage:not(:last-child)::before {
+      content: ''; position: absolute; left: 27px; top: 58px; bottom: -60px;
+      width: 1px; background: rgba(255,255,255,0.1);
+    }
+    .journey-stage-num {
+      counter-increment: stage;
+      position: absolute; left: 0; top: 0;
+      width: 54px; height: 54px; border-radius: 50%;
+      border: 1px solid rgba(184,150,96,0.45);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+      color: var(--gold-light); background: rgba(255,255,255,0.02);
+    }
+    .journey-stage-num::before { content: counter(stage, decimal-leading-zero); }
+    .journey-stage-head { margin-bottom: 26px; max-width: 660px; }
+    .journey-stage-who {
+      font-size: 0.86rem; letter-spacing: 0.01em; color: var(--blue-light); margin-bottom: 6px;
+      font-family: 'Noto Sans Devanagari','Lato',sans-serif;
+    }
+    .journey-stage-title {
+      font-family: 'Tiro Devanagari','Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 400;
+      color: var(--white); margin-bottom: 10px; line-height: 1.5;
+    }
+    .journey-stage-desc {
+      font-size: 0.96rem; color: rgba(255,255,255,0.58); line-height: 2.1;
+      font-family: 'Noto Sans Devanagari','Lato',sans-serif;
+    }
+    .journey-stage .exp-grid { grid-template-columns: repeat(3, 1fr); }
 
     .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
     .pill {
@@ -630,6 +676,10 @@
       .card-section { padding: 72px 32px; }
       .exp-grid { grid-template-columns: 1fr 1fr; }
       .exp-grid.two-col { grid-template-columns: 1fr; }
+      .journey-stage { padding-left: 60px; }
+      .journey-stage-num { width: 44px; height: 44px; font-size: 1.1rem; }
+      .journey-stage:not(:last-child)::before { left: 21px; top: 48px; bottom: -60px; }
+      .journey-stage .exp-grid { grid-template-columns: 1fr; }
       .faq { padding: 72px 32px; }
       .faq-question { padding: 22px 24px; }
       .faq-answer-inner { padding: 0 24px 24px; }
@@ -643,6 +693,9 @@
       .page-hero-ghost { display: none; }
       .exp-grid { grid-template-columns: 1fr; }
       .exp-grid.two-col { grid-template-columns: 1fr; }
+      .journey-stage { padding-left: 0; }
+      .journey-stage-num { position: static; margin-bottom: 14px; }
+      .journey-stage:not(:last-child)::before { display: none; }
       .floating-whatsapp { bottom: 76px; right: 20px; width: 50px; height: 50px; }
       footer { padding-bottom: 130px; }
     }
@@ -701,6 +754,7 @@
     <div class="sec-label light">गायनेकोलॉजिकल ऑन्कोलॉजी</div>
     <h1>कोलकाता में सर्वाइकल कैंसर उपचार व <em>स्क्रीनिंग</em></h1>
     <p class="page-hero-sub">सर्वाइकल कैंसर एकमात्र ऐसा गायनेकोलॉजिकल कैंसर है जिसका एक स्थापित, प्रभावी स्क्रीनिंग मार्ग है — Pap smear और HPV टेस्ट — और एक वैक्सीन जो अधिकांश मामलों को रोकती है। डॉ. दीपान्विता बैनर्जी, एक IFCPC IARC प्रमाणित कॉल्पोस्कोपिस्ट, एक ही विशेषज्ञ के अंतर्गत स्क्रीनिंग, शीघ्र पहचान और उपचार को एक साथ लाती हैं।</p>
+    <p class="page-hero-note">आप चाहे किसी भी चरण में हों — नियमित स्क्रीनिंग से जुड़ा सवाल, एक असामान्य Pap smear, पुष्ट निदान, या उपचार के बाद फॉलो-अप — <strong>नीचे अपनी स्थिति खोजें</strong> और देखें डॉ. बैनर्जी उसे कैसे संभालती हैं।</p>
     <div class="page-hero-btns">
       <a href="index.html#contact" class="btn-primary">
         परामर्श के लिए बुक करें
@@ -732,95 +786,117 @@
     </div>
   </section>
 
-  <section class="card-section">
-    <div class="page-hero-ghost">CERVICAL</div>
+  <section class="card-section" id="journey">
+    <div class="page-hero-ghost">SCREENING</div>
     <div class="card-section-intro">
-      <div class="sec-label light reveal">लक्षण</div>
-      <h2 class="reveal d1">लक्षण और <em>स्क्रीनिंग</em></h2>
-      <p class="reveal d2">गर्भाशय ग्रीवा की प्रारंभिक कोशिका परिवर्तन अक्सर कोई लक्षण नहीं दिखाते, यही कारण है कि लक्षणों की प्रतीक्षा करने के बजाय नियमित स्क्रीनिंग की सिफारिश की जाती है।</p>
+      <div class="sec-label light reveal">आपकी देखभाल की राह</div>
+      <h2 class="reveal d1">सर्वाइकल कैंसर देखभाल, <em>चरण दर चरण</em></h2>
+      <p class="reveal d2">सर्वाइकल कैंसर उन गिने-चुने गायनेकोलॉजिकल कैंसरों में से एक है जहां स्क्रीनिंग, रोकथाम और उपचार — सब कुछ पहले से ही सुनिश्चित है। डॉ. बैनर्जी का दृष्टिकोण इसी राह का अनुसरण करता है — बिना किसी लक्षण के नियमित स्क्रीनिंग से लेकर उपचार पूरा होने के बाद की निगरानी तक।</p>
     </div>
-    <div class="exp-grid two-col">
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d1">
-          <h3>असामान्य रक्तस्राव या स्राव</h3>
-          <p>सर्वाइकल कैंसर का सबसे सामान्य लक्षण असामान्य योनि रक्तस्राव है — जिसमें मासिक धर्म के बीच, संभोग के बाद, या रजोनिवृत्ति के बाद रक्तस्राव शामिल है — या असामान्य स्राव।</p>
+
+    <div class="journey">
+
+      <div class="journey-stage" id="stage-screening">
+        <div class="journey-stage-num"></div>
+        <div class="journey-stage-head">
+          <div class="journey-stage-who">यदि आपमें कोई लक्षण नहीं है — नियमित स्क्रीनिंग व रोकथाम</div>
+          <h3 class="journey-stage-title">स्क्रीनिंग व HPV टीकाकरण</h3>
+          <p class="journey-stage-desc">गर्भाशय ग्रीवा की प्रारंभिक कोशिका परिवर्तन शायद ही कभी कोई लक्षण दिखाते हैं, यही कारण है कि सर्वाइकल कैंसर को लक्षण की नहीं, बल्कि स्क्रीनिंग की समस्या माना जाता है। अधिकांश महिलाओं के लिए यही एकमात्र चरण है जिसकी उन्हें कभी आवश्यकता पड़ेगी।</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card reveal d1">
+            <h3>Pap Smear व HPV टेस्ट</h3>
+            <p>नियमित Pap smear व HPV टेस्ट परिणामों की व्याख्या, और उम्र व पिछले परिणामों के आधार पर कितनी बार दोहराना चाहिए इस पर मार्गदर्शन।</p>
+          </div>
+          <div class="exp-card reveal d2">
+            <h3>HPV टीकाकरण मार्गदर्शन</h3>
+            <p>Cervavac सहित HPV टीकाकरण पर सलाह, जो भारत की स्वदेशी वैक्सीन है — 9-26 वर्ष की लड़कियों के लिए, और चुनिंदा मामलों में 45 वर्ष की आयु तक भी।</p>
+          </div>
+          <div class="exp-card reveal d3">
+            <h3>शोध-समर्थित रोकथाम</h3>
+            <p>डॉ. बैनर्जी Serum Institute HPV वैक्सीन ट्रायल की Site Principal Investigator रह चुकी हैं, जिससे उन्हें HPV रोकथाम में प्रत्यक्ष शोध आधार मिला है।</p>
+          </div>
         </div>
       </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d2">
-          <h3>नियमित स्क्रीनिंग उपलब्ध है</h3>
-          <p>डॉ. बैनर्जी जिन पाँच गायनेकोलॉजिकल कैंसर का इलाज करती हैं, उनमें सर्वाइकल कैंसर ही एकमात्र ऐसा है जिसका एक नियमित स्क्रीनिंग मार्ग है: Pap smear और HPV टेस्ट।</p>
+
+      <div class="journey-stage" id="stage-abnormal-result">
+        <div class="journey-stage-num"></div>
+        <div class="journey-stage-head">
+          <div class="journey-stage-who">यदि आपका Pap smear या HPV टेस्ट असामान्य आया है</div>
+          <h3 class="journey-stage-title">कॉल्पोस्कोपी व प्री-कैंसर उपचार</h3>
+          <p class="journey-stage-desc">असामान्य स्क्रीनिंग परिणाम का अर्थ कैंसर नहीं है। इसका अर्थ है कि और करीब से जांच जरूरी है — और अधिकांश मामलों में, इस चरण पर उपचार सर्वाइकल कैंसर को विकसित होने से पहले ही रोक देता है।</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card reveal d1">
+            <h3>कॉल्पोस्कोपी-निर्देशित निदान</h3>
+            <p>एक IFCPC IARC प्रमाणित कॉल्पोस्कोपिस्ट के रूप में, डॉ. बैनर्जी मैग्निफिकेशन के माध्यम से गर्भाशय ग्रीवा की जांच कर यह पहचानती हैं कि प्री-कैंसरस बदलाव कहां और कितने गंभीर हैं।</p>
+          </div>
+          <div class="exp-card reveal d2">
+            <h3>बायोप्सी व ग्रेडिंग</h3>
+            <p>संदिग्ध क्षेत्र की टार्गेटेड बायोप्सी, पैथोलॉजी ग्रेडिंग सहित, जो यह तय करती है कि बदलाव को केवल निगरानी में रखा जाए या उपचार की आवश्यकता है।</p>
+          </div>
+          <div class="exp-card reveal d3">
+            <h3>प्री-कैंसरस बदलाव का उपचार</h3>
+            <p>गर्भाशय ग्रीवा को सुरक्षित रखने और भविष्य की फर्टिलिटी को यथासंभव बनाए रखने के लक्ष्य के साथ, प्री-कैंसरस टिश्यू को हटाने या उपचार के लिए छोटी प्रक्रियाएँ।</p>
+          </div>
         </div>
       </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d3">
-          <h3>असामान्य परिणामों के लिए कॉल्पोस्कोपी</h3>
-          <p>जब Pap smear या HPV टेस्ट का परिणाम असामान्य आता है, तो कॉल्पोस्कोपी — गर्भाशय ग्रीवा की एक विस्तृत मैग्निफाइड जांच — प्री-कैंसरस बदलावों को शीघ्र पहचानने के लिए अनुशंसित अगला कदम है।</p>
+
+      <div class="journey-stage" id="stage-confirmed-cancer">
+        <div class="journey-stage-num"></div>
+        <div class="journey-stage-head">
+          <div class="journey-stage-who">यदि आपका सर्वाइकल कैंसर पुष्ट हो चुका है</div>
+          <h3 class="journey-stage-title">स्टेजिंग व सर्जिकल उपचार</h3>
+          <p class="journey-stage-desc">पुष्ट निदान के बाद स्टेजिंग होती है और कैंसर की सीमा के आधार पर एक उपचार योजना बनाई जाती है, जो अंतरराष्ट्रीय स्तर पर मान्यता प्राप्त, प्रमाण-आधारित गाइडलाइनों का पालन करती है।</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card reveal d1">
+            <h3>स्टेजिंग वर्कअप</h3>
+            <p>कैंसर कितनी दूर तक फैला है यह निर्धारित करने के लिए इमेजिंग व क्लिनिकल मूल्यांकन, जो सर्जरी, रेडिएशन, कीमोथेरेपी या संयुक्त दृष्टिकोण में से कौन उपयुक्त है यह तय करता है।</p>
+          </div>
+          <div class="exp-card reveal d2">
+            <h3>रेडिकल व रिकंस्ट्रक्टिव सर्जरी</h3>
+            <p>पुष्ट रोग के लिए रेडिकल हिस्टेरेक्टमी व संबंधित प्रक्रियाएँ, अंतरराष्ट्रीय स्तर पर मान्यता प्राप्त ऑन्कोलॉजिक सर्जिकल मानकों के अनुसार की जाती हैं।</p>
+          </div>
+          <div class="exp-card reveal d3">
+            <h3>रोबोटिक व मिनिमली इनवेसिव सर्जरी</h3>
+            <p>New York के Roswell Park Comprehensive Cancer Centre में फेलोशिप प्रशिक्षण प्राप्त, उपयुक्त मामलों में सर्वाइकल कैंसर के लिए रोबोटिक सर्जरी — ओपन सर्जरी की तुलना में तेज़ रिकवरी व कम सर्जिकल ट्रॉमा।</p>
+          </div>
         </div>
       </div>
+
+      <div class="journey-stage" id="stage-after-treatment">
+        <div class="journey-stage-num"></div>
+        <div class="journey-stage-head">
+          <div class="journey-stage-who">यदि आपका उपचार पूरा हो चुका है</div>
+          <h3 class="journey-stage-title">फर्टिलिटी, फॉलो-अप व उपचार के बाद का जीवन</h3>
+          <p class="journey-stage-desc">देखभाल सर्जरी पर समाप्त नहीं होती। युवा महिलाओं के लिए, फर्टिलिटी पर निदान के समय से ही विचार किया जाता है; सभी के लिए, उपचार के बहुत बाद तक संरचित फॉलो-अप जारी रहता है।</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card reveal d1">
+            <h3>ऑन्कोफर्टिलिटी काउंसलिंग</h3>
+            <p>प्रारंभिक चरण की बीमारी वाली युवा महिलाओं के लिए, उपचार योजना बनाते समय ही फर्टिलिटी-स्पेयरिंग सर्जिकल विकल्पों पर काउंसलिंग।</p>
+          </div>
+          <div class="exp-card reveal d2">
+            <h3>संरचित फॉलो-अप</h3>
+            <p>पुनरावृत्ति को शीघ्र, जब वह सबसे अधिक उपचार योग्य हो, पहचानने के लिए उपचार के बाद एक निर्धारित निगरानी समय-सारणी।</p>
+          </div>
+          <div class="exp-card reveal d3">
+            <h3>सर्वाइवरशिप सपोर्ट</h3>
+            <p>दीर्घकालिक सर्वाइवरशिप देखभाल के हिस्से के रूप में उपचार के दुष्प्रभावों का प्रबंधन और गर्भाशय ग्रीवा/पेल्विक स्वास्थ्य की निरंतर निगरानी।</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <section class="text-section alt">
     <div class="text-section-inner">
-      <div class="sec-label reveal">जोखिम कारक</div>
-      <h2 class="reveal d1">जोखिम कारक और <em>HPV</em></h2>
-      <p class="reveal d2"><strong>HPV संक्रमण</strong> सर्वाइकल कैंसर का मुख्य जोखिम कारक है। HPV वैक्सीन उन HPV स्ट्रेन्स से सुरक्षा देती है जो 95% से अधिक सर्वाइकल कैंसर का कारण बनते हैं, और डॉ. बैनर्जी 9-26 वर्ष की आयु की लड़कियों के लिए टीकाकरण की दृढ़ता से सिफारिश करती हैं, और कुछ मामलों में 45 वर्ष की आयु तक भी।</p><p class="reveal d3">भारत में अब स्वदेशी रूप से निर्मित HPV वैक्सीन, <strong>Cervavac</strong>, उपलब्ध है, जिसने टीकाकरण को अधिक सुलभ बना दिया है। नियमित सर्वाइकल स्क्रीनिंग के साथ टीकाकरण अभी भी सबसे प्रभावी रोकथाम रणनीति बनी हुई है।</p>
-    </div>
-  </section>
-
-  <section class="photo-banner">
-    <div class="photo-banner-image" style="background-image:url('../robotic2.webp');"></div>
-    <div class="photo-banner-caption">
-      <div class="sec-label light">रोबोटिक सटीकता</div>
-      <p>New York के Roswell Park Comprehensive Cancer Centre में रोबोटिक गायनेकोलॉजिकल सर्जरी में फेलोशिप प्रशिक्षण प्राप्त — जटिल सर्वाइकल कैंसर मामलों में मिनिमली इनवेसिव सटीकता लाना।</p>
-    </div>
-  </section>
-
-  <section class="card-section">
-    <div class="page-hero-ghost">SCREENING</div>
-    <div class="card-section-intro">
-      <div class="sec-label light reveal">उपचार दृष्टिकोण</div>
-      <h2 class="reveal d1">डॉ. बैनर्जी का <em>सर्वाइकल कैंसर देखभाल</em> के प्रति दृष्टिकोण</h2>
-      <p class="reveal d2">स्क्रीनिंग परिणामों की व्याख्या से लेकर सर्जिकल उपचार तक, डॉ. बैनर्जी की सर्वाइकल कैंसर प्रैक्टिस उनके कॉल्पोस्कोपिस्ट प्रमाणन, HPV में शोध पृष्ठभूमि, और रोबोटिक सर्जरी में फेलोशिप प्रशिक्षण पर आधारित है।</p>
-    </div>
-    <div class="exp-grid">
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d1">
-          <h3>कॉल्पोस्कोपी-निर्देशित स्क्रीनिंग</h3>
-          <p>एक IFCPC IARC प्रमाणित कॉल्पोस्कोपिस्ट के रूप में, डॉ. बैनर्जी असामान्य Pap smear या HPV टेस्ट के बाद गर्भाशय ग्रीवा के प्री-कैंसरस बदलावों को कैंसर में बदलने से पहले ही पहचानने के लिए कॉल्पोस्कोपी करती हैं।</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d2">
-          <h3>HPV टीकाकरण मार्गदर्शन</h3>
-          <p>वे उपयुक्त आयु वर्गों के लिए निवारक देखभाल के हिस्से के रूप में Cervavac सहित HPV टीकाकरण की सलाह देती हैं, जो भारत की स्वदेशी रूप से निर्मित वैक्सीन है।</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d3">
-          <h3>HPV वैक्सीन ट्रायल अनुभव</h3>
-          <p>डॉ. बैनर्जी Serum Institute HPV वैक्सीन ट्रायल की Site Principal Investigator रह चुकी हैं, जिससे उन्हें अपनी क्लिनिकल प्रैक्टिस के साथ-साथ HPV रोकथाम में प्रत्यक्ष शोध अनुभव मिला है।</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d1">
-          <h3>रेडिकल सर्जरी</h3>
-          <p>पुष्ट सर्वाइकल कैंसर के लिए, वे अंतरराष्ट्रीय स्तर पर मान्यता प्राप्त, प्रमाण-आधारित गाइडलाइनों का उपयोग करते हुए रेडिकल और रिकंस्ट्रक्टिव सर्जरी करती हैं।</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d2">
-          <h3>रोबोटिक एवं मिनिमली इनवेसिव सर्जरी</h3>
-          <p>New York के Roswell Park Comprehensive Cancer Centre में फेलोशिप प्रशिक्षण प्राप्त, वे उपयुक्त मामलों में सर्वाइकल कैंसर के लिए मिनिमली इनवेसिव रोबोटिक प्रक्रियाएँ करती हैं — जो ओपन सर्जरी की तुलना में तेज़ रिकवरी और कम सर्जिकल ट्रॉमा प्रदान करती हैं।</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d3">
-          <h3>ऑन्कोफर्टिलिटी काउंसलिंग</h3>
-          <p>प्रारंभिक चरण की बीमारी वाली युवा महिलाओं के लिए, जहां क्लिनिकल स्थिति अनुमति देती है, वे फर्टिलिटी-स्पेयरिंग सर्जिकल विकल्पों पर काउंसलिंग प्रदान करती हैं।</p>
-        </div>
-      </div>
+      <div class="sec-label reveal">किन लक्षणों पर ध्यान दें</div>
+      <h2 class="reveal d1">कब जल्द <em>विशेषज्ञ से</em> मिलें</h2>
+      <p class="reveal d2">अधिकांश गर्भाशय ग्रीवा कोशिका परिवर्तन लक्षण दिखाने से बहुत पहले ही स्क्रीनिंग में पकड़ में आ जाते हैं। लेकिन असामान्य योनि रक्तस्राव — मासिक धर्म के बीच, संभोग के बाद, या रजोनिवृत्ति के बाद — या असामान्य योनि स्राव को अगली निर्धारित स्क्रीनिंग तक टालना नहीं चाहिए।</p>
+      <p class="reveal d3">यदि आपको ये लक्षण दिखें, या कोई स्क्रीनिंग टेस्ट पहले ही असामान्य आ चुका हो, तो प्रतीक्षा किए बिना परामर्श के लिए बुक करें।</p>
     </div>
   </section>
 
