@@ -303,7 +303,7 @@
     .sec-label.light { color: var(--gold-light); }
     .sec-label.light::before { background: var(--gold-light); }
 
-    /* ─── PAGE HERO (built from .expertise pattern) ─── */
+    /* ─── PAGE HERO ─── */
     .page-hero {
       background: var(--navy);
       padding: 168px 64px 96px;
@@ -333,8 +333,17 @@
     .page-hero h1 em { font-style: italic; color: var(--sky); }
     .page-hero-sub {
       font-size: 1.02rem; color: rgba(255,255,255,0.6); line-height: 1.9;
-      max-width: 680px; margin-bottom: 40px; position: relative; z-index: 1;
+      max-width: 680px; margin-bottom: 28px; position: relative; z-index: 1;
     }
+    .page-hero-note {
+      display: inline-flex; align-items: baseline; gap: 8px;
+      font-size: 0.9rem; color: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.05);
+      border-left: 2px solid var(--gold);
+      padding: 10px 16px; margin-bottom: 40px; max-width: 620px;
+      position: relative; z-index: 1; line-height: 1.7;
+    }
+    .page-hero-note strong { color: var(--gold-light); font-weight: 600; }
     .page-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; position: relative; z-index: 1; }
 
     .btn-primary {
@@ -356,7 +365,7 @@
     }
     .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
-    /* ─── TEXT SECTION (built from .exp-left pattern) ─── */
+    /* ─── TEXT SECTION ─── */
     .text-section { padding: 100px 64px; background: var(--cream); }
     .text-section.alt { background: var(--cream-dark); }
     .text-section-inner { max-width: 860px; }
@@ -381,7 +390,7 @@
       width: 7px; height: 7px; border-radius: 50%; background: var(--gold);
     }
 
-    /* ─── CARD GRID (reuses .exp-grid / .exp-card pattern) ─── */
+    /* ─── CARD GRID ─── */
     .card-section {
       background: var(--navy);
       padding: 100px 64px;
@@ -428,7 +437,41 @@
       line-height: 1.85; font-weight: 400;
     }
 
-    /* ─── COMPARISON-STYLE TABLE (reuses .gynae-table pattern) ─── */
+    /* ─── PATIENT JOURNEY (sequential stages — numbering reflects a real care pathway) ─── */
+    .journey {
+      display: flex; flex-direction: column; gap: 60px;
+      position: relative; z-index: 1; margin-top: 12px;
+      counter-reset: stage;
+    }
+    .journey-stage { position: relative; padding-left: 78px; }
+    .journey-stage:not(:last-child)::before {
+      content: ''; position: absolute; left: 27px; top: 58px; bottom: -60px;
+      width: 1px; background: rgba(255,255,255,0.1);
+    }
+    .journey-stage-num {
+      counter-increment: stage;
+      position: absolute; left: 0; top: 0;
+      width: 54px; height: 54px; border-radius: 50%;
+      border: 1px solid rgba(184,150,96,0.45);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+      color: var(--gold-light); background: rgba(255,255,255,0.02);
+    }
+    .journey-stage-num::before { content: counter(stage, decimal-leading-zero); }
+    .journey-stage-head { margin-bottom: 26px; max-width: 660px; }
+    .journey-stage-who {
+      font-size: 0.76rem; letter-spacing: 0.1em; color: var(--blue-light); margin-bottom: 6px;
+    }
+    .journey-stage-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400;
+      color: var(--white); margin-bottom: 10px; line-height: 1.25;
+    }
+    .journey-stage-desc {
+      font-size: 0.96rem; color: rgba(255,255,255,0.58); line-height: 1.85;
+    }
+    .journey-stage .exp-grid { grid-template-columns: repeat(3, 1fr); }
+
+    /* ─── COMPARISON-STYLE TABLE ─── */
     .gynae-comparison { padding: 100px 64px; background: var(--cream-dark); }
     .gynae-comparison h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.9rem); font-weight: 400; color: var(--navy); line-height: 1.2; margin-bottom: 18px; }
     .gynae-comparison h2 em { font-style: italic; color: var(--blue); }
@@ -440,7 +483,7 @@
     .gynae-table tr:nth-child(even) td { background: var(--cream-dark); }
     .gynae-table td:first-child { font-weight: 700; color: var(--navy); }
 
-    /* ─── CREDENTIAL STRIP (reuses .pills pattern) ─── */
+    /* ─── CREDENTIAL STRIP ─── */
     .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
     .pill {
       padding: 6px 16px;
@@ -533,7 +576,7 @@
     }
     .faq-item.open::after { transform: scaleX(1); }
 
-    /* ─── CONTACT CTA (reuses .contact pattern) ─── */
+    /* ─── CONTACT CTA ─── */
     .contact {
       background: var(--navy);
       display: grid; grid-template-columns: 1fr 1fr;
@@ -669,6 +712,10 @@
       .gynae-table th, .gynae-table td { padding: 12px 14px; }
       .exp-grid { grid-template-columns: 1fr 1fr; }
       .exp-grid.two-col { grid-template-columns: 1fr; }
+      .journey-stage { padding-left: 60px; }
+      .journey-stage-num { width: 44px; height: 44px; font-size: 1.1rem; }
+      .journey-stage:not(:last-child)::before { left: 21px; top: 48px; bottom: -60px; }
+      .journey-stage .exp-grid { grid-template-columns: 1fr; }
       .faq { padding: 72px 32px; }
       .faq-question { padding: 22px 24px; }
       .faq-answer-inner { padding: 0 24px 24px; }
@@ -682,6 +729,9 @@
       .page-hero-ghost { display: none; }
       .exp-grid { grid-template-columns: 1fr; }
       .exp-grid.two-col { grid-template-columns: 1fr; }
+      .journey-stage { padding-left: 0; }
+      .journey-stage-num { position: static; margin-bottom: 14px; }
+      .journey-stage:not(:last-child)::before { display: none; }
       .floating-whatsapp { bottom: 76px; right: 20px; width: 50px; height: 50px; }
       footer { padding-bottom: 130px; }
     }
@@ -740,6 +790,7 @@
     <div class="sec-label light">Gynaecological Oncology</div>
     <h1>Cervical Cancer Treatment &amp; Screening in <em>Kolkata</em></h1>
     <p class="page-hero-sub">Cervical cancer is the one gynaecological cancer with an established, effective screening pathway — Pap smear and HPV testing — and a vaccine that prevents most cases. Dr. Dipanwita Banerjee, an IFCPC IARC certified colposcopist, brings screening, early detection and treatment together under one specialist.</p>
+    <p class="page-hero-note">Whatever stage you are at — a routine screening question, an abnormal Pap smear, a confirmed diagnosis, or follow-up after treatment — <strong>find your situation below</strong> to see how Dr. Banerjee approaches it.</p>
     <div class="page-hero-btns">
       <a href="index.html#contact" class="btn-primary">
         Book a Consultation
@@ -771,95 +822,117 @@
     </div>
   </section>
 
-  <section class="card-section">
-    <div class="page-hero-ghost">CERVICAL</div>
+  <section class="card-section" id="journey">
+    <div class="page-hero-ghost">SCREENING</div>
     <div class="card-section-intro">
-      <div class="sec-label light reveal">Symptoms</div>
-      <h2 class="reveal d1">Symptoms & <em>screening</em></h2>
-      <p class="reveal d2">Early cervical cell changes often cause no symptoms at all, which is precisely why routine screening — rather than waiting for symptoms — is recommended.</p>
+      <div class="sec-label light reveal">Your Care Pathway</div>
+      <h2 class="reveal d1">Cervical cancer care, <em>stage by stage</em></h2>
+      <p class="reveal d2">Cervical cancer is one of the few gynaecological cancers where screening, prevention and treatment are all mapped out in advance. Dr. Banerjee's approach follows this pathway closely — from routine screening in a woman with no symptoms, through to surveillance after treatment is complete.</p>
     </div>
-    <div class="exp-grid two-col">
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d1">
-          <h3>Abnormal Bleeding or Discharge</h3>
-          <p>The most common symptom of cervical cancer is abnormal vaginal bleeding — including bleeding between periods, after intercourse, or after menopause — or unusual discharge.</p>
+
+    <div class="journey">
+
+      <div class="journey-stage" id="stage-screening">
+        <div class="journey-stage-num"></div>
+        <div class="journey-stage-head">
+          <div class="journey-stage-who">If you have no symptoms — routine screening &amp; prevention</div>
+          <h3 class="journey-stage-title">Screening &amp; HPV Vaccination</h3>
+          <p class="journey-stage-desc">Early cervical cell changes rarely cause symptoms, which is exactly why cervical cancer is approached as a screening problem, not a symptom problem. This is the stage most women will only ever need.</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card reveal d1">
+            <h3>Pap Smear &amp; HPV Testing</h3>
+            <p>Interpretation of routine Pap smear and HPV test results, and guidance on how often each should be repeated based on age and prior results.</p>
+          </div>
+          <div class="exp-card reveal d2">
+            <h3>HPV Vaccination Guidance</h3>
+            <p>Advice on HPV vaccination, including Cervavac, India's domestically produced vaccine, for girls aged 9–26 and, in select cases, up to age 45.</p>
+          </div>
+          <div class="exp-card reveal d3">
+            <h3>Research-Backed Prevention</h3>
+            <p>Dr. Banerjee served as Site Principal Investigator for the Serum Institute HPV vaccine trial, giving her direct research grounding in HPV prevention.</p>
+          </div>
         </div>
       </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d2">
-          <h3>Routine Screening Is Available</h3>
-          <p>Cervical cancer is the only gynaecological cancer among the five Dr. Banerjee treats with a routine screening pathway: the Pap smear and the HPV test.</p>
+
+      <div class="journey-stage" id="stage-abnormal-result">
+        <div class="journey-stage-num"></div>
+        <div class="journey-stage-head">
+          <div class="journey-stage-who">If your Pap smear or HPV test came back abnormal</div>
+          <h3 class="journey-stage-title">Colposcopy &amp; Pre-Cancer Treatment</h3>
+          <p class="journey-stage-desc">An abnormal screening result does not mean cancer. It means a closer look is needed — and, in most cases, treatment at this stage stops cervical cancer before it ever develops.</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card reveal d1">
+            <h3>Colposcopy-Guided Diagnosis</h3>
+            <p>As an IFCPC IARC certified colposcopist, Dr. Banerjee examines the cervix under magnification to identify exactly where and how severe any pre-cancerous change is.</p>
+          </div>
+          <div class="exp-card reveal d2">
+            <h3>Biopsy &amp; Grading</h3>
+            <p>Targeted biopsy of any suspicious area, with pathology grading to decide whether the change can be monitored or needs to be treated.</p>
+          </div>
+          <div class="exp-card reveal d3">
+            <h3>Treating Pre-Cancerous Change</h3>
+            <p>Minor procedures to remove or treat pre-cancerous cervical tissue, done with the aim of preserving the cervix and future fertility wherever possible.</p>
+          </div>
         </div>
       </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d3">
-          <h3>Colposcopy for Abnormal Results</h3>
-          <p>When a Pap smear or HPV test comes back abnormal, colposcopy — a detailed magnified examination of the cervix — is the recommended next step to identify pre-cancerous changes early.</p>
+
+      <div class="journey-stage" id="stage-confirmed-cancer">
+        <div class="journey-stage-num"></div>
+        <div class="journey-stage-head">
+          <div class="journey-stage-who">If you have a confirmed diagnosis of cervical cancer</div>
+          <h3 class="journey-stage-title">Staging &amp; Surgical Treatment</h3>
+          <p class="journey-stage-desc">A confirmed diagnosis moves into staging and a treatment plan built around the cancer's extent, using internationally recognised, evidence-based guidelines.</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card reveal d1">
+            <h3>Staging Workup</h3>
+            <p>Imaging and clinical assessment to determine how far the cancer has spread, which decides whether surgery, radiation, chemotherapy or a combination is appropriate.</p>
+          </div>
+          <div class="exp-card reveal d2">
+            <h3>Radical &amp; Reconstructive Surgery</h3>
+            <p>Radical hysterectomy and related procedures for confirmed disease, performed to internationally recognised oncologic surgical standards.</p>
+          </div>
+          <div class="exp-card reveal d3">
+            <h3>Robotic &amp; Minimally Invasive Surgery</h3>
+            <p>Fellowship-trained at Roswell Park Comprehensive Cancer Centre, New York, in robotic surgery for cervical cancer where the case is suitable — offering faster recovery and less surgical trauma than open surgery.</p>
+          </div>
         </div>
       </div>
+
+      <div class="journey-stage" id="stage-after-treatment">
+        <div class="journey-stage-num"></div>
+        <div class="journey-stage-head">
+          <div class="journey-stage-who">If you have completed treatment</div>
+          <h3 class="journey-stage-title">Fertility, Follow-Up &amp; Life After Treatment</h3>
+          <p class="journey-stage-desc">Care does not end at surgery. For younger women, fertility is considered from the point of diagnosis; for everyone, structured follow-up continues well beyond treatment.</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card reveal d1">
+            <h3>Oncofertility Counselling</h3>
+            <p>For younger women with early-stage disease, counselling on fertility-sparing surgical options, considered at the time a treatment plan is first made.</p>
+          </div>
+          <div class="exp-card reveal d2">
+            <h3>Structured Follow-Up</h3>
+            <p>A defined surveillance schedule after treatment to check for recurrence early, when it is most treatable.</p>
+          </div>
+          <div class="exp-card reveal d3">
+            <h3>Survivorship Support</h3>
+            <p>Ongoing management of treatment side effects and ongoing cervical/pelvic health monitoring as part of long-term survivorship care.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <section class="text-section alt">
     <div class="text-section-inner">
-      <div class="sec-label reveal">Risk Factors</div>
-      <h2 class="reveal d1">Risk factors & <em>HPV</em></h2>
-      <p class="reveal d2"><strong>HPV infection</strong> is the key risk factor for cervical cancer. The HPV vaccine protects against the strains of HPV responsible for over 95% of cervical cancers, and Dr. Banerjee strongly recommends vaccination for girls aged 9–26 years, and in some cases up to age 45.</p><p class="reveal d3">India now has a domestically produced HPV vaccine, <strong>Cervavac</strong>, which has made vaccination more accessible. Vaccination combined with regular cervical screening remains the most effective prevention strategy available.</p>
-    </div>
-  </section>
-
-  <section class="photo-banner">
-    <div class="photo-banner-image" style="background-image:url('robotic2.webp');"></div>
-    <div class="photo-banner-caption">
-      <div class="sec-label light">Robotic Precision</div>
-      <p>Fellowship-trained in robotic gynaecological surgery at Roswell Park Comprehensive Cancer Centre, New York — bringing minimally invasive precision to complex cervical cancer cases.</p>
-    </div>
-  </section>
-
-  <section class="card-section">
-    <div class="page-hero-ghost">SCREENING</div>
-    <div class="card-section-intro">
-      <div class="sec-label light reveal">Treatment Approach</div>
-      <h2 class="reveal d1">Dr. Banerjee's approach to <em>cervical cancer care</em></h2>
-      <p class="reveal d2">From screening interpretation through to surgical treatment, Dr. Banerjee's cervical cancer practice draws on her certification as a colposcopist, her research background in HPV, and her fellowship training in robotic surgery.</p>
-    </div>
-    <div class="exp-grid">
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d1">
-          <h3>Colposcopy-Guided Screening</h3>
-          <p>As an IFCPC IARC certified colposcopist, Dr. Banerjee performs colposcopy to identify pre-cancerous cervical changes early — before they progress to cancer — following an abnormal Pap smear or HPV test.</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d2">
-          <h3>HPV Vaccination Guidance</h3>
-          <p>She advises on HPV vaccination, including Cervavac, India's domestically produced vaccine, for eligible age groups as part of preventive care.</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d3">
-          <h3>HPV Vaccine Trial Experience</h3>
-          <p>Dr. Banerjee served as Site Principal Investigator for the Serum Institute HPV vaccine trial, giving her direct research experience in HPV prevention alongside her clinical practice.</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d1">
-          <h3>Radical Surgery</h3>
-          <p>For confirmed cervical cancer, she performs radical and reconstructive surgery using internationally recognised, evidence-based guidelines.</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d2">
-          <h3>Robotic &amp; Minimally Invasive Surgery</h3>
-          <p>Fellowship-trained at Roswell Park Comprehensive Cancer Centre, New York, she performs minimally invasive robotic procedures for cervical cancer where appropriate — offering faster recovery and reduced surgical trauma compared to open surgery.</p>
-        </div>
-      </div>
-      <div class="exp-grid-item">
-        <div class="exp-card reveal d3">
-          <h3>Oncofertility Counselling</h3>
-          <p>For younger women with early-stage disease, she provides counselling on fertility-sparing surgical options where the clinical picture allows it.</p>
-        </div>
-      </div>
+      <div class="sec-label reveal">Symptoms to Watch For</div>
+      <h2 class="reveal d1">When to see a specialist <em>sooner</em></h2>
+      <p class="reveal d2">Most cervical cell changes are caught by screening long before they cause symptoms. But abnormal vaginal bleeding — between periods, after intercourse, or after menopause — or unusual vaginal discharge should not wait for the next scheduled screening.</p>
+      <p class="reveal d3">If you notice these symptoms, or if a screening test has already come back abnormal, book a consultation rather than waiting them out.</p>
     </div>
   </section>
 
